@@ -37,4 +37,4 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Presentations
 
-- Pauloski, J. Gregory. (2018, September). Optimizing Deep Learning Methods for Image Segmentation with Distributed Training. Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
+- Pauloski, J. Gregory. (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
