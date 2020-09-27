@@ -1,15 +1,16 @@
-title: Researcher
+title: Greg Pauloski
 url: "https://ankitsultana.com"
-baseurl: "/researcher"
+baseurl: ""
 
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
-
-tracking_id: #
+#ins_logo: "./static/favicon.png"
 
 footer: yes
 footer_url: "https://github.com/ankitsultana"
 footer_text: "Page design by Ankit Sultana"
+
+favicon: yes
+favicon_location: "static/favicon.png"
 
 sass:
     style: compressed
@@ -17,8 +18,8 @@ sass:
 
 nav:
  - name: "About"
-   link: "/researcher/"
- - name: "Resume"
-   link: "resume.pdf"
- - name: "Contact"
-   link: "contact"
+   link: "index"
+
+exclude:
+ - README.md
+ - LICENSE
