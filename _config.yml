@@ -16,9 +16,11 @@ sass:
     style: compressed
     sass_dir: _sass
 
-nav:
- - name: "About"
-   link: "index"
+#nav:
+# - name: "About"
+#   link: "index"
+# - name: "Contact"
+#   link: "contact"
 
 exclude:
  - README.md
