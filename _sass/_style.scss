@@ -13,10 +13,13 @@ body {
     margin: 0;
     font-family: "Inconsolata";
     height: 100%;
+	background-color: $background;
+	color: $text-color;
+	font-size: large;
 }
 a {
     text-decoration: none;
-    color: $accent;
+    color: $accent3;
 }
 a:hover {
     text-decoration: underline;
@@ -26,6 +29,7 @@ hr {
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	background-color: $accent2;
 }
 
 /*
@@ -34,7 +38,7 @@ hr {
 
 #author-name {
     font-size: 30px;
-    color: #272727;
+    color: $title-color;
     display: inline-block;
 }
 .navbar {
