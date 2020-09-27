@@ -25,3 +25,4 @@ sass:
 exclude:
  - README.md
  - LICENSE
+ - pubs.bib
