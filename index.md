@@ -22,11 +22,11 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Projects
 
-#### - Distributed K-FAC Preconditioner \[[Paper](https://arxiv.org/pdf/2007.00784.pdf)\] \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
+- **Distributed K-FAC Preconditioner** \[[Paper](https://arxiv.org/pdf/2007.00784.pdf)\] \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 
-#### - 3pseatBot \[[Code](https://github.com/gpauloski/3pseatBot)\]
+- **3pseatBot** \[[Code](https://github.com/gpauloski/3pseatBot)\]
 
-#### - Distributed Deep Learning for Image Segmentation \[[Poster](https://gregpauloski.com/static/taccster_poster.pdf)\]
+- **Distributed Deep Learning for Image Segmentation** \[[Poster](https://gregpauloski.com/static/taccster_poster.pdf)\]
 
 ## Publications
 
@@ -37,4 +37,4 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Presentations
 
-- Pauloski, J. Gregory. (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
+- **Pauloski, J. G.**. (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
