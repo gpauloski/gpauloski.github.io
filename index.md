@@ -8,8 +8,8 @@ layout: default
 
 Hello there.
 I am a first-year Ph.D. student in Computer Science at the University of Chicago.
-I completed my Bachelors in Computer Science at the University of Texas at Austin.
-I work with Dr. Ian Foster and Dr. Kyle Chard, and I am a part of [Globus Labs](https://labs.globus.org/).
+I work with Dr. Ian Foster and Dr. Kyle Chard as a part of [Globus Labs](https://labs.globus.org/).
+I recently completed my Bachelors in Computer Science at the University of Texas at Austin where I worked at the Texas Advanced Computing Center.
 
 Check out my recent projects on [GitHub](https://github.com/gpauloski).
 You can contact me at jgpauloski (at) uchicago (dot) edu.
