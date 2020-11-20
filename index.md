@@ -28,6 +28,8 @@ I am also interested in various optimization methods that can enable large-batch
 
 - **Distributed Deep Learning for Image Segmentation** \[[Poster](https://gregpauloski.com/static/taccster_poster.pdf)\]
 
+- See more of my latest projects on my [GitHub](https://github.com/gpauloski).
+
 ## Publications
 
 - **Pauloski, J. G.**, Zhang, Z., Huang, L., Xu, W., Foster, I. T. (2020, June). [Convolutional Neural Network Training with Distributed K-FAC](https://arxiv.org/pdf/2007.00784). To be published in the proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC20), Atlanta, Georgia. \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
