@@ -39,4 +39,5 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Presentations
 
-- **Pauloski, J. G.**. (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
+- **Pauloski, J. G.** (2020, November). Convolutional Neural Network Training with Distributed K-FAC. International Conference for High Performance Computing, Networking, Storage and Analysis (SC20), Atlanta, Georgia.
+- **Pauloski, J. G.** (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
