@@ -1,35 +1,42 @@
-@misc{misc,
-    author = {Pauloski, J. and Zhang, Zhao and Huang, Lei and Xu, Weijia and Foster, Ian},
-    year = {2020},
-    month = {07},
-    pages = {},
-    title = {Convolutional Neural Network Training with Distributed K-FAC},
-	url = {https://arxiv.org/pdf/2007.00784.pdf}
-    note = {To appear in the proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis (SC20)}
+@inproceedings{pauloski2020kfac,
+	author = {Pauloski, J. Gregory and Zhang, Zhao and Huang, Lei and Xu, Weijia and Foster, Ian T.},
+	title = {Convolutional Neural Network Training with Distributed K-FAC},
+	year = {2020},
+	isbn = {9781728199986},
+	publisher = {IEEE Press},
+	abstract = {Training neural networks with many processors can reduce time-to-solution; however, it is challenging to maintain convergence and efficiency at large scales. The Kronecker-factored Approximate Curvature (K-FAC) was recently proposed as an approximation of the Fisher Information Matrix that can be used in natural gradient optimizers. We investigate here a scalable K-FAC design and its applicability in convolutional neural network (CNN) training at scale. We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. We use residual neural networks (ResNet) applied to the CIFAR-10 and ImageNet-1k datasets to evaluate the correctness and scalability of our K-FAC gradient preconditioner. With ResNet-50 on the ImageNet-1k dataset, our distributed K-FAC implementation converges to the 75.9% MLPerf baseline in 18--25% less time than does the classic stochastic gradient descent (SGD) optimizer across scales on a GPU cluster.},
+	booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+	articleno = {94},
+	numpages = {14},
+	keywords = {optimization methods, neural networks, high performance computing, scalability},
+	location = {Atlanta, Georgia},
+	series = {SC '20},
+	doi = {10.5555/3433701.3433826}
 }
 
-@inproceedings{inproceedings,
-    author = {Zhang, Zhao and Huang, Lei and Pauloski, J. and Foster, Ian},
-    year = {2020},
-    month = {05},
-    pages = {409-418},
-    title = {Efficient I/O for Neural Network Training with Compressed Data},
-    doi = {10.1109/IPDPS47924.2020.00050}
-	url = {https://ieeexplore.ieee.org/document/9139800}
-	note = {To appear in 2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS)}
+@inproceedings{zhang2020compressed,
+	author={Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. T. {Foster}},
+	booktitle={2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS)}, 
+	title={Efficient I/O for Neural Network Training with Compressed Data}, 
+	year={2020},
+	volume={},
+	number={},
+	pages={409-418},
+	doi={10.1109/IPDPS47924.2020.00050}
 }
 
-@inproceedings{inproceedings,
-    author = {Zhang, Zhao and Huang, Lei and Pauloski, J. and Foster, Ian},
-    year = {2019},
-    month = {11},
-    pages = {69-75},
-    title = {Aggregating Local Storage for Scalable Deep Learning I/O},
-    doi = {10.1109/DLS49591.2019.00014}
-	url = {https://ieeexplore.ieee.org/document/8945112}
+@INPROCEEDINGS{zhang2019aggregating,
+	author={Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. {Foster}},
+	booktitle={2019 IEEE/ACM Third Workshop on Deep Learning on Supercomputers (DLS)}, 
+	title={Aggregating Local Storage for Scalable Deep Learning I/O}, 
+	year={2019},
+	volume={},
+	number={},
+	pages={69-75},
+	doi={10.1109/DLS49591.2019.00014}
 }
 
-@inbook{inbook,
+@inbook{gates2019brats,
     author = {Gates, Evan and Pauloski, J. and Schellingerhout, Dawid and Fuentes, David},
     year = {2019},
     month = {01},
