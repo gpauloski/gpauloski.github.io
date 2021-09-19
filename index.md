@@ -34,6 +34,7 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Publications
 
+- Hong Z, **Pauloski JG**, Ward L, Chard K, Blaiszik B and Foster I (2021) [Models and Processes to Extract Drug-like Molecules From Natural Language Text](https://www.frontiersin.org/articles/10.3389/fmolb.2021.636077/full). Front. Mol. Biosci. 8:636077. doi: 10.3389/fmolb.2021.636077
 - **J. Gregory Pauloski**, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, and Zhao Zhang. 2021. [KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks](https://arxiv.org/abs/2107.01739). To be published in the proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21). \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 - **J. Gregory Pauloski**, Zhao Zhang, Lei Huang, Weijia Xu, and Ian T. Foster. 2020. [Convolutional neural network training with distributed K-FAC](https://dl.acm.org/doi/10.5555/3433701.3433826). In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20). IEEE Press, Article 94, 1–14. \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 - Z. Zhang, L. Huang, **J. G. Pauloski** and I. T. Foster, "[Efficient I/O for Neural Network Training with Compressed Data](https://ieeexplore.ieee.org/abstract/document/9139800)," 2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS), New Orleans, LA, USA, 2020, pp. 409-418, doi: 10.1109/IPDPS47924.2020.00050.
