@@ -36,7 +36,7 @@ I am also interested in various optimization methods that can enable large-batch
 
 ## Publications
 
-- **J. Gregory Pauloski**, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, and Zhao Zhang. 2021. [KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks](https://arxiv.org/abs/2107.01739). To be published in the proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21). \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
+- J. Gregory Pauloski, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, and Zhao Zhang. 2021. [KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks](https://arxiv.org/abs/2107.01739). In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21). Association for Computing Machinery, New York, NY, USA, Article 13, 1–14. \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 - Ward, L., Sivaraman, G., **Pauloski, J. G.**, Babuji, Y., Chard, R., Dandu, N., Redfern, P. C., Assary, R. S., Chard, K., Curtiss, L. A., Thakur, R., Foster, I. (2021, November).
 [Colmena: Scalable Machine-Learning-Based Steering of Ensemble Simulations for High Performance Computing.](https://arxiv.org/abs/2110.02827) 
 Accepted to the Machine Learning in HPC Environments Workshop.
@@ -48,5 +48,6 @@ Accepted to the Machine Learning in HPC Environments Workshop.
 
 ## Presentations
 
-- **Pauloski, J. G.** (2020, November). Convolutional Neural Network Training with Distributed K-FAC. International Conference for High Performance Computing, Networking, Storage and Analysis (SC20), Atlanta, Georgia.
+- **Pauloski, J. G.** (2021, November). KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks. International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21), St. Louis, Missouri.
+- **Pauloski, J. G.** (2020, November). Convolutional Neural Network Training with Distributed K-FAC. International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20), Atlanta, Georgia.
 - **Pauloski, J. G.** (2018, September). [Optimizing Deep Learning Methods for Image Segmentation with Distributed Training](https://gregpauloski.com/static/taccster_poster.pdf). Poster presented at the TACC Symposium for Texas Researchers, Austin, TX.
