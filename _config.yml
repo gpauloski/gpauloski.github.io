@@ -1,6 +1,7 @@
 title: Greg Pauloski
 url: "https://pauloski.org"
 baseurl: ""
+google_analytics: [G-G63Q9JW2W1]
 
 markdown: kramdown
 #ins_logo: "./static/favicon.png"
