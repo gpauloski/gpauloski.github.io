@@ -7,18 +7,18 @@ layout: default
 <img class="profile-picture" src="static/headshot.jpg">
 
 Hello there.
-I am a first-year Ph.D. student in Computer Science at the University of Chicago.
+I am a second-year Ph.D. student in Computer Science at the University of Chicago.
 I work with Dr. Ian Foster and Dr. Kyle Chard as a part of [Globus Labs](https://labs.globus.org/).
-I recently completed my Bachelors in Computer Science at the University of Texas at Austin where I worked at the Texas Advanced Computing Center.
+I completed my Bachelors in Computer Science at the University of Texas at Austin where I worked at the Texas Advanced Computing Center.
 
 Check out my recent projects on [GitHub](https://github.com/gpauloski).
 You can contact me at jgpauloski (at) uchicago (dot) edu.
 
 ## Research Interest
 
-My interest lie at the intersection of high-performance computing and machine learning.
-In particular, my research is focused on systems for enabling efficient and scalable machine learning training in large, distributed environments.
-I am also interested in various optimization methods that can enable large-batch training.
+I am interested in systems that enable large-scale machine learning and scientific applications.
+On the machine learning side, I am working to improve the efficiency and scalablity of distributed training via hybrid-parallel and higher-order optimization methods.
+I am also working on new approaches to managing the flow of data in scientific workflows that span multiple heterogeuous compute systems. 
 
 ## Projects
 
