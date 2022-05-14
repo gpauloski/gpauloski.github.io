@@ -18,15 +18,15 @@ You can contact me at jgpauloski (at) uchicago (dot) edu.
 
 I am interested in systems that enable large-scale machine learning and scientific applications.
 On the machine learning side, I am working to improve the efficiency and scalablity of distributed training via hybrid-parallel and higher-order optimization methods.
-I am also working on new approaches to managing the flow of data in scientific workflows that span multiple heterogeuous compute systems. 
+I am also working on new approaches to managing the flow of data in scientific workflows that span multiple heterogeneous compute systems. 
 
 ## Projects
 
 - **Distributed K-FAC Preconditioner** \[[Paper 1](https://arxiv.org/pdf/2007.00784)\] \[[Paper 2](https://arxiv.org/abs/2107.01739)\] \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 
-- **Colmena** \[[Code](https://github.com/exalearn/colmena)\] \[[Paper](https://arxiv.org/abs/2110.02827)\]
-
 - **ProxyStore** \[[Code](https://github.com/gpauloski/ProxyStore)\]
+
+- **Colmena** \[[Code](https://github.com/exalearn/colmena)\] \[[Paper](https://arxiv.org/abs/2110.02827)\]
 
 - **3pseatBot** \[[Code](https://github.com/gpauloski/3pseatBot)\]
 
@@ -36,7 +36,8 @@ I am also working on new approaches to managing the flow of data in scientific w
 
 ## Publications
 
-- J. Gregory Pauloski, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, and Zhao Zhang. 2021. [KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks](https://arxiv.org/abs/2107.01739). In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21). Association for Computing Machinery, New York, NY, USA, Article 13, 1–14. \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
+- **J. G. Pauloski**, L. Huang, W. Xu, K. Chard, I. Foster and Z. Zhang, "[Deep Neural Network Training with Distributed K-FAC](https://ieeexplore.ieee.org/abstract/document/9739867)," in IEEE Transactions on Parallel and Distributed Systems, doi: 10.1109/TPDS.2022.3161187. 
+- **J. Gregory Pauloski**, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, and Zhao Zhang. 2021. [KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks](https://arxiv.org/abs/2107.01739). In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '21). Association for Computing Machinery, New York, NY, USA, Article 13, 1–14. \[[Code](https://github.com/gpauloski/kfac_pytorch)\]
 - Ward, L., Sivaraman, G., **Pauloski, J. G.**, Babuji, Y., Chard, R., Dandu, N., Redfern, P. C., Assary, R. S., Chard, K., Curtiss, L. A., Thakur, R., Foster, I. (2021, November).
 [Colmena: Scalable Machine-Learning-Based Steering of Ensemble Simulations for High Performance Computing.](https://arxiv.org/abs/2110.02827) 
 Accepted to the Machine Learning in HPC Environments Workshop.
