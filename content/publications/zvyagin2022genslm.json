@@ -1,0 +1,24 @@
+{
+    "title": "GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics",
+    "authors": [
+        "Maxim Zvyagin",
+        "Alexander Brace",
+        "Kyle Hippe",
+        "Yuntian Deng",
+        ". . .",
+        "J. Gregory Pauloski",
+        ". . .",
+        "Venkatram Vishwanath",
+        "Arvind Ramanathan"
+    ],
+    "venue": "bioRxiv Preprint",
+    "tldr": "We build genome-scale language models (GenSLMs) which can learn the evolutionary landscape of SARS-CoV-2 genomes. By pretraining on over 110 million prokaryotic gene sequences, and then finetuning a SARS-CoV-2 specific model on 1.5 million genomes, we show that GenSLM can accurately and rapidly identify variants of concern.",
+    "paper": "publications/zvyagin2022genslm.pdf",
+    "bibtex": "zvyagin2022genslm",
+    "code": null,
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "year": 2022,
+    "month": 10
+}

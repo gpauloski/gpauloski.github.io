@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% for pub in publications %}
+<div class="bullet">
+<div>
+    <i class="material-icons">chevron_right</i>
+</div>
+<table cellspacing="0" cellpadding="0">
+    <tr><td>
+        <b>{{ pub.title }}</b>
+    </td></tr>
+    <tr><td>
+        {{ pub.authors }}
+    </td></tr>
+    <tr><td>
+        <em>{{ pub.venue }}</em>
+    </td></tr>
+    <tr><td>
+        <a href="javascript:unhide('{{ pub.bibtex_id }}_tldr')" class="red-text text-darken-4">TLDR</a> |
+        {% if pub.paper %}
+        <a href="{{ pub.paper }}" target="_blank" class="red-text text-darken-4">Paper</a> |
+        {% endif %}
+        {% if pub.website %}
+        <a href="{{ pub.website }}" target="_blank" class="red-text text-darken-4">Website</a> |
+        {% endif %}
+        {% if pub.code %}
+        <a href="{{ pub.code }}" target="_blank" class="red-text text-darken-4">Code</a> |
+        {% endif %}
+        {% if pub.poster %}
+        <a href="{{ pub.poster }}" target="_blank" class="red-text text-darken-4">Poster</a> |
+        {% endif %}
+        {% if pub.slides %}
+        <a href="{{ pub.slides }}" target="_blank" class="red-text text-darken-4">Slides</a> |
+        {% endif %}
+        <a href="javascript:unhide('{{ pub.bibtex_id }}')" class="red-text text-darken-4">BibTex</a>
+    </td></tr>
+    <tr><td>
+        <div id="{{ pub.bibtex_id }}_tldr" class="hidden">
+            <b>TLDR:</b> {{ pub.tldr }}
+        </div>
+    </td></tr>
+    <tr><td>
+        <div id="{{ pub.bibtex_id }}" class="hidden">
+            <div class="grey lighten-2" style="font-family: 'Roboto Mono'; font-size: 10pt; width: fit-content; max-width: 100%;">
+            <pre style="margin: 0px; white-space: pre-wrap;">{{ pub.bibtex }}</pre>
+            </div>
+        </div>
+    </td></tr>
+</table>
+</div>
+{% endfor %}

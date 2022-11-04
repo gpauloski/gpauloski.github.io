@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Greg Pauloski's personal website.">
+    <meta name="author" content="Greg Pauloski">
+
+    <title>Greg Pauloski</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- JS Stuff -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+
+    <script>
+        function unhide(divID) {
+            var item = document.getElementById(divID);
+            if (item) {
+                item.className=(item.className=='hidden')?'unhidden':'hidden';
+            }
+        }
+    </script>
+
+    <style>
+        .mainblock {
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        @media only screen and (max-width: 600px) {
+            .mainblock {
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-top: 4px;
+                padding-bottom: 18px;
+            }
+        }
+
+        .headshot {
+            float: right;
+            margin: 48px;
+            max-height: 240px;
+            max-width: 240px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .headshot {
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 24px;
+                display: block;
+                max-height: 180px;
+                max-width: 180px;
+            }
+        }
+
+        body {
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: 400;
+            background: #eeeeee;
+            background-image: radial-gradient(#e0e0e0 2px, transparent 0);
+            background-position: 0 0;
+            background-size: 25px 25px;
+            height: 200px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: "Open Sans";
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        a {
+            font-weight: 600;
+        }
+
+        a:hover {
+            position: relative;
+        	top: -1px;
+        }
+
+        .material-icons {
+            vertical-align: middle;
+            padding-bottom: 6px;
+            font-size: 24px;
+        }
+
+        .bullet {
+            display: grid;
+            grid-template-columns: min-content auto;
+            align-items: left;
+            padding-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .unhidden {
+            display: inline;
+        }
+
+        table, tr, td {
+            border: none;
+        }
+
+        td {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body class="grey lighten-3" style="height: 100%;">
+<div class="mainblock">
+    <div class="headshot">
+        <img src="images/headshot.jpg" alt="" width="100%" height="100%" style="border-radius: 50%; display: block; margin-right: auto; margin-left: auto;"/>
+    </div>
+
+    <h1 class="blue-grey-text text-darken-4">GREG PAULOSKI</h1>
+
+    <div>
+        <a href="mailto:jgpauloski@uchicago.edu" target="_blank" class="red-text text-darken-4">EMAIL</a> |
+        <a href="https://github.com/gpauloski" target="_blank" class="red-text text-darken-4">GITHUB</a> |
+        <a href="https://www.linkedin.com/in/gregorypauloski/" target="_blank" class="red-text text-darken-4">LINKEDIN</a> |
+        <a href="https://scholar.google.com/citations?user=rek2K4EAAAAJ&hl=en" target="_blank" class="red-text text-darken-4">SCHOLAR</a>
+    </div>
+
+    <p>
+        Hello there!
+        I am a third-year Ph.D. student in Computer Science at the
+        <a href="https://cs.uchicago.edu/" target="_blank" class="red-text text-darken-4">University of Chicago</a>.
+        I am a member of
+        <a href="https://labs.globus.com" target="_blank" class="red-text text-darken-4">Globus Labs</a>
+        where I am co-advised by
+        <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank" class="red-text text-darken-4">Ian Foster</a>
+        and
+        <a href="https://kylechard.com/" target="_blank" class="red-text text-darken-4">Kyle Chard</a>.
+        I completed my Bachelors in Computer Science at the
+        <a href="https://cs.utexas.edu/" target="_blank" class="red-text text-darken-4">University of Texas at Austin</a>.
+        I formerly worked at Google and the Texas Advanced Computing Center.
+    </p>
+
+    <h2 class="blue-grey-text text-darken-4">
+        <i class="material-icons" style="font-size: 24px;">science</i>
+        RESEARCH
+    </h2>
+    {% include 'research.html' %}
+
+    <h2 class="blue-grey-text text-darken-4">
+        <i class="material-icons" style="font-size: 24px;">article</i>
+        <a href="publications/publications.bib" target="_blank" class="blue-grey-text text-darken-4">PUBLICATIONS</a>
+    </h2>
+    {% include 'publications.html' %}
+
+    <h2 class="blue-grey-text text-darken-4">
+        <i class="material-icons" style="font-size: 24px;">co_present</i>
+        PRESENTATIONS
+    </h2>
+    {% include 'presentations.html' %}
+</div>
+</body>
+
+<footer style="margin-bottom: 18px">
+    <div class="tiny grey-text" style="text-align: center;">
+        <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
+        Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
+        Copyright &copy; {{ current_year }} Greg Pauloski. All Rights Reserved.
+    <div>
+</footer>
+
+</html>

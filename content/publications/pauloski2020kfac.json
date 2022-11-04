@@ -1,0 +1,20 @@
+{
+    "title": "Convolutional Neural Network Training with Distributed K-FAC",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Zhao Zhang",
+        "Lei Huang",
+        "Weijia Xu",
+        "Ian Foster"
+    ],
+    "venue": "SC 2020",
+    "tldr": "We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. Our distributed optimizer design trains Resnet-50 18--25% faster than SGD.",
+    "paper": "publications/pauloski2020kfac.pdf",
+    "bibtex": "pauloski2020kfac",
+    "code": "https://github.com/gpauloski/kfac-pytorch",
+    "website": null,
+    "poster": null,
+    "slides": "slides/pauloski-sc20-kfac.pdf",
+    "year": 2020,
+    "month": 11
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Glioma Segmentation and a Simple Accurate Model for Overall Survival Prediction",
+    "authors": [
+        "Evan Gates",
+        "J. Gregory Pauloski",
+        "Dawid Schellingerhout",
+        "David Fuentes"
+    ],
+    "venue": "BrainLes 2018",
+    "tldr": "We develop a multi-stage pipeline for accurate patient survival prediction from brain tumor MRI scans. We segment tumor subvolumes using a multi-scale convolutional network, extract intensity and shape features, then use an ensemble of machine learning models to predict patient outcomes.",
+    "paper": "publications/gates2019glioma.pdf",
+    "bibtex": "gates2019glioma",
+    "code": null,
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "year": 2018,
+    "month": 11
+}

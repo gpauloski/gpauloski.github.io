@@ -1,0 +1,19 @@
+{
+    "title": "Aggregating Local Storage for Scalable Deep Learning I/O",
+    "authors": [
+        "Zhao Zhang",
+        "Lei Huang",
+        "J. Gregory Pauloski",
+        "Ian Foster"
+    ],
+    "venue": "DLS 2019",
+    "tldr": "We develop a a user-level transient object store that provides low-latency and scalable POSIX-compliant file access for scalable deep learning training.",
+    "paper": "publications/zhang2019aggregating.pdf",
+    "bibtex": "zhang2019aggregating",
+    "code": "https://github.com/TACC/FanStore",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "year": 2019,
+    "month": 12
+}

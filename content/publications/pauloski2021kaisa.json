@@ -1,0 +1,22 @@
+{
+    "title": "KAISA: An Adaptive Second-Order Optimizer Framework for Deep Neural Networks",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Qi Huang",
+        "Lei Huang",
+        "Shivaram Venkataraman",
+        "Kyle Chard",
+        "Ian Foster",
+        "Zhao Zhang"
+    ],
+    "venue": "SC 2021",
+    "tldr": "We present KAISA, a K-FAC-enabled, Adaptable, Improved, and ScAlable second-order optimizer framework that adapts the memory footprint, communication, and computation given specific models and hardware to improve performance and increase scalability. Compared to the original optimizers, KAISA converges 18.1--36.3% faster across applications with the same global batch size.",
+    "paper": "publications/pauloski2021kaisa.pdf",
+    "bibtex": "pauloski2021kaisa",
+    "code": "https://github.com/gpauloski/kfac-pytorch",
+    "website": null,
+    "poster": null,
+    "slides": "slides/pauloski-sc21-kaisa.pdf",
+    "year": 2021,
+    "month": 11
+}
