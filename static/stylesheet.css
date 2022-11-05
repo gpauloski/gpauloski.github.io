@@ -1,0 +1,150 @@
+body {
+    height: 100%;
+}
+
+.mainblock {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+@media only screen and (max-width: 600px) {
+    .mainblock {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.headshot {
+    float: right;
+    margin: 48px;
+    max-height: 240px;
+    max-width: 240px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .headshot {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        display: block;
+        max-height: 180px;
+        max-width: 180px;
+    }
+}
+
+img {
+    border-radius: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    background: #eeeeee;
+    background-image: radial-gradient(#e0e0e0 2px, transparent 0);
+    background-position: 0 0;
+    background-size: 25px 25px;
+    height: 200px;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    font-size: 12pt;
+    padding-bottom: 18px;
+}
+
+h1 {
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+#h1-subheader {
+    font-weight: 600;
+    opacity: 0.7;
+    margin-top: 0px;
+}
+
+h2 {
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h2 i {
+    font-size: 24px;
+}
+
+#h2-subheader {
+    opacity: 0.7;
+    margin-top: 0px;
+    margin-left: 28px;
+}
+
+a {
+    font-weight: 600;
+}
+
+a:hover {
+    position: relative;
+    top: -1px;
+}
+
+.material-icons {
+    vertical-align: middle;
+    padding-bottom: 6px;
+    font-size: 24px;
+}
+
+.bullet {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: left;
+    padding-bottom: 10px;
+}
+
+#bullet-entry {
+    padding-left: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.unhidden {
+    display: inline;
+}
+
+table, tr, td {
+    border: none;
+}
+
+td {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#dropdown-box {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-color: #bdbdbd;
+    border-style: solid;
+}
+
+#dropdown-box-inner {
+    margin: 0px;
+    padding: 4px;
+}

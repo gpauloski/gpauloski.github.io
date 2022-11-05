@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
 
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
     <script>
         function unhide(divID) {
             var item = document.getElementById(divID);
@@ -32,114 +35,19 @@
             }
         }
     </script>
-
-    <style>
-        .mainblock {
-            padding-left: 60px;
-            padding-right: 60px;
-            padding-top: 24px;
-            padding-bottom: 24px;
-        }
-        @media only screen and (max-width: 600px) {
-            .mainblock {
-                padding-left: 24px;
-                padding-right: 24px;
-                padding-top: 4px;
-                padding-bottom: 18px;
-            }
-        }
-
-        .headshot {
-            float: right;
-            margin: 48px;
-            max-height: 240px;
-            max-width: 240px;
-        }
-
-        @media only screen and (max-width: 1000px) {
-            .headshot {
-                float: none;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 24px;
-                display: block;
-                max-height: 180px;
-                max-width: 180px;
-            }
-        }
-
-        body {
-            font-family: Roboto;
-            font-size: 18px;
-            font-weight: 400;
-            background: #eeeeee;
-            background-image: radial-gradient(#e0e0e0 2px, transparent 0);
-            background-position: 0 0;
-            background-size: 25px 25px;
-            height: 200px;
-            width: 100%;
-        }
-
-        h1 {
-            font-family: "Open Sans";
-            font-size: 32px;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-family: "Open Sans";
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        a {
-            font-weight: 600;
-        }
-
-        a:hover {
-            position: relative;
-        	top: -1px;
-        }
-
-        .material-icons {
-            vertical-align: middle;
-            padding-bottom: 6px;
-            font-size: 24px;
-        }
-
-        .bullet {
-            display: grid;
-            grid-template-columns: min-content auto;
-            align-items: left;
-            padding-bottom: 10px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .unhidden {
-            display: inline;
-        }
-
-        table, tr, td {
-            border: none;
-        }
-
-        td {
-            padding-top: 0px;
-            padding-bottom: 0px;
-        }
-    </style>
 </head>
 
-<body class="grey lighten-3" style="height: 100%;">
+<body class="grey lighten-4">
 <div class="mainblock">
     <div class="headshot">
-        <img src="images/headshot.jpg" alt="" width="100%" height="100%" style="border-radius: 50%; display: block; margin-right: auto; margin-left: auto;"/>
+        <img src="images/headshot.jpg" alt="" width="100%" height="100%"/>
     </div>
 
     <h1 class="blue-grey-text text-darken-4">GREG PAULOSKI</h1>
+
+    <p class="blue-grey-text text-darken-3" id="h1-subheader">
+        Computer Scientist // Software Engineer
+    </p>
 
     <div>
         <a href="mailto:jgpauloski@uchicago.edu" target="_blank" class="red-text text-darken-4">EMAIL</a> |
@@ -151,7 +59,7 @@
     <p>
         Hello there!
         I am a third-year Ph.D. student in Computer Science at the
-        <a href="https://cs.uchicago.edu/" target="_blank" class="red-text text-darken-4">University of Chicago</a>.
+        <a href="https://cs.uchicago.edu/" target="_blank" class="red-text text-darken-4">University of Chicago</a> interested in high-performance computing and machine learning systems.
         I am a member of
         <a href="https://labs.globus.com" target="_blank" class="red-text text-darken-4">Globus Labs</a>
         where I am co-advised by
@@ -159,36 +67,55 @@
         and
         <a href="https://kylechard.com/" target="_blank" class="red-text text-darken-4">Kyle Chard</a>.
         I completed my Bachelors in Computer Science at the
-        <a href="https://cs.utexas.edu/" target="_blank" class="red-text text-darken-4">University of Texas at Austin</a>.
-        I formerly worked at Google and the Texas Advanced Computing Center.
+        <a href="https://cs.utexas.edu/" target="_blank" class="red-text text-darken-4">University of Texas at Austin</a>
+        and previously worked at Google and the Texas Advanced Computing Center.
     </p>
 
     <h2 class="blue-grey-text text-darken-4">
-        <i class="material-icons" style="font-size: 24px;">science</i>
+        <i class="material-icons">science</i>
         RESEARCH
     </h2>
     {% include 'research.html' %}
 
-    <h2 class="blue-grey-text text-darken-4">
-        <i class="material-icons" style="font-size: 24px;">article</i>
-        <a href="publications/publications.bib" target="_blank" class="blue-grey-text text-darken-4">PUBLICATIONS</a>
+    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+        <i class="material-icons">engineering</i>
+        PROJECTS
     </h2>
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
+        <em>
+        Check out all of my projects on
+        <a href="https://github.com/gpauloski/" target="_blank" class="blue-grey-text text-darken-3">GitHub</a>.
+        </em>
+    </p>
+    {% include 'projects.html' %}
+
+    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+        <i class="material-icons">article</i>
+        PUBLICATIONS
+    </h2>
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
+        <em>
+        Ordered by most recent. Bibtex file available for download
+        <a href="publications/publications.bib" target="_blank" class="blue-grey-text text-darken-3">here</a>.
+        </em>
+    </p>
     {% include 'publications.html' %}
 
-    <h2 class="blue-grey-text text-darken-4">
-        <i class="material-icons" style="font-size: 24px;">co_present</i>
+    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+        <i class="material-icons">co_present</i>
         PRESENTATIONS
     </h2>
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
+        <em>Ordered by most recent.</em>
+    </p>
     {% include 'presentations.html' %}
 </div>
 </body>
 
-<footer style="margin-bottom: 18px">
-    <div class="tiny grey-text" style="text-align: center;">
-        <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
-        Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
-        Copyright &copy; {{ current_year }} Greg Pauloski. All Rights Reserved.
-    <div>
+<footer class="grey-text">
+    <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
+    Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
+    Copyright &copy; {{ current_year }} Greg Pauloski.
 </footer>
 
 </html>
