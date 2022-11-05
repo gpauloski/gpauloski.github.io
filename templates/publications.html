@@ -36,13 +36,17 @@
     </td></tr>
     <tr><td>
         <div id="{{ pub.bibtex_id }}_tldr" class="hidden">
-            <b>TLDR:</b> {{ pub.tldr }}
+            <div class="grey lighten-2" style="max-width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 4px; border-color: #bdbdbd; border-style: solid;">
+                <div style="margin: 4px; padding: 8px;">
+                <b>TLDR:</b> {{ pub.tldr }}
+                </div>
+            </div>
         </div>
     </td></tr>
     <tr><td>
         <div id="{{ pub.bibtex_id }}" class="hidden">
-            <div class="grey lighten-2" style="font-family: 'Roboto Mono'; font-size: 10pt; width: fit-content; max-width: 100%;">
-            <pre style="margin: 0px; white-space: pre-wrap;">{{ pub.bibtex }}</pre>
+            <div class="grey lighten-2" style="font-family: 'Roboto Mono'; font-size: 10pt; width: fit-content; max-width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 4px; border-color: #bdbdbd; border-style: solid;">
+            <pre style="margin: 4px; padding: 8px; white-space: pre-wrap;">{{ pub.bibtex }}</pre>
             </div>
         </div>
     </td></tr>
