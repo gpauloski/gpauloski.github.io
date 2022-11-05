@@ -8,7 +8,7 @@
         "Ben Blaiszik",
         "Ian Foster"
     ],
-    "venue": "Frontier in Molecular Biosciences",
+    "venue": "Frontiers in Molecular Biosciences",
     "tldr": "We present (1) an iterative model-in-the-loop method that makes judicious use of scarce human expertise in generating training data for an NER model and (2) the application and evaluation of this method to identifying drug-like molecules in the COVID-19 Open Research Dataset Challenge (CORD-19) corpus of 198,875 papers.",
     "paper": "publications/hong2021moleculesnlp.pdf",
     "bibtex": "hong2021moleculesnlp",
