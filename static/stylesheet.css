@@ -1,3 +1,7 @@
+body {
+    height: 100%;
+}
+
 .mainblock {
     padding-left: 60px;
     padding-right: 60px;
@@ -33,6 +37,13 @@
     }
 }
 
+img {
+    border-radius: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 body {
     font-family: Roboto;
     font-size: 18px;
@@ -45,16 +56,39 @@ body {
     width: 100%;
 }
 
+footer {
+    text-align: center;
+    font-size: 12pt;
+    padding-bottom: 18px;
+}
+
 h1 {
     font-family: "Open Sans";
     font-size: 32px;
     font-weight: 600;
+    margin-bottom: 6px;
+}
+
+#h1-subheader {
+    font-weight: 600;
+    opacity: 0.7;
+    margin-top: 0px;
 }
 
 h2 {
     font-family: "Open Sans";
     font-size: 24px;
     font-weight: 600;
+}
+
+h2 i {
+    font-size: 24px;
+}
+
+#h2-subheader {
+    opacity: 0.7;
+    margin-top: 0px;
+    margin-left: 28px;
 }
 
 a {
@@ -79,6 +113,10 @@ a:hover {
     padding-bottom: 10px;
 }
 
+#bullet-entry {
+    padding-left: 5px;
+}
+
 .hidden {
     display: none;
 }
@@ -94,4 +132,19 @@ table, tr, td {
 td {
     padding-top: 0px;
     padding-bottom: 0px;
+}
+
+#dropdown-box {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-color: #bdbdbd;
+    border-style: solid;
+}
+
+#dropdown-box-inner {
+    margin: 0px;
+    padding: 4px;
 }

@@ -37,15 +37,15 @@
     </script>
 </head>
 
-<body class="grey lighten-4" style="height: 100%;">
+<body class="grey lighten-4">
 <div class="mainblock">
     <div class="headshot">
-        <img src="images/headshot.jpg" alt="" width="100%" height="100%" style="border-radius: 50%; display: block; margin-right: auto; margin-left: auto;"/>
+        <img src="images/headshot.jpg" alt="" width="100%" height="100%"/>
     </div>
 
-    <h1 class="blue-grey-text text-darken-4" style="margin-bottom: 6px;">GREG PAULOSKI</h1>
+    <h1 class="blue-grey-text text-darken-4">GREG PAULOSKI</h1>
 
-    <p class="blue-grey-text text-darken-3" style="font-weight: 600; opacity: 0.7; margin-top: 0px;">
+    <p class="blue-grey-text text-darken-3" id="h1-subheader">
         Computer Scientist // Software Engineer
     </p>
 
@@ -72,52 +72,50 @@
     </p>
 
     <h2 class="blue-grey-text text-darken-4">
-        <i class="material-icons" style="font-size: 24px;">science</i>
+        <i class="material-icons">science</i>
         RESEARCH
     </h2>
     {% include 'research.html' %}
 
     <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
-        <i class="material-icons" style="font-size: 24px;">engineering</i>
+        <i class="material-icons">engineering</i>
         PROJECTS
     </h2>
-    <p class="blue-grey-text text-darken-3" style="opacity: 0.7; margin-top: 0px; margin-left: 28px">
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Check out all of my projects on
-        <a href="https://github.com/gpauloski/" target="_blank" class="blue-grey-text text-darken-3" style="font-weight: 600;">GitHub</a>.
+        <a href="https://github.com/gpauloski/" target="_blank" class="blue-grey-text text-darken-3">GitHub</a>.
         </em>
     </p>
     {% include 'projects.html' %}
 
     <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
-        <i class="material-icons" style="font-size: 24px;">article</i>
+        <i class="material-icons">article</i>
         PUBLICATIONS
     </h2>
-    <p class="blue-grey-text text-darken-3" style="opacity: 0.7; margin-top: 0px; margin-left: 28px">
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Ordered by most recent. Bibtex file available for download
-        <a href="publications/publications.bib" target="_blank" class="blue-grey-text text-darken-3" style="font-weight: 600;">here</a>.
+        <a href="publications/publications.bib" target="_blank" class="blue-grey-text text-darken-3">here</a>.
         </em>
     </p>
     {% include 'publications.html' %}
 
     <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
-        <i class="material-icons" style="font-size: 24px;">co_present</i>
+        <i class="material-icons">co_present</i>
         PRESENTATIONS
     </h2>
-    <p class="blue-grey-text text-darken-3" style="opacity: 0.7; margin-top: 0px; margin-left: 28px;">
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>Ordered by most recent.</em>
     </p>
     {% include 'presentations.html' %}
 </div>
 </body>
 
-<footer style="margin-bottom: 18px">
-    <div class="grey-text" style="text-align: center; font-size: 12pt;">
-        <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
-        Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
-        Copyright &copy; {{ current_year }} Greg Pauloski.
-    <div>
+<footer class="grey-text">
+    <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
+    Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
+    Copyright &copy; {{ current_year }} Greg Pauloski.
 </footer>
 
 </html>
