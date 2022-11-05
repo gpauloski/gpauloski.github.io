@@ -1,5 +1,8 @@
 # Publications
 
+Each file in this directory is JSON with the following fields.
+The files will be automatically parsed to generate the static page.
+
 ```json
 {
     "title": "Paper Title",
