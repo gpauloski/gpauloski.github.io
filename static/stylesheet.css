@@ -1,5 +1,8 @@
 body {
     height: 100%;
+
+    /* https://stackoverflow.com/questions/37793086/ */
+    -webkit-font-smoothing: antialiased;
 }
 
 .mainblock {
