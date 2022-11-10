@@ -8,7 +8,7 @@
         "Ian Foster"
     ],
     "venue": "SC 2020",
-    "tldr": "We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. Our distributed optimizer design trains Resnet-50 18--25% faster than SGD.",
+    "tldr": "We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. Our distributed optimizer design trains Resnet-50 18—25% faster than SGD.",
     "paper": "publications/pauloski2020kfac.pdf",
     "bibtex": "pauloski2020kfac",
     "code": "https://github.com/gpauloski/kfac-pytorch",
