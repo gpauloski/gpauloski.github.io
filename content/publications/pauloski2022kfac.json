@@ -9,7 +9,7 @@
         "Zhao Zhang"
     ],
     "venue": "TPDS 2022",
-    "tldr": "We extend our SC 2020 paper to evaluate the convergence and scaling properties of our K-FAC gradient preconditioner, for image classification, object detection, and language modeling applications. In all applications, our implementation converges to baseline performance targets in 9--25% less time than the standard first-order optimizers on GPU clusters across a variety of scales.",
+    "tldr": "We extend our SC 2020 paper to evaluate the convergence and scaling properties of our K-FAC gradient preconditioner, for image classification, object detection, and language modeling applications. In all applications, our implementation converges to baseline performance targets in 9—25% less time than the standard first-order optimizers on GPU clusters across a variety of scales.",
     "paper": "publications/pauloski2022kfac.pdf",
     "bibtex": "pauloski2022kfac",
     "code": "https://github.com/gpauloski/kfac-pytorch",

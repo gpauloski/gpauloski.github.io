@@ -10,7 +10,7 @@
         "Zhao Zhang"
     ],
     "venue": "SC 2021",
-    "tldr": "We present KAISA, a K-FAC-enabled, Adaptable, Improved, and ScAlable second-order optimizer framework that adapts the memory footprint, communication, and computation given specific models and hardware to improve performance and increase scalability. Compared to the original optimizers, KAISA converges 18.1--36.3% faster across applications with the same global batch size.",
+    "tldr": "We present KAISA, a K-FAC-enabled, Adaptable, Improved, and ScAlable second-order optimizer framework that adapts the memory footprint, communication, and computation given specific models and hardware to improve performance and increase scalability. Compared to the original optimizers, KAISA converges 18.1—36.3% faster across applications with the same global batch size.",
     "paper": "publications/pauloski2021kaisa.pdf",
     "bibtex": "pauloski2021kaisa",
     "code": "https://github.com/gpauloski/kfac-pytorch",
