@@ -138,16 +138,17 @@ td {
 }
 
 #dropdown-box {
-    max-width: 90%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4px;
     margin-bottom: 4px;
     border-color: #bdbdbd;
-    border-style: solid;
+    border-style: dotted;
+    border-width: 3px;
 }
 
 #dropdown-box-inner {
     margin: 0px;
-    padding: 4px;
+    padding: 8px;
 }
