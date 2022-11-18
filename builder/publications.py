@@ -3,6 +3,7 @@ from __future__ import annotations
 import glob
 import json
 import os
+from collections import defaultdict
 from typing import NamedTuple
 
 import bibtexparser
@@ -15,6 +16,7 @@ class Publication(NamedTuple):
     authors: str
     venue: str
     tldr: str
+    awards: str | None
     paper: str
     bibtex_id: str
     bibtex: str
@@ -30,28 +32,31 @@ def parse_publication_json(pub_file: str) -> Publication:
     with open(pub_file) as f:
         attrs = json.load(f)
 
-        if isinstance(attrs['authors'], list):
-            authors = ', '.join(attrs['authors'])
-        elif isinstance(attrs['authors'], str):
-            authors = attrs['authors']
-        else:
-            raise ValueError(f'Unable to parse authors field of {pub_file}.')
+    if isinstance(attrs['authors'], list):
+        authors = ', '.join(attrs['authors'])
+    elif isinstance(attrs['authors'], str):
+        authors = attrs['authors']
+    else:
+        raise ValueError(f'Unable to parse authors field of {pub_file}.')
 
-        return Publication(
-            title=attrs['title'],
-            authors=authors,
-            venue=attrs['venue'],
-            tldr=attrs['tldr'],
-            paper=attrs['paper'],
-            bibtex_id=attrs['bibtex'],
-            bibtex='',
-            code=attrs['code'] if 'code' in attrs else None,
-            website=attrs['website'] if 'website' in attrs else None,
-            poster=attrs['poster'] if 'poster' in attrs else None,
-            slides=attrs['slides'] if 'slides' in attrs else None,
-            year=attrs['year'],
-            month=attrs['month'],
-        )
+    attrs = defaultdict(lambda: None, attrs)
+
+    return Publication(
+        title=attrs['title'],
+        authors=authors,
+        venue=attrs['venue'],
+        tldr=attrs['tldr'],
+        awards=attrs['awards'],
+        paper=attrs['paper'],
+        bibtex_id=attrs['bibtex'],
+        bibtex='',
+        code=attrs['code'] if 'code' in attrs else None,
+        website=attrs['website'] if 'website' in attrs else None,
+        poster=attrs['poster'] if 'poster' in attrs else None,
+        slides=attrs['slides'] if 'slides' in attrs else None,
+        year=attrs['year'],
+        month=attrs['month'],
+    )
 
 
 def load_publications(pub_dir: str, bib_file: str) -> list[Publication]:

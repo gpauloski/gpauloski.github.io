@@ -13,7 +13,12 @@
         {{ pub.authors }}
     </td></tr>
     <tr><td>
-        <em>{{ pub.venue }}</em>
+        <em>
+            {{ pub.venue }}
+            {% if pub.awards %}
+            — {{ pub.awards }}
+            {% endif %}
+        </em>
     </td></tr>
     <tr><td>
         <a href="javascript:unhide('{{ pub.bibtex_id }}_tldr')" class="red-text text-darken-4">TLDR</a> |

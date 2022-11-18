@@ -11,6 +11,7 @@ The files will be automatically parsed to generate the static page.
         "Author 2"
     ],
     "venue": "FunConf 2022",
+    "awards": null,
     "tldr": "Two sentence TLDR.",
     "paper": "publications/*.pdf",
     "bibtex": "bibtex entry name",
