@@ -1,127 +1,127 @@
-@misc{hong2022scholarbert,
-  doi = {10.48550/ARXIV.2205.11342},
-  url = {https://arxiv.org/abs/2205.11342},
-  author = {Hong, Zhi and Ajith, Aswathy and Pauloski, Gregory and Duede, Eamon and Malamud, Carl and Magoulas, Roger and Chard, Kyle and Foster, Ian},
-  keywords = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences, I.2.7},
-  title = {ScholarBERT: Bigger is Not Always Better},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
-}
-
-@article{zvyagin2022genslm,
-  author = {Zvyagin, Maxim and Brace, Alexander and Hippe, Kyle and Deng, Yuntian and Zhang, Bin and Orozco Bohorquez, Cindy and Clyde, Austin and Kale, Bharat and Perez-Rivera, Danilo and Ma, Heng and Mann, Carla M. and Irvin, Michael and Pauloski, J. Gregory and Ward, Logan and Hayot, Valerie and Emani, Murali and Foreman, Sam and Xie, Zhen and Lin, Diangen and Shukla, Maulik and Nie, Weili and Romero, Josh and Dallago, Christian and Vahdat, Arash and Xiao, Chaowei and Gibbs, Thomas and Foster, Ian and Davis, James J. and Papka, Michael E. and Brettin, Thomas and Stevens, Rick and Anandkumar, Anima and Vishwanath, Venkatram and Ramanathan, Arvind},
-  title = {GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics},
-	elocation-id = {2022.10.10.511571},
-  year = {2022},
-  doi = {10.1101/2022.10.10.511571},
-  publisher = {Cold Spring Harbor Laboratory},
-  abstract = {Our work seeks to transform how new and emergent variants of pandemic causing viruses, specially SARS-CoV-2, are identified and classified. By adapting large language models (LLMs) for genomic data, we build genome-scale language models (GenSLMs) which can learn the evolutionary landscape of SARS-CoV-2 genomes. By pretraining on over 110 million prokaryotic gene sequences, and then finetuning a SARS-CoV-2 specific model on 1.5 million genomes, we show that GenSLM can accurately and rapidly identify variants of concern. Thus, to our knowledge, GenSLM represents one of the first whole genome scale foundation models which can generalize to other prediction tasks. We demonstrate the scaling of GenSLMs on both GPU-based supercomputers and AI-hardware accelerators, achieving over 1.54 zettaflops in training runs. We present initial scientific insights gleaned from examining GenSLMs in tracking the evolutionary dynamics of SARS-CoV-2, noting that its full potential on large biological data is yet to be realized.Competing Interest StatementThe authors have declared no competing interest.},
-  URL = {https://www.biorxiv.org/content/early/2022/10/11/2022.10.10.511571},
-  eprint = {https://www.biorxiv.org/content/early/2022/10/11/2022.10.10.511571.full.pdf},
-  journal = {bioRxiv}
-}
-
-@article{pauloski2022kfac,
-  author = {Pauloski, J. Gregory and Huang, Lei and Xu, Weijia and Chard, Kyle and Foster, Ian T. and Zhang, Zhao},
-  journal = {IEEE Transactions on Parallel and Distributed Systems},
-  title = {Deep Neural Network Training With Distributed K-FAC},
-  year = {2022},
-  volume = {33},
-  number = {12},
-  pages = {3616-3627},
-  doi = {10.1109/TPDS.2022.3161187}
-}
-
-@inproceedings{ward2021colmena,
-  author = {Ward, Logan and Sivaraman, Ganesh and Pauloski, J. Gregory and Babuji, Yadu and Chard, Ryan and Dandu, Naveen and Redfern, Paul C. and Assary, Rajeev S. and Chard, Kyle and Curtiss, Larry A. and Thakur, Rajeev and Foster, Ian},
-  booktitle = {2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC)},
-  title = {Colmena: Scalable Machine-Learning-Based Steering of Ensemble Simulations for High Performance Computing},
-  year = {2021},
-  volume = {},
-  number = {},
-  pages = {9-20},
-  doi = {10.1109/MLHPC54614.2021.00007}
-}
-
-@inproceedings{pauloski2021kaisa,
-  author = {Pauloski, J. Gregory and Huang, Qi and Huang, Lei and Venkataraman, Shivaram and Chard, Kyle and Foster, Ian and Zhang, Zhao},
-  title = {KAISA: An Adaptive Second-Order Optimizer Framework for Deep Neural Networks},
-  year = {2021},
-  isbn = {9781450384421},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3458817.3476152},
-  doi = {10.1145/3458817.3476152},
-  abstract = {Kronecker-factored Approximate Curvature (K-FAC) has recently been shown to converge faster in deep neural network (DNN) training than stochastic gradient descent (SGD); however, K-FAC's larger memory footprint hinders its applicability to large models. We present KAISA, a K-FAC-enabled, Adaptable, Improved, and ScAlable second-order optimizer framework that adapts the memory footprint, communication, and computation given specific models and hardware to improve performance and increase scalability. We quantify the tradeoffs between memory and communication cost and evaluate KAISA on large models, including ResNet-50, Mask R-CNN, U-Net, and BERT, on up to 128 NVIDIA A100 GPUs. Compared to the original optimizers, KAISA converges 18.1--36.3% faster across applications with the same global batch size. Under a fixed memory budget, KAISA converges 32.5% and 41.6% faster in ResNet-50 and BERT-Large, respectively. KAISA can balance memory and communication to achieve scaling efficiency equal to or better than the baseline optimizers.},
-  booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
-  articleno = {13},
-  numpages = {14},
-  keywords = {second-order optimization, machine learning, distributed computing, K-FAC, data-parallel algorithms},
-  location = {St. Louis, Missouri},
-  series = {SC '21}
+@inproceedings{gates2019glioma,
+    author = {Gates, Evan and Pauloski, J. Gregory and Schellingerhout, Dawid and Fuentes, David},
+    title = {{Glioma Segmentation and a Simple Accurate Model for Overall Survival Prediction}},
+    abstract = {Brain tumor segmentation is a challenging task necessary for quantitative tumor analysis and diagnosis. We apply a multi-scale convolutional neural network based on the DeepMedic to segment glioma subvolumes provided in the 2018 MICCAI Brain Tumor Segmentation Challenge. We go on to extract intensity and shape features from the images and cross-validate machine learning models to predict overall survival. Using only the mean FLAIR intensity, nonenhancing tumor volume, and patient age we are able to predict patient overall survival with reasonable accuracy.},
+    address = {Cham},
+    booktitle = {Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries},
+    editor = {Crimi, Alessandro and Bakas, Spyridon and Kuijf, Hugo and Keyvan, Farahani and Reyes, Mauricio and van Walsum, Theo},
+    isbn = {978-3-030-11726-9},
+    pages = {476--484},
+    publisher = {Springer International Publishing},
+    year = {2019}
 }
 
 @article{hong2021moleculesnlp,
-  author = {Hong, Zhi and Pauloski, J. Gregory and Ward, Logan and Chard, Kyle and Blaiszik, Ben and Foster, Ian},
-  title = {Models and Processes to Extract Drug-like Molecules From Natural Language Text},
-  journal = {Frontiers in Molecular Biosciences},
-  volume = {8},
-  pages = {826},
-  year = {2021},
-  url = {https://www.frontiersin.org/article/10.3389/fmolb.2021.636077},
-  doi = {10.3389/fmolb.2021.636077},
-  issn = {2296-889X},
-  abstract = {Researchers worldwide are seeking to repurpose existing drugs or discover new drugs to counter the disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). A promising source of candidates for such studies is molecules that have been reported in the scientific literature to be drug-like in the context of viral research. However, this literature is too large for human review and features unusual vocabularies for which existing named entity recognition (NER) models are ineffective. We report here on a project that leverages both human and artificial intelligence to detect references to such molecules in free text. We present 1) a iterative model-in-the-loop method that makes judicious use of scarce human expertise in generating training data for a NER model, and 2) the application and evaluation of this method to the problem of identifying drug-like molecules in the COVID-19 Open Research Dataset Challenge (CORD-19) corpus of 198,875 papers. We show that by repeatedly presenting human labelers only with samples for which an evolving NER model is uncertain, our human-machine hybrid pipeline requires only modest amounts of non-expert human labeling time (tens of hours to label 1778 samples) to generate an NER model with an F-1 score of 80.5%—on par with that of non-expert humans—and when applied to CORD’19, identifies 10,912 putative drug-like molecules. This enriched the computational screening team’s targets by 3,591 molecules, of which 18 ranked in the top 0.1% of all 6.6 million molecules screened for docking against the 3CLPro protein.}
+    author = {Hong, Zhi and Pauloski, J. Gregory and Ward, Logan and Chard, Kyle and Blaiszik, Ben and Foster, Ian},
+    title = {{Models and Processes to Extract Drug-like Molecules From Natural Language Text}},
+    abstract = {Researchers worldwide are seeking to repurpose existing drugs or discover new drugs to counter the disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). A promising source of candidates for such studies is molecules that have been reported in the scientific literature to be drug-like in the context of viral research. However, this literature is too large for human review and features unusual vocabularies for which existing named entity recognition (NER) models are ineffective. We report here on a project that leverages both human and artificial intelligence to detect references to such molecules in free text. We present 1) a iterative model-in-the-loop method that makes judicious use of scarce human expertise in generating training data for a NER model, and 2) the application and evaluation of this method to the problem of identifying drug-like molecules in the COVID-19 Open Research Dataset Challenge (CORD-19) corpus of 198,875 papers. We show that by repeatedly presenting human labelers only with samples for which an evolving NER model is uncertain, our human-machine hybrid pipeline requires only modest amounts of non-expert human labeling time (tens of hours to label 1778 samples) to generate an NER model with an F-1 score of 80.5%—on par with that of non-expert humans—and when applied to CORD’19, identifies 10,912 putative drug-like molecules. This enriched the computational screening team’s targets by 3,591 molecules, of which 18 ranked in the top 0.1% of all 6.6 million molecules screened for docking against the 3CLPro protein.},
+    doi = {10.3389/fmolb.2021.636077},
+    issn = {2296-889X},
+    journal = {Frontiers in Molecular Biosciences},
+    pages = {826},
+    url = {https://www.frontiersin.org/article/10.3389/fmolb.2021.636077},
+    volume = {8},
+    year = {2021}
+}
+
+@misc{hong2022scholarbert,
+    author = {Hong, Zhi and Ajith, Aswathy and Pauloski, Gregory and Duede, Eamon and Malamud, Carl and Magoulas, Roger and Chard, Kyle and Foster, Ian},
+    title = {{ScholarBERT: Bigger is Not Always Better}},
+    copyright = {Creative Commons Attribution 4.0 International},
+    doi = {10.48550/ARXIV.2205.11342},
+    keywords = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences, I.2.7},
+    publisher = {arXiv},
+    url = {https://arxiv.org/abs/2205.11342},
+    year = {2022}
 }
 
 @inproceedings{pauloski2020kfac,
-  author = {Pauloski, J. Gregory and Zhang, Zhao and Huang, Lei and Xu, Weijia and Foster, Ian T.},
-  title = {Convolutional Neural Network Training with Distributed K-FAC},
-  year = {2020},
-  isbn = {9781728199986},
-  publisher = {IEEE Press},
-  abstract = {Training neural networks with many processors can reduce time-to-solution; however, it is challenging to maintain convergence and efficiency at large scales. The Kronecker-factored Approximate Curvature (K-FAC) was recently proposed as an approximation of the Fisher Information Matrix that can be used in natural gradient optimizers. We investigate here a scalable K-FAC design and its applicability in convolutional neural network (CNN) training at scale. We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. We use residual neural networks (ResNet) applied to the CIFAR-10 and ImageNet-1k datasets to evaluate the correctness and scalability of our K-FAC gradient preconditioner. With ResNet-50 on the ImageNet-1k dataset, our distributed K-FAC implementation converges to the 75.9% MLPerf baseline in 18--25% less time than does the classic stochastic gradient descent (SGD) optimizer across scales on a GPU cluster.},
-  booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
-  articleno = {94},
-  numpages = {14},
-  keywords = {optimization methods, neural networks, high performance computing, scalability},
-  location = {Atlanta, Georgia},
-  series = {SC '20},
-  doi = {10.5555/3433701.3433826}
+    author = {Pauloski, J. Gregory and Zhang, Zhao and Huang, Lei and Xu, Weijia and Foster, Ian T.},
+    title = {{Convolutional Neural Network Training with Distributed K-FAC}},
+    abstract = {Training neural networks with many processors can reduce time-to-solution; however, it is challenging to maintain convergence and efficiency at large scales. The Kronecker-factored Approximate Curvature (K-FAC) was recently proposed as an approximation of the Fisher Information Matrix that can be used in natural gradient optimizers. We investigate here a scalable K-FAC design and its applicability in convolutional neural network (CNN) training at scale. We study optimization techniques such as layer-wise distribution strategies, inverse-free second-order gradient evaluation, and dynamic K-FAC update decoupling to reduce training time while preserving convergence. We use residual neural networks (ResNet) applied to the CIFAR-10 and ImageNet-1k datasets to evaluate the correctness and scalability of our K-FAC gradient preconditioner. With ResNet-50 on the ImageNet-1k dataset, our distributed K-FAC implementation converges to the 75.9% MLPerf baseline in 18--25% less time than does the classic stochastic gradient descent (SGD) optimizer across scales on a GPU cluster.},
+    articleno = {94},
+    booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+    doi = {10.5555/3433701.3433826},
+    isbn = {9781728199986},
+    keywords = {optimization methods, neural networks, high performance computing, scalability},
+    location = {Atlanta, Georgia},
+    numpages = {14},
+    publisher = {IEEE Press},
+    series = {SC '20},
+    year = {2020}
 }
 
-@inproceedings{zhang2020compressed,
-  author = {Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. T. {Foster}},
-  booktitle = {2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS)},
-  title = {Efficient I/O for Neural Network Training with Compressed Data},
-  year = {2020},
-  volume = {},
-  number = {},
-  pages = {409-418},
-  doi = {10.1109/IPDPS47924.2020.00050}
+@inproceedings{pauloski2021kaisa,
+    author = {Pauloski, J. Gregory and Huang, Qi and Huang, Lei and Venkataraman, Shivaram and Chard, Kyle and Foster, Ian and Zhang, Zhao},
+    title = {{KAISA: An Adaptive Second-Order Optimizer Framework for Deep Neural Networks}},
+    abstract = {Kronecker-factored Approximate Curvature (K-FAC) has recently been shown to converge faster in deep neural network (DNN) training than stochastic gradient descent (SGD); however, K-FAC's larger memory footprint hinders its applicability to large models. We present KAISA, a K-FAC-enabled, Adaptable, Improved, and ScAlable second-order optimizer framework that adapts the memory footprint, communication, and computation given specific models and hardware to improve performance and increase scalability. We quantify the tradeoffs between memory and communication cost and evaluate KAISA on large models, including ResNet-50, Mask R-CNN, U-Net, and BERT, on up to 128 NVIDIA A100 GPUs. Compared to the original optimizers, KAISA converges 18.1--36.3% faster across applications with the same global batch size. Under a fixed memory budget, KAISA converges 32.5% and 41.6% faster in ResNet-50 and BERT-Large, respectively. KAISA can balance memory and communication to achieve scaling efficiency equal to or better than the baseline optimizers.},
+    address = {New York, NY, USA},
+    articleno = {13},
+    booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+    doi = {10.1145/3458817.3476152},
+    isbn = {9781450384421},
+    keywords = {second-order optimization, machine learning, distributed computing, K-FAC, data-parallel algorithms},
+    location = {St. Louis, Missouri},
+    numpages = {14},
+    publisher = {Association for Computing Machinery},
+    series = {SC '21},
+    url = {https://doi.org/10.1145/3458817.3476152},
+    year = {2021}
+}
+
+@article{pauloski2022kfac,
+    author = {Pauloski, J. Gregory and Huang, Lei and Xu, Weijia and Chard, Kyle and Foster, Ian T. and Zhang, Zhao},
+    title = {{Deep Neural Network Training With Distributed K-FAC}},
+    doi = {10.1109/TPDS.2022.3161187},
+    journal = {IEEE Transactions on Parallel and Distributed Systems},
+    number = {12},
+    pages = {3616-3627},
+    volume = {33},
+    year = {2022}
+}
+
+@inproceedings{ward2021colmena,
+    author = {Ward, Logan and Sivaraman, Ganesh and Pauloski, J. Gregory and Babuji, Yadu and Chard, Ryan and Dandu, Naveen and Redfern, Paul C. and Assary, Rajeev S. and Chard, Kyle and Curtiss, Larry A. and Thakur, Rajeev and Foster, Ian},
+    title = {{Colmena: Scalable Machine-Learning-Based Steering of Ensemble Simulations for High Performance Computing}},
+    booktitle = {2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC)},
+    doi = {10.1109/MLHPC54614.2021.00007},
+    number = {},
+    pages = {9-20},
+    volume = {},
+    year = {2021}
 }
 
 @inproceedings{zhang2019aggregating,
-  author = {Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. {Foster}},
-  booktitle = {2019 IEEE/ACM Third Workshop on Deep Learning on Supercomputers (DLS)},
-  title = {Aggregating Local Storage for Scalable Deep Learning I/O},
-  year = {2019},
-  volume = {},
-  number = {},
-  pages = {69-75},
-  doi = {10.1109/DLS49591.2019.00014}
+    author = {Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. {Foster}},
+    title = {{Aggregating Local Storage for Scalable Deep Learning I/O}},
+    booktitle = {2019 IEEE/ACM Third Workshop on Deep Learning on Supercomputers (DLS)},
+    doi = {10.1109/DLS49591.2019.00014},
+    number = {},
+    pages = {69-75},
+    volume = {},
+    year = {2019}
 }
 
-@inproceedings{gates2019glioma,
-  author = "Gates, Evan and Pauloski, J. Gregory and Schellingerhout, Dawid and Fuentes, David",
-  editor = "Crimi, Alessandro and Bakas, Spyridon and Kuijf, Hugo and Keyvan, Farahani and Reyes, Mauricio and van Walsum, Theo",
-  title = "Glioma Segmentation and a Simple Accurate Model for Overall Survival Prediction",
-  booktitle = "Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries",
-  year = "2019",
-  publisher = "Springer International Publishing",
-  address = "Cham",
-  pages = "476--484",
-  abstract = "Brain tumor segmentation is a challenging task necessary for quantitative tumor analysis and diagnosis. We apply a multi-scale convolutional neural network based on the DeepMedic to segment glioma subvolumes provided in the 2018 MICCAI Brain Tumor Segmentation Challenge. We go on to extract intensity and shape features from the images and cross-validate machine learning models to predict overall survival. Using only the mean FLAIR intensity, nonenhancing tumor volume, and patient age we are able to predict patient overall survival with reasonable accuracy.",
-  isbn = "978-3-030-11726-9"
+@inproceedings{zhang2020compressed,
+    author = {Z. {Zhang} and L. {Huang} and J. G. {Pauloski} and I. T. {Foster}},
+    title = {{Efficient I/O for Neural Network Training with Compressed Data}},
+    booktitle = {2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS)},
+    doi = {10.1109/IPDPS47924.2020.00050},
+    number = {},
+    pages = {409-418},
+    volume = {},
+    year = {2020}
+}
+
+@article{zvyagin2022genslm,
+    author = {Zvyagin, Maxim and Brace, Alexander and Hippe, Kyle and Deng, Yuntian and Zhang, Bin and Orozco Bohorquez, Cindy and Clyde, Austin and Kale, Bharat and Perez-Rivera, Danilo and Ma, Heng and Mann, Carla M. and Irvin, Michael and Pauloski, J. Gregory and Ward, Logan and Hayot, Valerie and Emani, Murali and Foreman, Sam and Xie, Zhen and Lin, Diangen and Shukla, Maulik and Nie, Weili and Romero, Josh and Dallago, Christian and Vahdat, Arash and Xiao, Chaowei and Gibbs, Thomas and Foster, Ian and Davis, James J. and Papka, Michael E. and Brettin, Thomas and Stevens, Rick and Anandkumar, Anima and Vishwanath, Venkatram and Ramanathan, Arvind},
+    title = {{GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics}},
+    abstract = {Our work seeks to transform how new and emergent variants of pandemic causing viruses, specially SARS-CoV-2, are identified and classified. By adapting large language models (LLMs) for genomic data, we build genome-scale language models (GenSLMs) which can learn the evolutionary landscape of SARS-CoV-2 genomes. By pretraining on over 110 million prokaryotic gene sequences, and then finetuning a SARS-CoV-2 specific model on 1.5 million genomes, we show that GenSLM can accurately and rapidly identify variants of concern. Thus, to our knowledge, GenSLM represents one of the first whole genome scale foundation models which can generalize to other prediction tasks. We demonstrate the scaling of GenSLMs on both GPU-based supercomputers and AI-hardware accelerators, achieving over 1.54 zettaflops in training runs. We present initial scientific insights gleaned from examining GenSLMs in tracking the evolutionary dynamics of SARS-CoV-2, noting that its full potential on large biological data is yet to be realized.Competing Interest StatementThe authors have declared no competing interest.},
+    doi = {10.1101/2022.10.10.511571},
+    elocation-id = {2022.10.10.511571},
+    eprint = {https://www.biorxiv.org/content/early/2022/10/11/2022.10.10.511571.full.pdf},
+    journal = {bioRxiv},
+    publisher = {Cold Spring Harbor Laboratory},
+    url = {https://www.biorxiv.org/content/early/2022/10/11/2022.10.10.511571},
+    year = {2022}
 }
