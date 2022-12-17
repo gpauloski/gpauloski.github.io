@@ -80,12 +80,17 @@ def fix_title_casing(
     if 'title' in record:
         if per_token:
             title_tokens = [
-                token if token.islower() else f'{{{token}}}'
+                f'{{{token}}}'
+                if not token.islower() and not token.startswith('{')
+                else token
                 for token in record['title'].split(' ')
             ]
             record['title'] = ' '.join(title_tokens)
         else:
-            record['title'] = f'{{{record["title"]}}}'
+            title = record['title']
+            record['title'] = (
+                f'{{{title}}}' if not title.startswith('{') else title
+            )
 
     return record
 
