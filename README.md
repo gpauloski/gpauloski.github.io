@@ -49,3 +49,21 @@ The website is build and deployed using a GitHub action that triggers on pushes 
 $ git tag -s v2.0.5 -m "Personal website v2.0.5"
 $ git push origin v2.0.5
 ```
+
+# Fixing BibTex
+
+The `builder` package also includes a CLI utility for formatting BibTex files.
+The formatter will do many things: sort by entry IDs, sort keys within entries, clean up indents, use uniform formatting, fix casing in titles, and more.
+
+The `builder` package must first be installed in your Python environment if not already.
+```bash
+$ virtualenv venv
+$ . venv/bin/activate
+$ pip install .
+```
+
+To format:
+```bash
+$ python -m builder.publications --input INPUT_BIB_FILE --output OUTPUT_BIB_FILE
+```
+Use `python -m builder.publications --help` for additional options.
