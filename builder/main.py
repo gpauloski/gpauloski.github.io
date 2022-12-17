@@ -77,9 +77,21 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
 
+    bib_dir = os.path.join(args.static, 'publications')
+    bib_files = [
+        os.path.join(bib_dir, f)
+        for f in os.listdir(bib_dir)
+        if f.endswith('.bib')
+    ]
+    if len(bib_files) == 0:
+        raise OSError(f'No files ending with .bib in {bib_dir} were found.')
+    elif len(bib_files) > 1:
+        raise OSError(f'Found multiple files ending with .bib in {bib_dir}.')
+    (bib_file,) = bib_files
+
     publications = load_publications(
         os.path.join(args.content, 'publications'),
-        os.path.join(args.static, 'publications/publications.bib'),
+        bib_file,
     )
     presentations = load_presentations(
         os.path.join(args.content, 'presentations'),
