@@ -5,6 +5,7 @@ import datetime
 import os
 import shutil
 import sys
+import webbrowser
 from collections.abc import Sequence
 
 import builder
@@ -68,12 +69,29 @@ def main(argv: Sequence[str] | None = None) -> int:
         default='./templates',
         help='templates directory',
     )
+    parser.add_argument(
+        '--open',
+        action='store_true',
+        help='open the page in browser after build',
+    )
 
     args = parser.parse_args(argv)
 
+    bib_dir = os.path.join(args.static, 'publications')
+    bib_files = [
+        os.path.join(bib_dir, f)
+        for f in os.listdir(bib_dir)
+        if f.endswith('.bib')
+    ]
+    if len(bib_files) == 0:
+        raise OSError(f'No files ending with .bib in {bib_dir} were found.')
+    elif len(bib_files) > 1:
+        raise OSError(f'Found multiple files ending with .bib in {bib_dir}.')
+    (bib_file,) = bib_files
+
     publications = load_publications(
         os.path.join(args.content, 'publications'),
-        os.path.join(args.static, 'publications/publications.bib'),
+        bib_file,
     )
     presentations = load_presentations(
         os.path.join(args.content, 'presentations'),
@@ -87,5 +105,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         presentations=presentations,
         current_year=datetime.date.today().year,
     )
+
+    if args.open:
+        url = os.path.join(build_dir, 'index.html')
+        webbrowser.open(url, new=0, autoraise=True)
 
     return 0
