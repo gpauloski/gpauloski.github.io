@@ -5,6 +5,7 @@ import datetime
 import os
 import shutil
 import sys
+import webbrowser
 from collections.abc import Sequence
 
 import builder
@@ -68,6 +69,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         default='./templates',
         help='templates directory',
     )
+    parser.add_argument(
+        '--open',
+        action='store_true',
+        help='open the page in browser after build',
+    )
 
     args = parser.parse_args(argv)
 
@@ -87,5 +93,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         presentations=presentations,
         current_year=datetime.date.today().year,
     )
+
+    if args.open:
+        url = os.path.join(build_dir, 'index.html')
+        webbrowser.open(url, new=0, autoraise=True)
 
     return 0
