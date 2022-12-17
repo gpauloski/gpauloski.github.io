@@ -4,10 +4,12 @@ import glob
 import json
 import os
 from collections import defaultdict
+from typing import Any
 from typing import NamedTuple
 
 import bibtexparser
 from bibtexparser.bibdatabase import BibDatabase
+from bibtexparser.bparser import BibTexParser
 from bibtexparser.bwriter import BibTexWriter
 
 
@@ -59,9 +61,35 @@ def parse_publication_json(pub_file: str) -> Publication:
     )
 
 
-def load_publications(pub_dir: str, bib_file: str) -> list[Publication]:
+def fix_title_casing(
+    record: dict[str, Any],
+    per_token: bool = False,
+) -> dict[str, Any]:
+    # Adds {} around title to preserve casing
+    if 'title' in record:
+        if per_token:
+            title_tokens = [
+                token if token.islower() else f'{{{token}}}'
+                for token in record['title'].split(' ')
+            ]
+            record['title'] = ' '.join(title_tokens)
+        else:
+            record['title'] = f'{{{record["title"]}}}'
+
+    return record
+
+
+def load_bibtex(bib_file: str) -> BibDatabase:
+    parser = BibTexParser(customization=fix_title_casing)
+
     with open(bib_file) as bf:
-        bibs = bibtexparser.load(bf).entries_dict
+        bibs = bibtexparser.load(bf, parser)
+
+    return bibs
+
+
+def load_publications(pub_dir: str, bib_file: str) -> list[Publication]:
+    bibs = load_bibtex(bib_file).entries_dict
 
     bib_writer = BibTexWriter()
     bib_writer.indent = '  '
