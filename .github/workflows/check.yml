@@ -1,0 +1,26 @@
+name: check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: python -m pip install --upgrade setuptools pip
+
+      - name: Install the Builder Package
+        run: python -m pip install .
+
+      - name: Verify static site builds
+        run: python -m builder

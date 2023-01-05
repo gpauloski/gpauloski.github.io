@@ -6,10 +6,8 @@ on:
   # Runs at 1am on Monday
   schedule:
     - cron: '00 1 * * 1'
-  # Runs on new tags starting with v
   push:
-    tags:
-      - 'v*'
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,11 +31,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Checkout latest release tag
-        run: |
-          LATEST_TAG=$(git describe --match "v[0-9]*")
-          git checkout $LATEST_TAG
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
