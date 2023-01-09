@@ -8,7 +8,7 @@
     ],
     "venue": "DLS 2019",
     "tldr": "We develop a a user-level transient object store that provides low-latency and scalable POSIX-compliant file access for scalable deep learning training.",
-    "paper": "publications/zhang2019aggregating.pdf",
+    "paper": "publications/zhang2019aggregating-preprint.pdf",
     "bibtex": "zhang2019aggregating",
     "code": "https://github.com/TACC/FanStore",
     "website": null,
