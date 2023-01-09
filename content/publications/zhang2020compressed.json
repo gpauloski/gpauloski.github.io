@@ -8,7 +8,7 @@
     ],
     "venue": "IPDPS 2020",
     "tldr": "We investigate the tradeoff between runtime overhead and data compression ratio on real-world deep learning training datasets and applications. We show that storage can be reduced by 2—13x with minimal additional runtime overhead.",
-    "paper": "publications/zhang2020compressed.pdf",
+    "paper": "publications/zhang2020compressed-preprint.pdf",
     "bibtex": "zhang2020compressed",
     "code": "https://github.com/TACC/FanStore",
     "website": null,
