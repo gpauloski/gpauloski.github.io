@@ -1,0 +1,26 @@
+{
+    "title": "Cloud Services Enable Efficient AI-Guided Simulation Workflows across Heterogeneous Resources",
+    "authors": [
+        "Logan Ward",
+        "J. Gregory Pauloski",
+        "Valerie Hayot-Sasson",
+        "Ryan Chard",
+        "Yadu Babuji",
+        "Ganesh Sivaraman",
+        "Sutanay Choudhury",
+        "Kyle Chard",
+        "Rajeev Thakur",
+        "Ian Foster"
+    ],
+    "venue": "HCW @ IPDPS 2023",
+    "awards": null,
+    "tldr": "We describe our experiences in building and deploying AI driven workflows across multiple computing sites without networking hassles and without losing performance using Colmena, Globus, FuncX, and ProxyStore.",
+    "paper": "publications/ward2023colmena-preprint.pdf",
+    "bibtex": "ward2023colmena",
+    "code": "https://github.com/exalearn/multi-site-campaigns",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "year": 2023,
+    "month": 3
+}
