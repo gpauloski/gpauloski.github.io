@@ -1,0 +1,21 @@
+{
+    "title": "The Diminishing Returns of Masked Language Models to Science",
+    "authors": [
+        "Zhi Hong",
+        "Aswathy Ajith",
+        "J. Gregory Pauloski",
+        "Eamon Duede",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "tldr": "We use 14 domain-specific transformer based models (including ScholarBERT, a new 770M-parameter science-focused masked language model pretrained on up to 225B tokens) to evaluate the impact of training data, model size, pretraining and finetuning time on 12 downstream scientific tasks. Interestingly, we find that increasing model sizes, training data, or compute time does not always lead to measurable improvements for scientific information extraction tasks.",
+    "paper": "publications/hong2023scholarbert-preprint.pdf",
+    "bibtex": "hong2023scholarbert",
+    "code": null,
+    "website": "https://huggingface.co/globuslabs/ScholarBERT-XL",
+    "poster": null,
+    "slides": null,
+    "year": 2023,
+    "month": 7
+}
