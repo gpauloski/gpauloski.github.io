@@ -1,0 +1,23 @@
+{
+    "title": "Accelerating Communications in Federated Applications with Transparent Object Proxies",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Valerie Hayot-Sasson",
+        "Logan Ward",
+        "Nathaniel Hudson",
+        "Charlie Sabino",
+        "Matt Baughman",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "ArXiv Preprint",
+    "tldr": "We describe ProxyStore, a system that decouples control flow from data flow by extending the pass-by-reference model to distributed applications using object proxies that act as wide-area object references with just-in-time resolution. This proxy model enables data producers to communicate data unilaterally, transparently, and efficiently to both local and remote consumers. We demonstrate the benefits of this model with synthetic benchmarks and real-world scientific applications, running across various computing platforms.",
+    "paper": "publications/pauloski2023proxystore-preprint.pdf",
+    "bibtex": "pauloski2023proxystore",
+    "code": "https://github.com/proxystore/proxystore",
+    "website": "https://docs.proxystore.dev",
+    "poster": "posters/gcasr2023-proxystore.pdf",
+    "slides": null,
+    "year": 2023,
+    "month": 5
+}
