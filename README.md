@@ -11,7 +11,7 @@ The page design is based on [ericwallace.com](https://www.ericswallace.com/), an
 | Directory    | Description |
 | ------------ | ----------- |
 | `builder/`   | Python packages that compiles the static site with Jinja.     |
-| `content/`   | Data files for generating various sections of the site.       |
+| `config/`    | Data files for generating various sections of the site.       |
 | `static/`    | Static files to include in the site (CSS, files, images).     |
 | `templates/` | HTML Jinja templates compiled to produce final rendered site. |
 
@@ -25,9 +25,9 @@ $ python -m builder --open
 ```
 
 The output is written to `_site/` by default, and `_site/index.html` can be opened in your browser to view.
-The `--open` flag will automatically open the page after the build completes.
+The `--open` flag will automatically open the page after the build completes if your terminal is configured to open links.
 
-The filepaths default to the existing ones in the repo but can be overridden via arguments.
+The build and content are configured in the `config/config.toml` file.
 See `python -m builder --help` for more details.
 
 ## Updating
@@ -35,11 +35,11 @@ See `python -m builder --help` for more details.
 To add a new publication:
 1. Add the bibtex entry to `static/publications/publications.html`.
 2. Add the PDF to `static/publications/`.
-3. Create a new JSON file for the publication in `content/publications/` and fill out all of the fields.
+3. Create a new JSON file for the publication in `config/publications/` and fill out all of the fields.
 
 To add a new presentation:
 1. Add the PDF to `static/slides/` or `static/posters/`.
-2. Create a new JSON file for the presentation in `content/presentations/` and fill out all of the fields.
+2. Create a new JSON file for the presentation in `config/presentations/` and fill out all of the fields.
 
 # Deploying
 
