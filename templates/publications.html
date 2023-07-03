@@ -21,23 +21,23 @@
         </em>
     </td></tr>
     <tr><td>
-        <a href="javascript:unhide('{{ pub.bibtex_id }}_tldr')" class="red-text text-darken-4">TLDR</a> |
+        <a href="javascript:unhide('{{ pub.bibtex_id }}_tldr')" target="_self">TLDR</a> |
         {% if pub.paper %}
-        <a href="{{ pub.paper }}" target="_blank" class="red-text text-darken-4">Paper</a> |
+        <a href="{{ pub.paper }}">Paper</a> |
         {% endif %}
         {% if pub.website %}
-        <a href="{{ pub.website }}" target="_blank" class="red-text text-darken-4">Website</a> |
+        <a href="{{ pub.website }}">Website</a> |
         {% endif %}
         {% if pub.code %}
-        <a href="{{ pub.code }}" target="_blank" class="red-text text-darken-4">Code</a> |
+        <a href="{{ pub.code }}">Code</a> |
         {% endif %}
         {% if pub.poster %}
-        <a href="{{ pub.poster }}" target="_blank" class="red-text text-darken-4">Poster</a> |
+        <a href="{{ pub.poster }}">Poster</a> |
         {% endif %}
         {% if pub.slides %}
-        <a href="{{ pub.slides }}" target="_blank" class="red-text text-darken-4">Slides</a> |
+        <a href="{{ pub.slides }}">Slides</a> |
         {% endif %}
-        <a href="javascript:unhide('{{ pub.bibtex_id }}')" class="red-text text-darken-4">BibTex</a>
+        <a href="javascript:unhide('{{ pub.bibtex_id }}')" target="_self">BibTex</a>
     </td></tr>
     <tr><td>
         <div id="{{ pub.bibtex_id }}_tldr" class="hidden">

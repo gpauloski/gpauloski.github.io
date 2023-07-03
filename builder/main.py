@@ -9,6 +9,7 @@ import webbrowser
 from collections.abc import Sequence
 
 import builder
+from builder.config import Config
 from builder.presentations import load_presentations
 from builder.publications import load_publications
 from builder.render import build_templates
@@ -50,24 +51,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
 
     parser.add_argument(
-        '--build',
-        default='./_site',
-        help='output directory',
-    )
-    parser.add_argument(
-        '--content',
-        default='./content',
-        help='content directory',
-    )
-    parser.add_argument(
-        '--static',
-        default='./static',
-        help='seed directory (static content for site)',
-    )
-    parser.add_argument(
-        '--templates',
-        default='./templates',
-        help='templates directory',
+        '--config',
+        default='./config/config.toml',
+        help='config file',
     )
     parser.add_argument(
         '--open',
@@ -77,33 +63,26 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
 
-    bib_dir = os.path.join(args.static, 'publications')
-    bib_files = [
-        os.path.join(bib_dir, f)
-        for f in os.listdir(bib_dir)
-        if f.endswith('.bib')
-    ]
-    if len(bib_files) == 0:
-        raise OSError(f'No files ending with .bib in {bib_dir} were found.')
-    elif len(bib_files) > 1:
-        raise OSError(f'Found multiple files ending with .bib in {bib_dir}.')
-    (bib_file,) = bib_files
+    config = Config.from_file(args.config)
 
     publications = load_publications(
-        os.path.join(args.content, 'publications'),
-        bib_file,
+        config.publications.publications_dir,
+        os.path.join(config.build.static_dir, config.publications.bibtex),
     )
-    presentations = load_presentations(
-        os.path.join(args.content, 'presentations'),
-    )
+    presentations = load_presentations(config.presentations.presentations_dir)
 
-    build_dir = configure_build_dir(args.build, seed_dir=args.static)
+    build_dir = configure_build_dir(
+        config.build.build_dir,
+        seed_dir=config.build.static_dir,
+    )
     build_templates(
         build_dir,
-        templates=args.templates,
+        templates=config.build.templates_dir,
+        # Keyword arguments that get passed to jinja templates
         publications=publications,
         presentations=presentations,
         current_year=datetime.date.today().year,
+        config=config,
     )
 
     if args.open:

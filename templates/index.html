@@ -3,21 +3,24 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RP37QLH20F"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.overview.analytics }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-RP37QLH20F');
+      gtag('config', '{{ config.overview.analytics }}');
     </script>
+
+    <!-- Open links in new tab by default -->
+    <base target="_blank">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Greg Pauloski's personal website.">
-    <meta name="author" content="Greg Pauloski">
+    <meta name="description" content="Personal website of {{ config.overview.name }}.">
+    <meta name="author" content="{{ config.overview.name }}">
 
-    <title>Greg Pauloski</title>
+    <title>{{ config.overview.name }}</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!-- Compiled and minified CSS -->
@@ -50,36 +53,23 @@
 <body class="grey lighten-4">
 <div class="mainblock">
     <div class="headshot">
-        <img src="images/headshot.jpg" alt="" width="100%" height="100%"/>
+        <img src="{{ config.overview.headshot }}" alt="" width="100%" height="100%"/>
     </div>
 
-    <h1 class="blue-grey-text text-darken-4">GREG PAULOSKI</h1>
+    <h1 class="blue-grey-text text-darken-4">{{ config.overview.name }}</h1>
 
     <p class="blue-grey-text text-darken-3" id="h1-subheader">
-        Computer Scientist // Software Engineer
+        {{ config.overview.titles | join(' // ') }}
     </p>
 
     <div>
-        <a href="mailto:jgpauloski@uchicago.edu" target="_blank" class="red-text text-darken-4">EMAIL</a> |
-        <a href="https://github.com/gpauloski" target="_blank" class="red-text text-darken-4">GITHUB</a> |
-        <a href="https://www.linkedin.com/in/gregorypauloski/" target="_blank" class="red-text text-darken-4">LINKEDIN</a> |
-        <a href="https://scholar.google.com/citations?user=rek2K4EAAAAJ&hl=en" target="_blank" class="red-text text-darken-4">SCHOLAR</a>
+        {% set pipe = joiner("|") %}
+        {% for contact in config.overview.contacts %}
+        {{ pipe() }} <a href="{{ contact.link }}" style="text-transform: uppercase">{{ contact.name }}</a>
+        {% endfor %}
     </div>
 
-    <p>
-        Hello there!
-        I am a third-year Ph.D. student in Computer Science at the
-        <a href="https://cs.uchicago.edu/" target="_blank" class="red-text text-darken-4">University of Chicago</a> interested in high-performance computing and machine learning systems.
-        I am a member of
-        <a href="https://labs.globus.org" target="_blank" class="red-text text-darken-4">Globus Labs</a>
-        where I am co-advised by
-        <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank" class="red-text text-darken-4">Ian Foster</a>
-        and
-        <a href="https://kylechard.com/" target="_blank" class="red-text text-darken-4">Kyle Chard</a>.
-        I completed my Bachelors in Computer Science at the
-        <a href="https://cs.utexas.edu/" target="_blank" class="red-text text-darken-4">University of Texas at Austin</a>
-        and previously worked at Google and the Texas Advanced Computing Center.
-    </p>
+    <p>{{ config.overview.text | safe }}</p>
 
     <h2 class="blue-grey-text text-darken-4">
         <i class="material-icons">science</i>
@@ -94,7 +84,7 @@
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Check out all of my projects on
-        <a href="https://github.com/gpauloski/" target="_blank" class="blue-grey-text text-darken-3">GitHub</a>.
+        <a href="{{ config.projects.github }}" class="blue-grey-text text-darken-3">GitHub</a>.
         </em>
     </p>
     {% include 'projects.html' %}
@@ -106,7 +96,7 @@
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Ordered by most recent. Bibtex file available for download
-        <a href="publications/pauloski.bib" target="_blank" class="blue-grey-text text-darken-3">here</a>.
+        <a href="{{ config.publications.bibtex }}" class="blue-grey-text text-darken-3">here</a>.
         </em>
     </p>
     {% include 'publications.html' %}
@@ -123,9 +113,9 @@
 </body>
 
 <footer class="grey-text">
-    <a href="https://github.com/gpauloski/gpauloski.github.io/" target="_blank" class="grey-text">Source Code</a><br>
-    Website design based on <a href="https://www.ericswallace.com/" target="_blank" class="grey-text">ericwallace.com</a>.<br>
-    Copyright &copy; {{ current_year }} Greg Pauloski.
+    <a href="{{ config.overview.source }}" class="grey-text">Source Code</a><br>
+    Website design based on <a href="https://www.ericswallace.com/" class="grey-text">ericwallace.com</a>.<br>
+    Copyright &copy; {{ current_year }} {{ config.overview.name }}.
 </footer>
 
 </html>

@@ -70,6 +70,7 @@ h1 {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 6px;
+    text-transform: uppercase;
 }
 
 #h1-subheader {
@@ -95,6 +96,7 @@ h2 i {
 }
 
 a {
+    color: #B71C1C;
     font-weight: 600;
 }
 
