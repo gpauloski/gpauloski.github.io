@@ -78,9 +78,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     build_templates(
         build_dir,
         templates=config.build.templates_dir,
+        # Keyword arguments that get passed to jinja templates
         publications=publications,
         presentations=presentations,
         current_year=datetime.date.today().year,
+        config=config,
     )
 
     if args.open:

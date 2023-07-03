@@ -20,7 +20,7 @@ class Config:
         return Config(
             build=BuildConfig(**data['build']),
             overview=OverviewConfig(**data['overview']),
-            research=ResearchConfig(data['research']),
+            research=ResearchConfig(**data['research']),
             projects=ProjectsConfig(**data['projects']),
             publications=PublicationsConfig(**data['publications']),
             presentations=PresentationsConfig(**data['presentations']),
@@ -56,6 +56,7 @@ class OverviewConfig:
         titles: List of titles/professions.
         headshot: Path to headshot image.
         contacts: Mapping of contact type to link.
+        analytics: Google analyics ID.
         source: Link to source code of website.
         text: Overview/intro paragraph (HTML supported).
     """
@@ -63,7 +64,8 @@ class OverviewConfig:
     name: str
     titles: list[str]
     headshot: str
-    contacts: dict[str, str]
+    contacts: list[dict[str, str]]
+    analytics: str
     source: str
     text: str
 
@@ -73,10 +75,11 @@ class ResearchConfig:
     """Research config.
 
     Attributes:
-        sections: Mapping of section name to content.
+        sections: List of mappings where each mapping contains the name
+            and text key corresponding to a research section.
     """
 
-    sections: dict[str, str]
+    sections: list[dict[str, str]]
 
 
 @dataclasses.dataclass
@@ -85,11 +88,12 @@ class ProjectsConfig:
 
     Attributes:
         github: Link to GitHub page where projects can be found.
-        links: Mapping of project name to project link.
+        links: List of mappings where each mapping contains the name and link
+            key corresponding to a project.
     """
 
     github: str
-    links: dict[str, str]
+    links: list[dict[str, str]]
 
 
 @dataclasses.dataclass

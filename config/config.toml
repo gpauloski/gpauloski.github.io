@@ -8,11 +8,12 @@ name = "Greg Pauloski"
 titles = ["Computer Scientist", "Software Engineer"]
 headshot = "images/headshot.jpg"
 contacts = [
-    { email = "mailto:jgpauloski@uchicago.edu" },
-    { github = "https://github.com/gpauloski" },
-    { linkedin = "https://www.linkedin.com/in/gregorypauloski/" },
-    { scholar = "https://scholar.google.com/citations?user=rek2K4EAAAAJ&hl=en" },
+    { name = "email", link = "mailto:jgpauloski@uchicago.edu" },
+    { name = "github", link = "https://github.com/gpauloski" },
+    { name = "linkedin", link = "https://www.linkedin.com/in/gregorypauloski/" },
+    { name = "scholar", link = "https://scholar.google.com/citations?user=rek2K4EAAAAJ&hl=en" },
 ]
+analytics = "G-RP37QLH20F"
 source = "https://github.com/gpauloski/gpauloski.github.io/"
 text = """
 Hello there!
@@ -22,26 +23,20 @@ I completed my Bachelors in Computer Science at the <a href="https://cs.utexas.e
 """
 
 [research]
-"Scalable Deep Learning" = """\
-We are exploring new techniques for improving deep learning training time and scalability by (1) exploiting scalable algorithms for second-order information approximation; (2) developing methods for adapting to different computer hardware by tuning computation and communication to maximize training speed; and (3) exploring compression techniques to reduce communication overheads.
-"""
-"Workflow Systems" = """\
-Modern computational science experiments are increasingly written as a coupled set of many distinct software coordinated by a central workflow system.
-We are designing new programming models which decouple communication from application design to enable multiple data movement methods depending on where data are moved, what are moved, or when they are moved.
-"""
-"Scientific Language Models" = """\
-We are building large (billion+ parameter) transformer-based language models on broad scientific literature to automate knowledge extraction.
-We are evaluating the training methods for these models to quantify the impact of training corpus size, model size, and pretraining time on downstream performance, and we are investigating better methods for assessing the quality of the trained models.
-"""
+sections = [
+    { name = "Scalable Deep Learning", text = "We are exploring new techniques for improving deep learning training time and scalability by (1) exploiting scalable algorithms for second-order information approximation; (2) developing methods for adapting to different computer hardware by tuning computation and communication to maximize training speed; and (3) exploring compression techniques to reduce communication overheads." },
+    { name = "Workflow Systems", text = "Modern computational science experiments are increasingly written as a coupled set of many distinct software coordinated by a central workflow system. We are designing new programming models which decouple communication from application design to enable multiple data movement methods depending on where data are moved, what are moved, or when they are moved." },
+    { name = "Scientific Language Models", text = "We are building large (billion+ parameter) transformer-based language models on broad scientific literature to automate knowledge extraction. We are evaluating the training methods for these models to quantify the impact of training corpus size, model size, and pretraining time on downstream performance, and we are investigating better methods for assessing the quality of the trained models."} ,
+]
 
 [projects]
 github = "https://github.com/gpauloski/"
 links = [
-    { "ProxyStore" = "https://github.com/proxystore" },
-    { "Distributed KFAC Preconditioner" = "https://github.com/gpauloski/kfac-pytorch" },
-    { "Language Model Training" = "https://github.com/gpauloski/llm-pytorch" },
-    { "Colmena" = "https://github.com/exalearn/colmena" },
-    { "3pseatBot: a Discord Bot" = "https://github.com/gpauloski/3pseatBot" },
+    { name = "ProxyStore", link = "https://github.com/proxystore" },
+    { name = "Distributed KFAC Preconditioner", link = "https://github.com/gpauloski/kfac-pytorch" },
+    { name = "Language Model Training", link = "https://github.com/gpauloski/llm-pytorch" },
+    { name = "Colmena", link = "https://github.com/exalearn/colmena" },
+    { name = "3pseatBot: a Discord Bot", link = "https://github.com/gpauloski/3pseatBot" },
 ]
 
 [publications]
