@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import calendar
 import glob
 import json
 import os
@@ -27,10 +28,14 @@ class Publication(NamedTuple):
     bibtex: str
     year: int
     month: int
+    date_str: str
     code: str | None = None
     website: str | None = None
     poster: str | None = None
     slides: str | None = None
+    preprint: str | None = None
+    publisher: str | None = None
+    selected: bool = False
 
 
 def get_bibtex_writer() -> BibTexWriter:
@@ -67,8 +72,12 @@ def parse_publication_json(pub_file: str) -> Publication:
         website=attrs['website'] if 'website' in attrs else None,
         poster=attrs['poster'] if 'poster' in attrs else None,
         slides=attrs['slides'] if 'slides' in attrs else None,
+        publisher=attrs['publisher'] if 'publisher' in attrs else None,
+        preprint=attrs['preprint'] if 'preprint' in attrs else None,
         year=attrs['year'],
         month=attrs['month'],
+        date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
+        selected=attrs['selected'] if 'selected' in attrs else False,
     )
 
 

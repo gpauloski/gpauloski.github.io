@@ -6,7 +6,8 @@
         <i class="material-icons">chevron_right</i>
     </div>
     <div id="bullet-entry">
-        <a href="{{ project.link }}">{{ project.name }}</a>
+        <b>{{ project.name }}:</b> {{ project.description }}
+        [<a href="{{ project.link }}">Code</a>]
     </div>
 </div>
 {% endfor %}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import calendar
 import glob
 import json
 import os
@@ -11,6 +12,7 @@ class Presentation(NamedTuple):
     location: str
     year: int
     month: int
+    date_str: str
     slides: str | None = None
     poster: str | None = None
 
@@ -26,6 +28,7 @@ def parse_presentation_json(pres_file: str) -> Presentation:
             slides=attrs['slides'] if 'slides' in attrs else None,
             year=attrs['year'],
             month=attrs['month'],
+            date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
         )
 
 

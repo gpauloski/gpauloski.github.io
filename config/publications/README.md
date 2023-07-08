@@ -19,7 +19,10 @@ The files will be automatically parsed to generate the static page.
     "website": null,
     "poster": null,
     "slides": null,
+    "publication" : null,
+    "preprint": null,
     "year": 2020,
-    "month": 11
+    "month": 11,
+    "selected": false
 }
 ```

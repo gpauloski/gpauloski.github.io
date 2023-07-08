@@ -8,6 +8,10 @@
 <table cellspacing="0" cellpadding="0">
     <tr><td>
         <b>{{ pub.title }}</b>
+        <span class="grey-text text-darken-1" style="padding-left: 6px;">[{{ pub.date_str }}]</span>
+        <a href="#{{ pub.bibtex_id }}" target="_self">
+            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
+        </a>
     </td></tr>
     <tr><td>
         {{ pub.authors }}
@@ -23,7 +27,7 @@
     <tr><td>
         <a href="javascript:unhide('{{ pub.bibtex_id }}_tldr')" target="_self">TLDR</a> |
         {% if pub.paper %}
-        <a href="{{ pub.paper }}">Paper</a> |
+        <a href="{{ pub.paper }}">PDF</a> |
         {% endif %}
         {% if pub.website %}
         <a href="{{ pub.website }}">Website</a> |
@@ -36,6 +40,11 @@
         {% endif %}
         {% if pub.slides %}
         <a href="{{ pub.slides }}">Slides</a> |
+        {% endif %}
+        {% if pub.publisher %}
+        <a href="{{ pub.publisher }}">Publication</a> |
+        {% elif pub.preprint %}
+        <a href="{{ pub.preprint }}">Preprint</a> |
         {% endif %}
         <a href="javascript:unhide('{{ pub.bibtex_id }}')" target="_self">BibTex</a>
     </td></tr>
