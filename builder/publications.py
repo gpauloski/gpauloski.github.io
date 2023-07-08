@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import calendar
 import glob
 import json
 import os
@@ -27,6 +28,7 @@ class Publication(NamedTuple):
     bibtex: str
     year: int
     month: int
+    date_str: str
     code: str | None = None
     website: str | None = None
     poster: str | None = None
@@ -70,6 +72,7 @@ def parse_publication_json(pub_file: str) -> Publication:
         slides=attrs['slides'] if 'slides' in attrs else None,
         year=attrs['year'],
         month=attrs['month'],
+        date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
         selected=attrs['selected'] if 'selected' in attrs else False,
     )
 
