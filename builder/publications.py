@@ -31,6 +31,7 @@ class Publication(NamedTuple):
     website: str | None = None
     poster: str | None = None
     slides: str | None = None
+    selected: bool = False
 
 
 def get_bibtex_writer() -> BibTexWriter:
@@ -69,6 +70,7 @@ def parse_publication_json(pub_file: str) -> Publication:
         slides=attrs['slides'] if 'slides' in attrs else None,
         year=attrs['year'],
         month=attrs['month'],
+        selected=attrs['selected'] if 'selected' in attrs else False,
     )
 
 

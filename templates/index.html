@@ -95,6 +95,19 @@
     </p>
     {% include 'projects.html' %}
 
+    <h2 id="selected-publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+        <i class="material-icons">star</i>
+        SELECTED PUBLICATIONS
+        <a href="#selected-publications" target="_self">
+            <i class="material-icons grey-text text-lighten-1" style="padding-bottom: 2px;">link</i>
+        </a>
+    </h2>
+    <p class="blue-grey-text text-darken-3" id="h2-subheader">
+        <em>Ordered by most recent.</em>
+    </p>
+    {% set publications = selected_publications %}
+    {% include 'publications.html' %}
+
     <h2 id="publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
         <i class="material-icons">article</i>
         PUBLICATIONS
@@ -108,6 +121,7 @@
         <a href="{{ config.publications.bibtex }}" class="blue-grey-text text-darken-3">here</a>.
         </em>
     </p>
+    {% set publications = unselected_publications %}
     {% include 'publications.html' %}
 
     <h2 id="presentations" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">

@@ -79,7 +79,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         build_dir,
         templates=config.build.templates_dir,
         # Keyword arguments that get passed to jinja templates
-        publications=publications,
+        selected_publications=[p for p in publications if p.selected],
+        unselected_publications=[p for p in publications if not p.selected],
         presentations=presentations,
         current_year=datetime.date.today().year,
         config=config,

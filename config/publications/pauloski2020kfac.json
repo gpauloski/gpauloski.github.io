@@ -16,5 +16,6 @@
     "poster": null,
     "slides": "slides/pauloski-sc20-kfac.pdf",
     "year": 2020,
-    "month": 11
+    "month": 11,
+    "selected": true
 }

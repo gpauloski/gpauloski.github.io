@@ -20,6 +20,7 @@ The files will be automatically parsed to generate the static page.
     "poster": null,
     "slides": null,
     "year": 2020,
-    "month": 11
+    "month": 11,
+    "selected": false
 }
 ```
