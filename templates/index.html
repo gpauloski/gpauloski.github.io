@@ -71,15 +71,21 @@
 
     <p>{{ config.overview.text | safe }}</p>
 
-    <h2 class="blue-grey-text text-darken-4">
+    <h2 id="research" class="blue-grey-text text-darken-4">
         <i class="material-icons">science</i>
         RESEARCH
+        <a href="#research" target="_self">
+            <i class="material-icons grey-text text-lighten-1" style="padding-bottom: 2px;">link</i>
+        </a>
     </h2>
     {% include 'research.html' %}
 
-    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="projects" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
         <i class="material-icons">engineering</i>
         PROJECTS
+        <a href="#projects" target="_self">
+            <i class="material-icons grey-text text-lighten-1" style="padding-bottom: 2px;">link</i>
+        </a>
     </h2>
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
@@ -89,9 +95,12 @@
     </p>
     {% include 'projects.html' %}
 
-    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
         <i class="material-icons">article</i>
         PUBLICATIONS
+        <a href="#publications" target="_self">
+            <i class="material-icons grey-text text-lighten-1" style="padding-bottom: 2px;">link</i>
+        </a>
     </h2>
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
@@ -101,9 +110,12 @@
     </p>
     {% include 'publications.html' %}
 
-    <h2 class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="presentations" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
         <i class="material-icons">co_present</i>
         PRESENTATIONS
+        <a href="#presentations" target="_self">
+            <i class="material-icons grey-text text-lighten-1" style="padding-bottom: 2px;">link</i>
+        </a>
     </h2>
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>Ordered by most recent.</em>
