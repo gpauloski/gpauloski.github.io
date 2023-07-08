@@ -154,3 +154,8 @@ td {
     margin: 0px;
     padding: 8px;
 }
+
+.anchor-link {
+    padding-left: 6px;
+    padding-bottom: 2px;
+}
