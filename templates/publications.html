@@ -46,7 +46,7 @@
         {% elif pub.preprint %}
         <a href="{{ pub.preprint }}">Preprint</a> |
         {% endif %}
-        <a href="javascript:unhide('{{ pub.bibtex_id }}')" target="_self">BibTex</a>
+        <a href="javascript:unhide('{{ pub.bibtex_id }}_bibtex')" target="_self">BibTex</a>
     </td></tr>
     <tr><td>
         <div id="{{ pub.bibtex_id }}_tldr" class="hidden">
@@ -58,7 +58,7 @@
         </div>
     </td></tr>
     <tr><td>
-        <div id="{{ pub.bibtex_id }}" class="hidden">
+        <div id="{{ pub.bibtex_id }}_bibtex" class="hidden">
             <div class="grey lighten-3" id="dropdown-box">
             <pre id="dropdown-box-inner" style="white-space: pre-wrap; font-family: 'Roboto Mono'; font-size: 10pt;">{{ pub.bibtex }}</pre>
             </div>
