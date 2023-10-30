@@ -19,6 +19,9 @@
         {% elif p.poster %}
         <a href="{{ p.poster }}" target="_blank">Poster</a>
         {% endif %}
+        {% if p.video %}
+        | <a href="{{ p.video }}" target="_blank">Video</a>
+        {% endif %}
     </td></tr>
 </table>
 </div>
