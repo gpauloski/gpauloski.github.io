@@ -1,0 +1,18 @@
+{
+    "title": "DeepSpeed4Science Initiative: Enabling Large-Scale Scientific Discovery through Sophisticated AI System Technologies",
+    "authors": [
+        "Collaboration between Microsoft, Rutgers University, University of Sydney, Columbia University, Harvard University, Argonne National Laboratory, University of Chicago, Oak Ridge National Laboratory, Brookhaven National Laboratory, Princeton University, AMD, and NVIDIA"
+    ],
+    "venue": "arXiv Preprint",
+    "tldr": "We present the DeepSpeed4Science initiative which aims to build unique capabilities through AI system technology innovations to help domain experts to unlock today's biggest science mysteries. By leveraging DeepSpeed's current technology pillars (training, inference and compression) as base technology enablers, DeepSpeed4Science will create a new set of AI system technologies tailored for accelerating scientific discoveries by addressing their unique complexity beyond the common technical approaches used for accelerating generic large language models.",
+    "paper": "publications/song2023deepspeed4science-preprint.pdf",
+    "bibtex": "song2023deepspeed4science",
+    "code": null,
+    "website": "https://deepspeed4science.ai/",
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2310.04610",
+    "year": 2023,
+    "month": 11,
+    "selected": false
+}
