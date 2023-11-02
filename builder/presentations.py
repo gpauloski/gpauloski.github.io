@@ -15,6 +15,7 @@ class Presentation(NamedTuple):
     date_str: str
     slides: str | None = None
     poster: str | None = None
+    video: str | None = None
 
 
 def parse_presentation_json(pres_file: str) -> Presentation:
@@ -26,6 +27,7 @@ def parse_presentation_json(pres_file: str) -> Presentation:
             location=attrs['location'],
             poster=attrs['poster'] if 'poster' in attrs else None,
             slides=attrs['slides'] if 'slides' in attrs else None,
+            video=attrs['video'] if 'video' in attrs else None,
             year=attrs['year'],
             month=attrs['month'],
             date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
