@@ -36,7 +36,7 @@
         "Venkatram Vishwanath",
         "Arvind Ramanathan"
     ],
-    "venue": "bioRxiv Preprint",
+    "venue": "IJHPCA",
     "awards": "ACM Gordon Bell Special Prize for COVID-19 Research",
     "tldr": "We build genome-scale language models (GenSLMs) which can learn the evolutionary landscape of SARS-CoV-2 genomes. By pretraining on over 110 million prokaryotic gene sequences, and then finetuning a SARS-CoV-2 specific model on 1.5 million genomes, we show that GenSLM can accurately and rapidly identify variants of concern.",
     "paper": "publications/zvyagin2022genslm-preprint.pdf",
@@ -46,6 +46,7 @@
     "poster": null,
     "slides": null,
     "preprint": "https://www.biorxiv.org/content/10.1101/2022.10.10.511571v2",
+    "publisher": "https://journals.sagepub.com/doi/pdf/10.1177/10943420231201154",
     "year": 2022,
     "month": 10
 }
