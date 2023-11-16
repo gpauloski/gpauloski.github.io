@@ -17,7 +17,7 @@
     "code": "https://github.com/proxystore/proxystore",
     "website": "https://docs.proxystore.dev",
     "poster": "posters/gcasr2023-proxystore.pdf",
-    "slides": null,
+    "slides": "slides/pauloski-sc23-proxystore.pdf",
     "preprint": "https://arxiv.org/abs/2305.09593",
     "publisher": "https://dl.acm.org/doi/10.1145/3581784.3607047",
     "year": 2023,
