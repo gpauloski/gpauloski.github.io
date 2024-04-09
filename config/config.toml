@@ -35,7 +35,7 @@ links = [
     { name = "ProxyStore", link = "https://github.com/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
     { name = "K-FAC", link = "https://github.com/gpauloski/kfac-pytorch", description = "Distributed PyTorch K-FAC gradient preconditioner" },
     { name = "LLM Training", link = "https://github.com/gpauloski/llm-pytorch", description = "Tools and scripts for large language model training" },
-    { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "A framework for steer large campaigns of simulations on HPC" },
+    { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "A framework for steering large campaigns of simulations on HPC" },
     { name = "3pseatBot", link = "https://github.com/gpauloski/3pseatBot", description = "A hobby Discord bot" },
 ]
 

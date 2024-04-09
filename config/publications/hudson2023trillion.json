@@ -1,0 +1,30 @@
+{
+    "title": "Trillion Parameter AI Serving Infrastructure for Scientific Discovery: A Survey and Vision",
+    "authors": [
+        "Nathaniel C. Hudson",
+        "J. Gregory Pauloski",
+        "Matt Baughman",
+        "Alok Kamatar",
+        "Mansi Sakarvadia",
+        "Logan Ward",
+        "Ryan Chard",
+        "André Bauer",
+        "Maksim Levental",
+        "Wenyi Wang",
+        "Will Engler",
+        "Owen Price Skelly",
+        "Ben Blaiszik",
+        "Rick Stevens",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "BDCAT 2023",
+    "tldr": "Deep learning methods are transforming research, enabling new techniques, and ultimately leading to new discoveries. As the demand for more capable AI models continues to grow, we are now entering an era of Trillion Parameter Models (TPM), or models with more than a trillion parameters---such as Huawei's PanGu-Σ. We describe a vision for the ecosystem of TPM users and providers that caters to the specific needs of the scientific community. We then outline the significant technical challenges and open problems in system design for serving TPMs to enable scientific research and discovery. Specifically, we describe the requirements of a comprehensive software stack and interfaces to support the diverse and flexible requirements of researchers.",
+    "paper": "publications/hudson2023trillion-preprint.pdf",
+    "bibtex": "hudson2023trillion",
+    "preprint": "https://arxiv.org/abs/2402.03480",
+    "publisher": "https://dl.acm.org/doi/abs/10.1145/3632366.3632396",
+    "year": 2023,
+    "month": 12,
+    "selected": false
+}
