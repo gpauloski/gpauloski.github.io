@@ -23,19 +23,19 @@ def parse_presentation_json(pres_file: str) -> Presentation:
         attrs = json.load(f)
 
         return Presentation(
-            title=attrs['title'],
-            location=attrs['location'],
-            poster=attrs['poster'] if 'poster' in attrs else None,
-            slides=attrs['slides'] if 'slides' in attrs else None,
-            video=attrs['video'] if 'video' in attrs else None,
-            year=attrs['year'],
-            month=attrs['month'],
+            title=attrs["title"],
+            location=attrs["location"],
+            poster=attrs["poster"] if "poster" in attrs else None,
+            slides=attrs["slides"] if "slides" in attrs else None,
+            video=attrs["video"] if "video" in attrs else None,
+            year=attrs["year"],
+            month=attrs["month"],
             date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
         )
 
 
 def load_presentations(pres_dir: str) -> list[Presentation]:
-    pres_files = glob.glob('*.json', root_dir=pres_dir)
+    pres_files = glob.glob("*.json", root_dir=pres_dir)
 
     press = [
         parse_presentation_json(os.path.join(pres_dir, f)) for f in pres_files

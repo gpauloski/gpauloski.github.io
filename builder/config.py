@@ -18,17 +18,17 @@ class Config:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Config:
         return Config(
-            build=BuildConfig(**data['build']),
-            overview=OverviewConfig(**data['overview']),
-            research=ResearchConfig(**data['research']),
-            projects=ProjectsConfig(**data['projects']),
-            publications=PublicationsConfig(**data['publications']),
-            presentations=PresentationsConfig(**data['presentations']),
+            build=BuildConfig(**data["build"]),
+            overview=OverviewConfig(**data["overview"]),
+            research=ResearchConfig(**data["research"]),
+            projects=ProjectsConfig(**data["projects"]),
+            publications=PublicationsConfig(**data["publications"]),
+            presentations=PresentationsConfig(**data["presentations"]),
         )
 
     @classmethod
     def from_file(cls, filepath: str | pathlib.Path) -> Config:
-        with open(filepath, 'rb') as f:
+        with open(filepath, "rb") as f:
             return Config.from_dict(tomllib.load(f))
 
 
