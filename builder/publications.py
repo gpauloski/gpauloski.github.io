@@ -40,9 +40,9 @@ class Publication(NamedTuple):
 
 def get_bibtex_writer() -> BibTexWriter:
     bib_writer = BibTexWriter()
-    bib_writer.indent = '    '
-    bib_writer.order_entries_by = ('ID',)
-    bib_writer.display_order = ['author', 'title']
+    bib_writer.indent = "    "
+    bib_writer.order_entries_by = ("ID",)
+    bib_writer.display_order = ["author", "title"]
     return bib_writer
 
 
@@ -50,34 +50,34 @@ def parse_publication_json(pub_file: str) -> Publication:
     with open(pub_file) as f:
         attrs = json.load(f)
 
-    if isinstance(attrs['authors'], list):
-        authors = ', '.join(attrs['authors'])
-    elif isinstance(attrs['authors'], str):
-        authors = attrs['authors']
+    if isinstance(attrs["authors"], list):
+        authors = ", ".join(attrs["authors"])
+    elif isinstance(attrs["authors"], str):
+        authors = attrs["authors"]
     else:
-        raise ValueError(f'Unable to parse authors field of {pub_file}.')
+        raise ValueError(f"Unable to parse authors field of {pub_file}.")
 
     attrs = defaultdict(lambda: None, attrs)
 
     return Publication(
-        title=attrs['title'],
+        title=attrs["title"],
         authors=authors,
-        venue=attrs['venue'],
-        tldr=attrs['tldr'],
-        awards=attrs['awards'],
-        paper=attrs['paper'],
-        bibtex_id=attrs['bibtex'],
-        bibtex='',
-        code=attrs['code'] if 'code' in attrs else None,
-        website=attrs['website'] if 'website' in attrs else None,
-        poster=attrs['poster'] if 'poster' in attrs else None,
-        slides=attrs['slides'] if 'slides' in attrs else None,
-        publisher=attrs['publisher'] if 'publisher' in attrs else None,
-        preprint=attrs['preprint'] if 'preprint' in attrs else None,
-        year=attrs['year'],
-        month=attrs['month'],
+        venue=attrs["venue"],
+        tldr=attrs["tldr"],
+        awards=attrs["awards"],
+        paper=attrs["paper"],
+        bibtex_id=attrs["bibtex"],
+        bibtex="",
+        code=attrs["code"] if "code" in attrs else None,
+        website=attrs["website"] if "website" in attrs else None,
+        poster=attrs["poster"] if "poster" in attrs else None,
+        slides=attrs["slides"] if "slides" in attrs else None,
+        publisher=attrs["publisher"] if "publisher" in attrs else None,
+        preprint=attrs["preprint"] if "preprint" in attrs else None,
+        year=attrs["year"],
+        month=attrs["month"],
         date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
-        selected=attrs['selected'] if 'selected' in attrs else False,
+        selected=attrs["selected"] if "selected" in attrs else False,
     )
 
 
@@ -86,21 +86,21 @@ def fix_title_casing(
     per_token: bool = False,
 ) -> dict[str, Any]:
     # Adds {} around title to preserve casing
-    if 'title' in record:
+    if "title" in record:
         if per_token:
             title_tokens = [
                 (
-                    f'{{{token}}}'
-                    if not token.islower() and not token.startswith('{')
+                    f"{{{token}}}"
+                    if not token.islower() and not token.startswith("{")
                     else token
                 )
-                for token in record['title'].split(' ')
+                for token in record["title"].split(" ")
             ]
-            record['title'] = ' '.join(title_tokens)
+            record["title"] = " ".join(title_tokens)
         else:
-            title = record['title']
-            record['title'] = (
-                f'{{{title}}}' if not title.startswith('{') else title
+            title = record["title"]
+            record["title"] = (
+                f"{{{title}}}" if not title.startswith("{") else title
             )
 
     return record
@@ -120,7 +120,7 @@ def load_publications(pub_dir: str, bib_file: str) -> list[Publication]:
     bib_writer = get_bibtex_writer()
 
     pubs: list[Publication] = []
-    for pub_file in glob.glob('*.json', root_dir=pub_dir):
+    for pub_file in glob.glob("*.json", root_dir=pub_dir):
         pub = parse_publication_json(os.path.join(pub_dir, pub_file))
 
         bib = bibs[pub.bibtex_id]
@@ -140,38 +140,38 @@ def main(argv: Sequence[str] | None = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
 
     parser = argparse.ArgumentParser(
-        description='BibTex Parser',
+        description="BibTex Parser",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-        prog='python -m builder.publications',
+        prog="python -m builder.publications",
     )
     parser.add_argument(
-        '--input',
-        help='BibTex file to format',
+        "--input",
+        help="BibTex file to format",
     )
     parser.add_argument(
-        '--output',
-        help='Path to output file',
+        "--output",
+        help="Path to output file",
     )
     parser.add_argument(
-        '--indent',
-        default='    ',
-        help='indent format',
+        "--indent",
+        default="    ",
+        help="indent format",
     )
 
     args = parser.parse_args(argv)
 
-    print(f'loading file at {args.input}')
+    print(f"loading file at {args.input}")
     bibs = load_bibtex(args.input)
     bib_writer = get_bibtex_writer()
     bib_writer.indent = args.indent
 
-    with open(args.output, 'w') as f:
+    with open(args.output, "w") as f:
         f.write(bib_writer.write(bibs))
 
-    print(f'wrote formatted bib to {args.output}')
+    print(f"wrote formatted bib to {args.output}")
 
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     raise SystemExit(main())

@@ -30,18 +30,12 @@ repository = "https://github.com/gpauloski/gpauloski.github.io"
 
 [project.optional-dependencies]
 dev = [
-    "black",
     "mypy",
     "pre-commit",
     "ruff",
     "tox",
     "virtualenv",
 ]
-
-[tool.black]
-line-length = 79
-target-version = ["py311"]
-skip-string-normalization = true
 
 [tool.codespell]
 skip = """
@@ -68,18 +62,21 @@ warn_unused_configs = true
 warn_unused_ignores = true
 
 [tool.ruff]
+line-length = 79
+target-version = "py311"
+
+[tool.ruff.lint]
 # pycodestyle, pyflakes, flake8-builtins, flake8-bugbear, isort, pep8-naming,
 # pydocstyle, flake8-debugger, flake8-commas
 select = ["E", "F", "A", "B", "I", "N", "D", "T10", "COM"]
 extend-ignore = ["D10"]
-target-version = "py311"
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 force-single-line = true
 known-first-party = ["builder"]
 required-imports = ["from __future__ import annotations"]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.setuptools.packages.find]
