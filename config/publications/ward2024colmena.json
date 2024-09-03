@@ -1,0 +1,27 @@
+{
+    "title": "Employing Artificial Intelligence to Steer Exascale Workflows with Colmena",
+    "authors": [
+        "Logan Ward",
+        "J. Gregory Pauloski",
+        "Valerie Hayot-Sasson",
+        "Yadu Babuji",
+        "Alexander Brace",
+        "Ryan Chard",
+        "Kyle Chard",
+        "Rajeev Thakur",
+        "Ian Foster"
+    ],
+    "venue": "IJHPCA 2024",
+    "awards": null,
+    "tldr": "We created Colmena to leverage the massive parallelism of a supercomputer by using Artificial Intelligence (AI) to learn from and adapt a workflow as it executes. Colmena allows scientists to define how their application should respond to events (e.g., task completion) as a series of cooperative agents. In this paper, we describe the design of Colmena, the challenges we overcame while deploying applications on exascale systems, and the science workflows we have enhanced through interweaving AI.",
+    "paper": "publications/ward2024colmena-preprint.pdf",
+    "bibtex": "ward2024colmena",
+    "code": "https://github.com/exalearn/colmena",
+    "website": "https://colmena.readthedocs.io/",
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2408.14434",
+    "publisher": null,
+    "year": 2024,
+    "month": 8
+}
