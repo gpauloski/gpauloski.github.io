@@ -17,7 +17,7 @@ analytics = "G-RP37QLH20F"
 source = "https://github.com/gpauloski/gpauloski.github.io/"
 text = """
 Hello there!
-I am a fourth-year Ph.D. student in Computer Science at the <a href="https://cs.uchicago.edu/" target="_blank">University of Chicago</a> interested in high-performance computing and deep learning frameworks.
+I am a fifth-year Ph.D. student in Computer Science at the <a href="https://cs.uchicago.edu/" target="_blank">University of Chicago</a> interested in high-performance computing and deep learning frameworks.
 I am a member of <a href="https://labs.globus.org" target="_blank">Globus Labs</a> where I am co-advised by <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank">Ian Foster</a> and <a href="https://kylechard.com/" target="_blank">Kyle Chard</a>.
 I completed my Bachelors in Computer Science at the <a href="https://cs.utexas.edu/" target="_blank">University of Texas at Austin</a> and previously worked at Apple, Google, and the Texas Advanced Computing Center.
 """
@@ -32,7 +32,8 @@ sections = [
 [projects]
 github = "https://github.com/gpauloski/"
 links = [
-    { name = "ProxyStore", link = "https://github.com/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
+    { name = "ProxyStore", link = "https://github.com/proxystore/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
+    { name = "TaPS", link = "https://github.com/proxystore/taps", description = "Benchmarking suite for distributed/parallel task executors" },
     { name = "K-FAC", link = "https://github.com/gpauloski/kfac-pytorch", description = "Distributed PyTorch K-FAC gradient preconditioner" },
     { name = "LLM Training", link = "https://github.com/gpauloski/llm-pytorch", description = "Tools and scripts for large language model training" },
     { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "A framework for steering large campaigns of simulations on HPC" },
