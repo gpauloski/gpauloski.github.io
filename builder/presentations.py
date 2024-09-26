@@ -4,10 +4,12 @@ import calendar
 import glob
 import json
 import os
+import pathlib
 from typing import NamedTuple
 
 
 class Presentation(NamedTuple):
+    tag: str
     title: str
     location: str
     year: int
@@ -23,6 +25,7 @@ def parse_presentation_json(pres_file: str) -> Presentation:
         attrs = json.load(f)
 
         return Presentation(
+            tag=pathlib.Path(pres_file).stem,
             title=attrs["title"],
             location=attrs["location"],
             poster=attrs["poster"] if "poster" in attrs else None,

@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 
-{% for p in presentations %}
-<div class="bullet">
-<div>
-    <i class="material-icons">chevron_right</i>
-</div>
-<table cellspacing="0" cellpadding="0">
-    <tr><td>
-        <b>{{ p.title }}</b>
-        <span class="grey-text text-darken-1" style="padding-left: 6px;">[{{ p.date_str }}]</span>
-    </td></tr>
-    <tr><td>
-        <em>{{ p.location }}</em>
-    </td></tr>
-    <tr><td>
-        {% if p.slides %}
-        <a href="{{ p.slides }}" target="_blank">Slides</a>
-        {% elif p.poster %}
-        <a href="{{ p.poster }}" target="_blank">Poster</a>
-        {% endif %}
-        {% if p.video %}
-        | <a href="{{ p.video }}" target="_blank">Video</a>
-        {% endif %}
-    </td></tr>
+<div style="padding-left: 24px; margin-bottom: 24px">
+<table cellspacing="0" cellpadding="0" style="table-layout: auto; width: 100%">
+    <!-- <colgroup> -->
+    <!--    <col span="1" style="max-width: 100%; white-space: nowrap"> -->
+    <!--    <col span="1"> -->
+    <!--    <col span="1"> -->
+    <!--    <col span="1" style="max-width: 100%; white-space: nowrap"> -->
+    <!-- </colgroup> -->
+    <tbody>
+    {% for p in presentations %}
+    <tr>
+        <td style="white-space: nowrap">
+            <span class="grey-text text-darken-1">{{ p.date_str }}</span>
+        </td>
+        <td id={{ p.tag }} style="width: 100%">
+            <b>{{ p.title }}</b>
+            <a href="#{{ p.tag }}" target="_self">
+                <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="white-space: nowrap">
+            {% if p.slides %}
+            <a href="{{ p.slides }}" target="_blank">Slides</a>
+            {% elif p.poster %}
+            <a href="{{ p.poster }}" target="_blank">Poster</a>
+            {% endif %}
+            {% if p.video %}
+            | <a href="{{ p.video }}" target="_blank">Video</a>
+            {% endif %}
+            | <em>{{ p.location }}</em>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
 </table>
 </div>
-{% endfor %}

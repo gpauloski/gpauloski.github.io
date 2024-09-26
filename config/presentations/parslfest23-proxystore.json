@@ -1,6 +1,6 @@
 {
     "title": "ProxyStore: Decoupling Control and Data Flow in Workflows",
-    "location": "ParslFest 2023",
+    "location": "ParslFest",
     "poster": null,
     "slides": "slides/parslfest23-proxystore.pdf",
     "video": "https://www.youtube.com/watch?v=49-MDZ0h8RE",
