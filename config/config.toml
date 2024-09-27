@@ -17,26 +17,28 @@ analytics = "G-RP37QLH20F"
 source = "https://github.com/gpauloski/gpauloski.github.io/"
 text = """
 Hello there!
-I am a fifth-year Ph.D. student in Computer Science at the <a href="https://cs.uchicago.edu/" target="_blank">University of Chicago</a> interested in high-performance computing and deep learning frameworks.
+I am a fifth-year Ph.D. student in Computer Science at the <a href="https://cs.uchicago.edu/" target="_blank">University of Chicago</a> interested in high-performance computing, distributed systems, and deep learning frameworks.
 I am a member of <a href="https://labs.globus.org" target="_blank">Globus Labs</a> where I am co-advised by <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank">Ian Foster</a> and <a href="https://kylechard.com/" target="_blank">Kyle Chard</a>.
 I completed my Bachelors in Computer Science at the <a href="https://cs.utexas.edu/" target="_blank">University of Texas at Austin</a> and previously worked at Apple, Google, and the Texas Advanced Computing Center.
+<br><br>
+🎉 <b>I am on the job market!</b> Seeking full-time opportunities post-graduation (Spring/Summer 2025).
 """
 
 [research]
 sections = [
-    { name = "Scalable Deep Learning", text = "We are exploring new techniques for improving deep learning training time and scalability by (1) exploiting scalable algorithms for second-order information approximation; (2) developing methods for adapting to different computer hardware by tuning computation and communication to maximize training speed; and (3) exploring compression techniques to reduce communication overheads." },
-    { name = "Workflow Systems", text = "Modern computational science experiments are increasingly written as a coupled set of many distinct software coordinated by a central workflow system. We are designing new programming models which decouple communication from application design to enable multiple data movement methods depending on where data are moved, what are moved, or when they are moved." },
-    { name = "Scientific Language Models", text = "We are building large (billion+ parameter) transformer-based language models on broad scientific literature to automate knowledge extraction. We are evaluating the training methods for these models to quantify the impact of training corpus size, model size, and pretraining time on downstream performance, and we are investigating better methods for assessing the quality of the trained models."} ,
+    { name = "Distributed Systems", text = "Modern computational science experiments are increasingly written as a coupled set of many distinct software coordinated by a central workflow system. We are designing new programming models which decouple communication from application design to enable multiple data movement methods depending on <i>where</i> data are moved, <i>what</i> are moved, or <i>when</i> they are moved." },
+    { name = "Scalable Deep Learning", text = "We are exploring new techniques for improving deep learning training time and scalability by (1) exploiting scalable algorithms for second-order information approximation; (2) developing methods for adapting to different computer hardware by tuning computation and communication to maximize training speed; (3) exploring compression techniques to reduce communication overheads; and (4) enabling complex, hierarchical federated learning across diverse ecosystems of hardware." },
+    { name = "AI for Science", text = "We are (1) training large (billion+ parameter) transformer-based language models on broad scientific literature to automate knowledge extraction; (2) developing frameworks for coupling AI and simluations on exascale supercomputers; and (3) building innovative and large-scale solutions to scientific challenges in genome evolution, next-generation battery design, and carbon capture."},
 ]
 
 [projects]
 github = "https://github.com/gpauloski/"
 links = [
     { name = "ProxyStore", link = "https://github.com/proxystore/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
-    { name = "TaPS", link = "https://github.com/proxystore/taps", description = "Benchmarking suite for distributed/parallel task executors" },
     { name = "K-FAC", link = "https://github.com/gpauloski/kfac-pytorch", description = "Distributed PyTorch K-FAC gradient preconditioner" },
+    { name = "TaPS", link = "https://github.com/proxystore/taps", description = "Benchmarking suite for distributed/parallel task executors" },
     { name = "LLM Training", link = "https://github.com/gpauloski/llm-pytorch", description = "Tools and scripts for large language model training" },
-    { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "A framework for steering large campaigns of simulations on HPC" },
+    { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "Steering large campaigns of simulations on HPC with AI" },
     { name = "3pseatBot", link = "https://github.com/gpauloski/3pseatBot", description = "A hobby Discord bot" },
 ]
 
@@ -46,3 +48,6 @@ publications_dir = "./config/publications"
 
 [presentations]
 presentations_dir = "./config/presentations"
+
+[theses]
+theses_dir = "./config/theses"

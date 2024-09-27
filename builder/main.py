@@ -13,6 +13,7 @@ from builder.config import Config
 from builder.presentations import load_presentations
 from builder.publications import load_publications
 from builder.render import build_templates
+from builder.theses import load_theses
 
 
 def configure_build_dir(build_dir: str, *, seed_dir: str | None = None) -> str:
@@ -70,6 +71,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         os.path.join(config.build.static_dir, config.publications.bibtex),
     )
     presentations = load_presentations(config.presentations.presentations_dir)
+    theses = load_theses(config.theses.theses_dir)
 
     build_dir = configure_build_dir(
         config.build.build_dir,
@@ -82,6 +84,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         selected_publications=[p for p in publications if p.selected],
         unselected_publications=[p for p in publications if not p.selected],
         presentations=presentations,
+        theses=theses,
         current_year=datetime.date.today().year,
         config=config,
     )

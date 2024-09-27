@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% for thesis in theses %}
+<div class="bullet">
+<div>
+    <i class="material-icons">chevron_right</i>
+</div>
+<table id={{ thesis.tag }} cellspacing="0" cellpadding="0">
+    <tr><td>
+        <b>{{ thesis.title }}</b>
+        <span class="grey-text text-darken-1" style="padding-left: 6px;">[{{ thesis.date_str }}]</span>
+        <a href="#{{ thesis.tag }}" target="_self">
+            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
+        </a>
+    </td></tr>
+    <tr><td>
+        {% if thesis.pdf %}
+        <a href="{{ thesis.pdf }}" target="_blank">PDF</a> |
+        {% endif %}
+        {% if thesis.slides %}
+        <a href="{{ thesis.slides }}" target="_blank">Slides</a> |
+        {% endif %}
+        {% if thesis.poster %}
+        <a href="{{ thesis.poster }}" target="_blank">Poster</a> |
+        {% endif %}
+        <em>{{ thesis.location }}</em>
+    </td></tr>
+</table>
+</div>
+{% endfor %}
