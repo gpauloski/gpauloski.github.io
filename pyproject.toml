@@ -46,6 +46,7 @@ build,
 dist,
 .*egg-info
 """
+ignore-words-list = "theses,THESES"
 
 [tool.coverage.run]
 plugins = ["covdefaults"]

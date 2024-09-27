@@ -14,6 +14,7 @@ class Config:
     projects: ProjectsConfig
     publications: PublicationsConfig
     presentations: PresentationsConfig
+    theses: ThesesConfig
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Config:
@@ -24,6 +25,7 @@ class Config:
             projects=ProjectsConfig(**data["projects"]),
             publications=PublicationsConfig(**data["publications"]),
             presentations=PresentationsConfig(**data["presentations"]),
+            theses=ThesesConfig(**data["theses"]),
         )
 
     @classmethod
@@ -121,3 +123,14 @@ class PresentationsConfig:
     """
 
     presentations_dir: str
+
+
+@dataclasses.dataclass
+class ThesesConfig:
+    """Theses config.
+
+    Attributes:
+        theses_dir: Directory containing JSON files of theses metadata.
+    """
+
+    theses_dir: str
