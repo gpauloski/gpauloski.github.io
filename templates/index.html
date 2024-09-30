@@ -82,8 +82,8 @@
 
     <h2 id="theses" class="blue-grey-text text-darken-4">
         <i class="material-icons">book</i>
-        THESES
-        <a href="#theses" target="_self">
+        DISSERTATIONS
+        <a href="#dissertations" target="_self">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
@@ -115,22 +115,22 @@
         <em>Ordered by most recent.</em>
     </p>
     {% set publications = selected_publications %}
-    {% include 'publications.html' %}
+    {% include 'selected.html' %}
 
     <h2 id="publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
         <i class="material-icons">article</i>
-        PUBLICATIONS
+        ALL PUBLICATIONS
         <a href="#publications" target="_self">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
-        Ordered by most recent. Bibtex file available for download
+        Ordered by most recent and grouped by topic. Bibtex file available for download
         <a href="{{ config.publications.bibtex }}" class="blue-grey-text text-darken-3">here</a>.
         </em>
     </p>
-    {% set publications = unselected_publications %}
+    {% set publications = all_publications %}
     {% include 'publications.html' %}
 
     <h2 id="presentations" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">

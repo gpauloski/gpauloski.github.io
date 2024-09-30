@@ -73,6 +73,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     presentations = load_presentations(config.presentations.presentations_dir)
     theses = load_theses(config.theses.theses_dir)
 
+    pub_categories = {
+        "systems": "Distributed Systems",
+        "ml": "Scalable Deep Learning",
+        "science": "AI for Science",
+    }
+
     build_dir = configure_build_dir(
         config.build.build_dir,
         seed_dir=config.build.static_dir,
@@ -82,7 +88,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         templates=config.build.templates_dir,
         # Keyword arguments that get passed to jinja templates
         selected_publications=[p for p in publications if p.selected],
-        unselected_publications=[p for p in publications if not p.selected],
+        all_publications=publications,
+        pub_categories=pub_categories,
         presentations=presentations,
         theses=theses,
         current_year=datetime.date.today().year,

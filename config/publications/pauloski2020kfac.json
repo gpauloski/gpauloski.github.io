@@ -18,5 +18,6 @@
     "publisher": "https://ieeexplore.ieee.org/abstract/document/9355234",
     "year": 2020,
     "month": 11,
-    "selected": true
+    "selected": true,
+    "category": "ml"
 }

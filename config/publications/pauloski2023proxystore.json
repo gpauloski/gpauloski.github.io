@@ -22,5 +22,6 @@
     "publisher": "https://dl.acm.org/doi/10.1145/3581784.3607047",
     "year": 2023,
     "month": 11,
-    "selected": true
+    "selected": true,
+    "category": "systems"
 }
