@@ -14,6 +14,7 @@
         </a>
     </td></tr>
     <tr><td>
+        <a href="javascript:unhide('{{ thesis.tag }}_abstract')" target="_self">Abstract</a> |
         {% if thesis.pdf %}
         <a href="{{ thesis.pdf }}" target="_blank">PDF</a> |
         {% endif %}
@@ -24,6 +25,15 @@
         <a href="{{ thesis.poster }}" target="_blank">Poster</a> |
         {% endif %}
         <em>{{ thesis.location }}</em>
+    </td></tr>
+    <tr><td>
+        <div id="{{ thesis.tag }}_abstract" class="hidden">
+            <div class="grey lighten-3" id="dropdown-box">
+                <div id="dropdown-box-inner">
+                <b>ABSTRACT:</b> {{ thesis.abstract | safe }}
+                </div>
+            </div>
+        </div>
     </td></tr>
 </table>
 </div>
