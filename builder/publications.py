@@ -29,6 +29,7 @@ class Publication(NamedTuple):
     year: int
     month: int
     date_str: str
+    category: str
     code: str | None = None
     website: str | None = None
     poster: str | None = None
@@ -78,6 +79,7 @@ def parse_publication_json(pub_file: str) -> Publication:
         month=attrs["month"],
         date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
         selected=attrs["selected"] if "selected" in attrs else False,
+        category=attrs["category"],
     )
 
 
