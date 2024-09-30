@@ -44,7 +44,8 @@ skip = """
 __pycache__,
 build,
 dist,
-.*egg-info
+.*egg-info,
+config/theses/pauloski2022masters.json,
 """
 ignore-words-list = "theses,THESES"
 
