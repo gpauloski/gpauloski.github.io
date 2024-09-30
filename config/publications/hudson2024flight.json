@@ -1,0 +1,27 @@
+{
+    "title": "Flight: A FaaS-Based Framework for Complex and Hierarchical Federated Learning",
+    "authors": [
+        "Nathaniel Hudson",
+        "Valerie Hayot-Sasson",
+        "Yadu Babuji",
+        "Matt Baughman",
+        "J. Gregory Pauloski",
+        "Ryan Chard",
+        "Ian Foster",
+        "Kyle Chard"
+    ],
+    "venue": "arXiv Preprint",
+    "tldr": "Federated Learning (FL) is a decentralized machine learning paradigm where models are trained on distributed devices and are aggregated at a central server. Existing FL frameworks assume simple two-tier network topologies where end devices are directly connected to the aggregation server. While this is a practical mental model, it does not exploit the inherent topology of real-world distributed systems like the Internet-of-Things. We present Flight, a novel FL framework that supports complex hierarchical multi-tier topologies, asynchronous aggregation, and decouples the control plane from the data plane. We compare the performance of Flight against Flower, a state-of-the-art FL framework. Our results show that Flight scales beyond Flower, supporting up to 2048 simultaneous devices, and reduces FL makespan across several models. Finally, we show that Flight's hierarchical FL model can reduce communication overheads by more than 60%.",
+    "paper": "publications/hudson2024flight-preprint.pdf",
+    "bibtex": "hudson2024flight",
+    "code": "https://github.com/globus-labs/flight",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2409.16495",
+    "publisher": null,
+    "year": 2024,
+    "month": 9,
+    "selected": false,
+    "category": "ml"
+}
