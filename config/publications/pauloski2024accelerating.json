@@ -1,0 +1,24 @@
+{
+    "title": "Accelerating Python Applications with Dask and ProxyStore",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Klaudiusz Rydzy",
+        "Valerie Hayot-Sasson",
+        "Ian Foster",
+        "Kyle Chard"
+    ],
+    "venue": "arXiv Preprint & HPPSS24 Demo",
+    "tldr": "Applications are increasingly written as dynamic workflows underpinned by an execution framework that manages asynchronous computations across distributed hardware. However, execution frameworks typically offer one-size-fits-all solutions for data flow management, which can restrict performance and scalability. ProxyStore, a middleware layer that optimizes data flow via an advanced pass-by-reference paradigm, has shown to be an effective mechanism for addressing these limitations. Here, we investigate integrating ProxyStore with Dask Distributed, one of the most popular libraries for distributed computing in Python, with the goal of supporting scalable and portable scientific workflows. Dask provides an easy-to-use and flexible framework, but is less optimized for scaling certain data-intensive workflows. We investigate these limitations and detail the technical contributions necessary to develop a robust solution for distributed applications and demonstrate improved performance on synthetic benchmarks and real applications.",
+    "paper": "publications/pauloski2024accelerating.pdf",
+    "bibtex": "pauloski2024accelerating",
+    "code": "https://github.com/proxystore/hppss24-demo",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2410.12092",
+    "publisher": null,
+    "year": 2024,
+    "month": 10,
+    "selected": false,
+    "category": "systems"
+}
