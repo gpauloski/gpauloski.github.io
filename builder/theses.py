@@ -12,6 +12,7 @@ class Thesis(NamedTuple):
     tag: str
     title: str
     abstract: str
+    committee: str
     location: str
     year: int
     month: int
@@ -29,6 +30,7 @@ def parse_thesis_json(thesis_file: str) -> Thesis:
             tag=pathlib.Path(thesis_file).stem,
             title=attrs["title"],
             abstract=attrs["abstract"],
+            committee=attrs["committee"],
             location=attrs["location"],
             pdf=attrs["pdf"] if "pdf" in attrs else None,
             poster=attrs["poster"] if "poster" in attrs else None,
