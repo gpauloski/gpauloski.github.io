@@ -19,14 +19,15 @@
         <td></td>
         <td style="white-space: nowrap">
             {% if p.slides %}
-            <a href="{{ p.slides }}" target="_blank">Slides</a>
-            {% elif p.poster %}
-            <a href="{{ p.poster }}" target="_blank">Poster</a>
+            <a href="{{ p.slides }}" target="_blank">Slides</a> |
+            {% endif %}
+            {% if p.poster %}
+            <a href="{{ p.poster }}" target="_blank">Poster</a> |
             {% endif %}
             {% if p.video %}
-            | <a href="{{ p.video }}" target="_blank">Video</a>
+            <a href="{{ p.video }}" target="_blank">Video</a> |
             {% endif %}
-            | <em>{{ p.location }}</em>
+            <em>{{ p.location }}</em>
         </td>
     </tr>
     {% endfor %}
