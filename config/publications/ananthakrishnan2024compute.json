@@ -1,0 +1,33 @@
+{
+    "title": "Establishing a High-Per. and Productive Ecosystem for Dist. Execution of Python Functions Using Globus Compute",
+    "authors": [
+        "(Alphabetical) Rachana Ananthakrishnan",
+        "Yadu Babuji",
+        "Josh Bryan",
+        "Kyle Chard",
+        "Ryan Chard",
+        "Ben Clifford",
+        "Ian Foster",
+        "Lev Gorenstein",
+        "Kevin Hunter Kesling",
+        "Chris Janidlo",
+        "Daniel Katz",
+        "Reid Mello",
+        "J. Gregory Pauloski",
+        "Lei Wang"
+    ],
+    "venue": "HUST @ SC 2024",
+    "tldr": "The research computing ecosystem is increasingly heterogeneous and diverse. Democratizing access to these essential resources is critical for accelerating research progress. However, the gap between a high-level workload, such as Python in a Jupyter notebook, and the resources and interfaces exposed by HPC systems is significant. Users must securely authenticate, manage network connections, deploy and manage software, provision and configure nodes, and manage workload execution. Globus Compute reduces these barriers by providing a managed, fire-and-forget model that enables execution of Python functions across any resource to which a user has access. However, while Globus Compute has relieved users from many of the challenges of remote computing, we have observed some inefficiencies that remain in terms of use. For example, many users wrap external applications, such as C/C++, Fortran, and even MPI applications, in Python functions and users must deploy many endpoints on a single computer to exploit different configurations. We describe enhancements to Globus Compute to address these barriers: an asynchronous, future-based executor interface for submitting and monitoring tasks, shell and MPI-based function types, and a multi-user endpoint that can be deployed by administrators and used by authorized users.",
+    "paper": "publications/ananthakrishnan2024compute.pdf",
+    "bibtex": "ananthakrishnan2024compute",
+    "code": "https://github.com/globus/globus-compute",
+    "website": "https://www.globus.org/compute",
+    "poster": null,
+    "slides": "slides/pauloski-hust24-compute.pdf",
+    "preprint": null,
+    "publisher": null,
+    "year": 2024,
+    "month": 11,
+    "selected": false,
+    "category": "systems"
+}
