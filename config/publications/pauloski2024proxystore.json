@@ -9,7 +9,7 @@
         "Kyle Chard",
         "Ian Foster"
     ],
-    "venue": "arXiv Preprint",
+    "venue": "TPDS 2024",
     "tldr": "In prior work, we demonstrated the transparent object proxy, which provides wide-area references that can resolve to data regardless of location, as an effective low-level building block for data flow optimization in distributed application design. Here we propose three high-level proxy-based programming patterns---distributed futures, streaming, and ownership---that make the power of the proxy pattern usable for more complex and dynamic distributed program structures. We motivate these patterns via careful review of application requirements and describe implementations of each pattern. We evaluate our implementations through a suite of benchmarks and by applying them in three substantial scientific applications, in which we demonstrate substantial improvements in runtime, throughput, and memory usage.",
     "paper": "publications/pauloski2024proxystore-preprint.pdf",
     "bibtex": "pauloski2024proxystore",
@@ -20,7 +20,7 @@
     "preprint": "https://arxiv.org/abs/2407.01764",
     "publisher": null,
     "year": 2024,
-    "month": 7,
+    "month": 12,
     "selected": true,
     "category": "systems"
 }
