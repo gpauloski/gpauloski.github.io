@@ -1,0 +1,32 @@
+{
+    "title": "An Empirical Investigation of Container Building [...] to Reduce Cold Starts in Sci. Computing Serverless Functions",
+    "authors": [
+        "André Bauer",
+        "Maxime Gonthier",
+        "Haochen Pan",
+        "Ryan Chard",
+        "Daniel Grzenda",
+        "Martin Straesser",
+        "J. Gregory Pauloski",
+        "Alok Kamatar",
+        "Matt Baughman",
+        "Nathaniel Hudson",
+        "Ian Foster",
+        "Kyle Chard"
+    ],
+    "venue": "eScience 2024",
+    "tldr": "Serverless platforms dynamically create execution environments, often using containers. The cost to create and deploy these environments is known as \"cold start\" latency, and this cost can be particularly detrimental to scientific computing workloads characterized by sporadic and dynamic demands. We investigate methods to mitigate cold start issues in scientific computing applications by pre-installing Python packages in container images. Using data from Globus Compute and Binder, we empirically analyze cold start behavior and evaluate four strategies for building containers, including fully pre-built environments and dynamic, on-demand installations. Our results show that pre-installing all packages reduces initial cold start time but requires significant storage. Conversely, dynamic installation offers lower storage requirements but incurs repetitive delays. Additionally, we implemented a simulator and assessed the impact of different warm times, finding that moderate warm times significantly reduce cold starts without the excessive overhead of maintaining always-hot states.",
+    "paper": "publications/bauer2024containers-preprint.pdf",
+    "awards": null,
+    "bibtex": "bauer2024containers",
+    "code": null,
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": null,
+    "publisher": "https://ieeexplore.ieee.org/document/10678668",
+    "year": 2024,
+    "month": 9,
+    "selected": false,
+    "category": "systems"
+}
