@@ -46,6 +46,7 @@ build,
 dist,
 .*egg-info,
 config/theses/pauloski2022masters.json,
+static/publications/pauloski.bib,
 """
 ignore-words-list = "theses,THESES"
 
