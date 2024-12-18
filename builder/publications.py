@@ -8,7 +8,6 @@ import os
 import sys
 from collections import defaultdict
 from collections.abc import Sequence
-from typing import Any
 from typing import NamedTuple
 
 import bibtexparser
@@ -43,7 +42,7 @@ def get_bibtex_writer() -> BibTexWriter:
     bib_writer = BibTexWriter()
     bib_writer.indent = "    "
     bib_writer.order_entries_by = ("ID",)
-    bib_writer.display_order = ["author", "title"]
+    bib_writer.display_order = ["title", "author"]
     return bib_writer
 
 
@@ -83,33 +82,8 @@ def parse_publication_json(pub_file: str) -> Publication:
     )
 
 
-def fix_title_casing(
-    record: dict[str, Any],
-    per_token: bool = False,
-) -> dict[str, Any]:
-    # Adds {} around title to preserve casing
-    if "title" in record:
-        if per_token:
-            title_tokens = [
-                (
-                    f"{{{token}}}"
-                    if not token.islower() and not token.startswith("{")
-                    else token
-                )
-                for token in record["title"].split(" ")
-            ]
-            record["title"] = " ".join(title_tokens)
-        else:
-            title = record["title"]
-            record["title"] = (
-                f"{{{title}}}" if not title.startswith("{") else title
-            )
-
-    return record
-
-
 def load_bibtex(bib_file: str) -> BibDatabase:
-    parser = BibTexParser(customization=fix_title_casing)
+    parser = BibTexParser()
 
     with open(bib_file) as bf:
         bibs = bibtexparser.load(bf, parser)
