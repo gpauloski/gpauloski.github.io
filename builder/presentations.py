@@ -33,7 +33,7 @@ def parse_presentation_json(pres_file: str) -> Presentation:
             video=attrs["video"] if "video" in attrs else None,
             year=attrs["year"],
             month=attrs["month"],
-            date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
+            date_str=f"{calendar.month_abbr[attrs['month']]} {attrs['year']}",
         )
 
 

@@ -76,7 +76,7 @@ def parse_publication_json(pub_file: str) -> Publication:
         preprint=attrs["preprint"] if "preprint" in attrs else None,
         year=attrs["year"],
         month=attrs["month"],
-        date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
+        date_str=f"{calendar.month_abbr[attrs['month']]} {attrs['year']}",
         selected=attrs["selected"] if "selected" in attrs else False,
         category=attrs["category"],
     )

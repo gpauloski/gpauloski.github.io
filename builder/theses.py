@@ -37,7 +37,7 @@ def parse_thesis_json(thesis_file: str) -> Thesis:
             slides=attrs["slides"] if "slides" in attrs else None,
             year=attrs["year"],
             month=attrs["month"],
-            date_str=f'{calendar.month_abbr[attrs["month"]]} {attrs["year"]}',
+            date_str=f"{calendar.month_abbr[attrs['month']]} {attrs['year']}",
         )
 
 
