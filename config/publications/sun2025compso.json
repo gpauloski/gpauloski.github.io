@@ -1,0 +1,33 @@
+{
+    "title": "COMPSO: Optimizing Gradient Compression for Distributed Training with Second-Order Optimizers",
+    "authors": [
+        "Baixi Sun",
+        "eijin Liu",
+        "J. Gregory Pauloski",
+        "Jiannan Tian",
+        "Jinda Jia",
+        "Daoce Wang",
+        "Boyuan Zhang",
+        "Mingkai Zheng",
+        "Sheng Di",
+        "Sian Jin",
+        "Zhao Zhang",
+        "Xiaodong Yu",
+        "Kamil A. Iskra",
+        "Pete Beckman",
+        "Guangming Tan",
+        "Dingwen Tao"
+    ],
+    "venue": "PPoPP 2025",
+    "tldr": "Gradient compression, a technique commonly used to accelerate communication for first-order approaches, often results in low communication reduction ratios, decreased model accuracy, and/or high compression overhead when applied to second-order methods. We introduce a novel gradient compression method for second-order optimizers called COMPSO, which reduces communication costs while preserving the advantages of second-order optimization. COMPSO employs stochastic rounding to maintain accuracy and filters out minor gradients to improve compression ratios. We develop GPU optimizations to minimize compression overhead and performance modeling to ensure end-to-end performance gains across various systems. Evaluation of COMPSO on different DNN models shows that it achieves a compression ratio of 22.1x, reduces communication time by 14.2x, and improves overall performance by 1.9x, all without any drop in model accuracy..",
+    "paper": "publications/sun2025compso.pdf",
+    "bibtex": "sun2025compso",
+    "code": null,
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "publisher": "https://dl.acm.org/doi/10.1145/3710848.3710852",
+    "year": 2025,
+    "month": 2,
+    "category": "ml"
+}
