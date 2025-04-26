@@ -1,0 +1,29 @@
+{
+    "title": "WRATH: Workload Resilience Across Task Hierarchies in Task-based Parallel Programming Frameworks",
+    "authors": [
+        "Sicheng Zhou",
+        "Zhuozhao Li",
+        "Valerie Hayot-Sasson",
+        "Haochen Pan",
+        "Maxime Gonthier",
+        "J. Gregory Pauloski",
+        "Ryan Chard",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "CCGrid 2025",
+    "tldr": "Failures in Task-based Parallel Programming (TBPP) can severely degrade performance and result in incomplete or incorrect outcomes. Existing failure-handling approaches, including reactive, proactive, and resilient methods such as retry and checkpointing mechanisms, often apply uniform retry mechanisms regardless of the root cause of failures, failing to account for the unique characteristics of TBPP frameworks such as heterogeneous resource availability and task-level failures. We describe WRATH, a novel systematic approach that categorizes failures based on the unique layered structure of TBPP frameworks and defines specific responses to address failures at different layers. WRATH combines a distributed monitoring system and a resilient module to collaboratively address different types of failures in real time. The monitoring system captures execution and resource information, reports failures, and profiles tasks across different layers of TBPP frameworks. The resilient module then categorizes failures and responds with appropriate actions, such as hierarchically retrying failed tasks on suitable resources.",
+    "paper": "publications/zhou2025wrath-preprint.pdf",
+    "awards": null,
+    "bibtex": "zhou2025wrath",
+    "code": null,
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2503.12752",
+    "publisher": null,
+    "year": 2025,
+    "month": 3,
+    "selected": false,
+    "category": "systems"
+}
