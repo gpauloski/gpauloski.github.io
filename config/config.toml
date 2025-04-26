@@ -26,7 +26,7 @@ I completed my Bachelors in Computer Science at the <a href="https://cs.utexas.e
 
 [research]
 sections = [
-    { name = "Distributed Systems", text = "We are designing new programming paradigms which decouple communication from application design to enable multiple data movement methods depending on <i>where</i> data are moved, <i>what</i> are moved, or <i>when</i> they are moved. We are using these paradigms to build scalable scientific workflows, federated function-as-a-service platforms, and agents/actors frameworks." },
+    { name = "Distributed Systems", text = "We are designing new programming paradigms which decouple communication from application design to enable multiple data movement methods depending on <i>where</i> data are moved, <i>what</i> are moved, or <i>when</i> they are moved. We are using these paradigms to build scalable scientific workflows, federated function-as-a-service platforms, and multi-agent systems." },
     { name = "Scalable Deep Learning", text = "We are exploring new techniques for improving deep learning training time and scalability by (1) exploiting scalable algorithms for second-order information approximation; (2) developing methods for adapting to different computer hardware by tuning computation and communication to maximize training speed; (3) exploring compression techniques to reduce communication overheads; and (4) enabling complex, hierarchical federated learning across diverse ecosystems of hardware." },
     { name = "AI for Science", text = "We are (1) training large (billion+ parameter) transformer-based language models on broad scientific literature to automate knowledge extraction; (2) developing frameworks for coupling AI and simulations on exascale supercomputers; and (3) building innovative and large-scale solutions to scientific challenges in genome evolution, next-generation battery design, and carbon capture."},
 ]
@@ -36,6 +36,7 @@ github = "https://github.com/gpauloski/"
 links = [
     { name = "ProxyStore", link = "https://github.com/proxystore/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
     { name = "K-FAC", link = "https://github.com/gpauloski/kfac-pytorch", description = "Distributed PyTorch K-FAC gradient preconditioner" },
+    { name = "Academy", link = "https://github.com/proxystore/academy", description = "Build and deploy stateful agents across federated resources" },
     { name = "TaPS", link = "https://github.com/proxystore/taps", description = "Benchmarking suite for distributed/parallel task executors" },
     { name = "LLM Training", link = "https://github.com/gpauloski/llm-pytorch", description = "Tools and scripts for large language model training" },
     { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "Steering large campaigns of simulations on HPC with AI" },
