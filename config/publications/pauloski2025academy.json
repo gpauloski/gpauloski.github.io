@@ -1,0 +1,26 @@
+{
+    "title": "Empowering Scientific Workflows with Federated Agents",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Yadu Babuji",
+        "Ryan Chard",
+        "Mansi Sakarvadia",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "arXiv Preprint",
+    "tldr": "Agentic systems, in which diverse agents cooperate to tackle challenging problems, are exploding in popularity in the AI community. However, the agentic frameworks used to build these systems have not previously enabled use with research cyberinfrastructure. We introduce Academy, a modular and extensible middleware designed to deploy autonomous agents across the federated research ecosystem, including HPC systems, experimental facilities, and data repositories. To meet the demands of scientific computing, Academy supports asynchronous execution, heterogeneous resources, high-throughput data flows, and dynamic resource availability. It provides abstractions for expressing stateful agents, managing inter-agent coordination, and integrating computation with experimental control.",
+    "paper": "publications/pauloski2025academy-preprint.pdf",
+    "awards": null,
+    "bibtex": "pauloski2025academy",
+    "code": "https://github.com/proxystore/academy",
+    "website": "https://academy.proxystore.dev",
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2505.05428",
+    "publisher": null,
+    "year": 2025,
+    "month": 5,
+    "selected": true,
+    "category": "systems"
+}
