@@ -1,0 +1,33 @@
+{
+    "title": "AERO: An autonomous platform for continuous research",
+    "authors": [
+        "Valérie Hayot-Sasson",
+        "Abby Stevens",
+        "Nicholson Collier",
+        "Sudershan Sridhar",
+        "Kyle Conroy",
+        "J Gregory Pauloski",
+        "Yadu Babuji",
+        "Maxime Gonthier",
+        "Nathaniel Hudson",
+        "Dante D Sanchez-Gallegos",
+        "Ian Foster",
+        "Jonathan Ozik",
+        "Kyle Chard"
+    ],
+    "venue": "arXiv Preprint",
+    "tldr": "The COVID-19 pandemic highlighted the need for new data infrastructure, as epidemiologists and public health workers raced to harness rapidly evolving data, analytics, and infrastructure in support of cross-sector investigations. To meet this need, we developed AERO, an automated research and data sharing platform for continuous, distributed, and multi-disciplinary collaboration. AERO supports the automatic ingestion, validation, and transformation of monitored data into a form suitable for analysis; the automated execution of analyses on this data; and the sharing of data among different entities. AERO leverages capabilities provided by the Globus platform and GitHub for automation, distributed execution, data sharing, and authentication.",
+    "paper": "https://arxiv.org/pdf/2505.18408",
+    "awards": null,
+    "bibtex": "hayotsasson2025aero",
+    "code": "https://github.com/NSF-RESUME/aero",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2505.18408",
+    "publisher": null,
+    "year": 2025,
+    "month": 5,
+    "selected": false,
+    "category": "systems"
+}
