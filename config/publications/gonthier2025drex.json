@@ -1,0 +1,31 @@
+{
+    "title": "D-Rex: Heterogeneity-Aware Reliability Framework and Adaptive Algorithms for Distributed Storage",
+    "authors": [
+        "Maxime Gonthier",
+        "Dante D Sanchez-Gallegos",
+        "Haochen Pan",
+        "Bogdan Nicolae",
+        "Sicheng Zhou",
+        "Hai Duc Nguyen",
+        "Valerie Hayot-Sasson",
+        "J Gregory Pauloski",
+        "Jesus Carretero",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "ICS 2025",
+    "tldr": "As data volumes grow rapidly, we need distributed storage systems. But storage devices often differ in size, speed, and reliability, which makes managing them hard. Erasure coding—a method that protects against data loss by spreading data across devices—is widely used, but it's computationally expensive and typically doesn’t account for differences in device performance. In this work, we address how to use erasure coding efficiently on diverse storage systems. Our goal is to store more data, reduce encoding/decoding time, and meet reliability needs for each piece of data. We introduce two adaptive scheduling algorithms—D-Rex LB and D-Rex SC—that choose the right coding settings and assign data to devices based on their capabilities. D-Rex SC offers better storage use and speed but is more computationally demanding; D-Rex LB is faster with slightly lower performance. In tests, our methods stored 45% more data on average without hurting I/O performance compared to leading approaches.",
+    "paper": "https://arxiv.org/pdf/2506.02026",
+    "awards": null,
+    "bibtex": "gonthier2025drex",
+    "code": "https://github.com/dynostore/D-rex",
+    "website": null,
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2506.02026",
+    "publisher": "https://hal.science/hal-05097054/",
+    "year": 2025,
+    "month": 5,
+    "selected": false,
+    "category": "systems"
+}
