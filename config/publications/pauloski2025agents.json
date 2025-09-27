@@ -1,0 +1,23 @@
+{
+    "title": "Agentic Discovery: Closing the Loop With Cooperative Agents",
+    "authors": [
+        "J. Gregory Pauloski",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "IEEE Computer",
+    "tldr": "As data-driven methods, artificial intelligence, and automated workflows accelerate scientific tasks, we see the rate of discovery increasingly limited by human decision-making tasks such as setting objectives, generating hypotheses, and designing experiments. Cooperative agents can augment the role of humans and enable autonomous discovery.",
+    "paper": null,
+    "awards": null,
+    "bibtex": "pauloski2025agents",
+    "code": null,
+    "website": "https://academy-agents.org",
+    "poster": null,
+    "slides": null,
+    "preprint": null,
+    "publisher": "https://doi.ieeecomputersociety.org/10.1109/MC.2025.3575029",
+    "year": 2025,
+    "month": 10,
+    "selected": false,
+    "category": "science"
+}
