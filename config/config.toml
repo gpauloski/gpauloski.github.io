@@ -35,7 +35,7 @@ github = "https://github.com/gpauloski/"
 links = [
     { name = "ProxyStore", link = "https://github.com/proxystore/proxystore", description = "Pass-by-reference semantics for distributed Python applications" },
     { name = "K-FAC", link = "https://github.com/gpauloski/kfac-pytorch", description = "Distributed PyTorch K-FAC gradient preconditioner" },
-    { name = "Academy", link = "https://github.com/proxystore/academy", description = "Build and deploy stateful agents across federated resources" },
+    { name = "Academy", link = "https://docs.academy-agents.org", description = "Build and deploy stateful agents across federated resources" },
     { name = "TaPS", link = "https://github.com/proxystore/taps", description = "Benchmarking suite for distributed/parallel task executors" },
     { name = "LLM Training", link = "https://github.com/gpauloski/llm-pytorch", description = "Tools and scripts for large language model training" },
     { name = "Colmena", link = "https://github.com/exalearn/colmena", description = "Steering large campaigns of simulations on HPC with AI" },
