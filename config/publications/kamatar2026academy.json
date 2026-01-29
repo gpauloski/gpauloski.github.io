@@ -1,0 +1,28 @@
+{
+    "title": "Empowering Scientific Workflows with Federated Agents",
+    "authors": [
+        "Alok Kamatar",
+        "J. Gregory Pauloski (co-first author)",
+        "Yadu Babuji",
+        "Ryan Chard",
+        "Mansi Sakarvadia",
+        "Daniel Babnigg",
+        "Kyle Chard",
+        "Ian Foster"
+    ],
+    "venue": "IPDPS 2026",
+    "tldr": "Agentic systems, in which diverse agents cooperate to tackle challenging problems, are exploding in popularity in the AI community. However, existing agentic frameworks take a relatively narrow view of agents, apply a centralized model, and target conversational, cloud-native applications (e.g., LLM-based AI chatbots). In contrast, scientific applications require myriad agents be deployed and managed across diverse cyberinfrastructure. Here we introduce Academy, a modular and extensible middleware designed to deploy autonomous agents across the federated research ecosystem, including HPC systems, experimental facilities, and data repositories. To meet the demands of scientific computing, Academy supports asynchronous execution, heterogeneous resources, high-throughput data flows, and dynamic resource availability. Academy provides abstractions for expressing stateful agents, managing inter-agent coordination, and integrating computation with experimental control.",
+    "paper": "publications/kamatar2026academy-preprint.pdf",
+    "awards": null,
+    "bibtex": "kamatar2026academy",
+    "code": "https://github.com/academy-agents/academy",
+    "website": "https://docs.academy-agents.org",
+    "poster": null,
+    "slides": null,
+    "preprint": "https://arxiv.org/abs/2505.05428",
+    "publisher": null,
+    "year": 2026,
+    "month": 5,
+    "selected": true,
+    "category": "systems"
+}
