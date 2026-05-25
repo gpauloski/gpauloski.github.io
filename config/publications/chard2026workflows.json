@@ -1,0 +1,24 @@
+{
+    "title": "Managing Distributed Scientific Workflows with Globus",
+    "authors": [
+        "Kyle Chard",
+        "J. Gregory Pauloski",
+        "Ryan Chard",
+        "Ian Foster"
+    ],
+    "venue": "Book Chapter",
+    "tldr": "Scientific workflows increasingly span remote computing resources, from local desktops and scientific instruments to supercomputers, clouds, and AI accelerators. This distribution is driven by the nature of modern data-driven research and the availability of specialized computing hardware. Distribution creates new opportunities to improve performance and efficiency by exploiting resource heterogeneity and locality; however, it also creates new challenges related to portability and security. In this chapter, we describe Globus, a platform designed to tackle these challenges via a hybrid model in which cloud services securely manage the remote execution of arbitrary research activities. We describe how Globus Flows, a cloud-hosted workflow platform, combined with Globus Compute and Globus Transfer, enables researchers to define and execute workflows across diverse distributed computing resources. We present several example applications in real-time instrument analysis, simulation campaigns, and distributed model training that demonstrate how Globus addresses challenges in real-world scenarios.",
+    "paper": "publications/chard2026workflows.pdf",
+    "awards": null,
+    "bibtex": "chard2026workflows",
+    "code": null,
+    "website": "https://globus.org",
+    "poster": null,
+    "slides": null,
+    "preprint": null,
+    "publisher": "https://doi.org/10.14279/depositonce-25822",
+    "year": 2026,
+    "month": 5,
+    "selected": false,
+    "category": "systems"
+}
