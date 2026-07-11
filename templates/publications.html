@@ -2,11 +2,11 @@
 
 {% for key, category in pub_categories.items() %}
 <div style="margin-bottom: 10px">
-<div class="bullet">
-<div><i class="material-icons">chevron_right</i></div>
+<div class="bullet collapse-toggle" onclick="toggleCollapse('pub_section_{{ key }}')">
+<div><i class="material-icons" id="pub_section_{{ key }}_icon">unfold_less</i></div>
 <div id="bullet-entry"><b>{{ category | upper }}</b></div>
 </div>
-<div style="padding-left: 24px">
+<div id="pub_section_{{ key }}" style="padding-left: 24px; display: block">
 <table cellspacing="0" cellpadding="0" style="table-layout: auto; width: 100%">
     <tbody>
     {% for pub in publications %}
