@@ -47,6 +47,18 @@
                 item.className=(item.className=='hidden')?'unhidden':'hidden';
             }
         }
+
+        function toggleCollapse(sectionID) {
+            var content = document.getElementById(sectionID);
+            var icon = document.getElementById(sectionID + '_icon');
+            if (content) {
+                var collapsed = content.style.display === 'none';
+                content.style.display = collapsed ? 'block' : 'none';
+                if (icon) {
+                    icon.textContent = collapsed ? 'unfold_less' : 'unfold_more';
+                }
+            }
+        }
     </script>
 </head>
 
