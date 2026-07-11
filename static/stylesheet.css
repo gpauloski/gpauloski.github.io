@@ -131,6 +131,11 @@ a:hover {
     transition: transform 0.15s ease;
 }
 
+.section-toggle-icon {
+    padding-left: 6px;
+    padding-bottom: 2px;
+}
+
 .hidden {
     display: none;
 }

@@ -83,31 +83,39 @@
 
     <p>{{ config.overview.text | safe }}</p>
 
-    <h2 id="research" class="blue-grey-text text-darken-4">
+    <h2 id="research" class="blue-grey-text text-darken-4 collapse-toggle" onclick="toggleCollapse('section_research')">
         <i class="material-icons">science</i>
         RESEARCH
-        <a href="#research" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_research_icon">unfold_less</i>
+        <a href="#research" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_research" style="display: block">
     {% include 'research.html' %}
+    </div>
 
-    <h2 id="theses" class="blue-grey-text text-darken-4">
+    <h2 id="theses" class="blue-grey-text text-darken-4 collapse-toggle" onclick="toggleCollapse('section_theses')">
         <i class="material-icons">book</i>
         DISSERTATIONS
-        <a href="#dissertations" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_theses_icon">unfold_less</i>
+        <a href="#dissertations" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_theses" style="display: block">
     {% include 'theses.html' %}
+    </div>
 
-    <h2 id="projects" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="projects" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_projects')">
         <i class="material-icons">engineering</i>
         PROJECTS
-        <a href="#projects" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_projects_icon">unfold_less</i>
+        <a href="#projects" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_projects" style="display: block">
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Check out all of my projects on
@@ -115,27 +123,33 @@
         </em>
     </p>
     {% include 'projects.html' %}
+    </div>
 
-    <h2 id="selected-publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="selected-publications" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_selected')">
         <i class="material-icons">star</i>
         SELECTED PUBLICATIONS
-        <a href="#selected-publications" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_selected_icon">unfold_less</i>
+        <a href="#selected-publications" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_selected" style="display: block">
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>Ordered by most recent.</em>
     </p>
     {% set publications = selected_publications %}
     {% include 'selected.html' %}
+    </div>
 
-    <h2 id="publications" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="publications" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_publications')">
         <i class="material-icons">article</i>
         ALL PUBLICATIONS
-        <a href="#publications" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_publications_icon">unfold_less</i>
+        <a href="#publications" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_publications" style="display: block">
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>
         Ordered by most recent and grouped by topic. Bibtex file available for download
@@ -144,18 +158,22 @@
     </p>
     {% set publications = all_publications %}
     {% include 'publications.html' %}
+    </div>
 
-    <h2 id="presentations" class="blue-grey-text text-darken-4" style="margin-bottom: 4px;">
+    <h2 id="presentations" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_presentations')">
         <i class="material-icons">co_present</i>
         PRESENTATIONS
-        <a href="#presentations" target="_self">
+        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_presentations_icon">unfold_less</i>
+        <a href="#presentations" target="_self" onclick="event.stopPropagation()">
             <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
         </a>
     </h2>
+    <div id="section_presentations" style="display: block">
     <p class="blue-grey-text text-darken-3" id="h2-subheader">
         <em>Ordered by most recent.</em>
     </p>
     {% include 'presentations.html' %}
+    </div>
 </div>
 </body>
 
