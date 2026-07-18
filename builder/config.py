@@ -15,6 +15,7 @@ class Config:
     publications: PublicationsConfig
     presentations: PresentationsConfig
     theses: ThesesConfig
+    layout: LayoutConfig
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Config:
@@ -26,6 +27,7 @@ class Config:
             publications=PublicationsConfig(**data["publications"]),
             presentations=PresentationsConfig(**data["presentations"]),
             theses=ThesesConfig(**data["theses"]),
+            layout=LayoutConfig(**data.get("layout", {})),
         )
 
     @classmethod
@@ -61,6 +63,7 @@ class OverviewConfig:
         analytics: Google analyics ID.
         source: Link to source code of website.
         text: Overview/intro paragraph (HTML supported).
+        topics: Short topic tags shown under the name in the hero.
     """
 
     name: str
@@ -70,6 +73,7 @@ class OverviewConfig:
     analytics: str
     source: str
     text: str
+    topics: list[str] = dataclasses.field(default_factory=list)
 
 
 @dataclasses.dataclass
@@ -79,9 +83,12 @@ class ResearchConfig:
     Attributes:
         sections: List of mappings where each mapping contains the name
             and text key corresponding to a research section.
+        intro: Optional introductory blurb shown above the research
+            sections (HTML supported).
     """
 
     sections: list[dict[str, str]]
+    intro: str = ""
 
 
 @dataclasses.dataclass
@@ -134,3 +141,14 @@ class ThesesConfig:
     """
 
     theses_dir: str
+
+
+@dataclasses.dataclass
+class LayoutConfig:
+    """Layout config.
+
+    Attributes:
+        sections_collapsed: Whether the top-level sections start collapsed.
+    """
+
+    sections_collapsed: bool = True

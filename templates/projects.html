@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-
+{% import 'icons.html' as icons %}
+<div class="projects">
 {% for project in config.projects.links %}
-<div class="bullet">
-    <div>
-        <i class="material-icons">chevron_right</i>
-    </div>
-    <div id="bullet-entry">
-        <b>{{ project.name }}:</b> {{ project.description }}
-        [<a href="{{ project.link }}">Code</a>]
-    </div>
-</div>
+    <a class="proj" href="{{ project.link }}">
+        <div class="pt">{{ project.name }} <span class="arrow">{{ icons.icon('arrow-up-right') }}</span></div>
+        <div class="pd">{{ project.description }}</div>
+    </a>
 {% endfor %}
+</div>

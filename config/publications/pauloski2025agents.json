@@ -5,10 +5,10 @@
         "Kyle Chard",
         "Ian Foster"
     ],
-    "venue": "IEEE Computer — 2025 Best Paper",
+    "venue": "IEEE Computer",
     "tldr": "As data-driven methods, artificial intelligence, and automated workflows accelerate scientific tasks, we see the rate of discovery increasingly limited by human decision-making tasks such as setting objectives, generating hypotheses, and designing experiments. Cooperative agents can augment the role of humans and enable autonomous discovery.",
     "paper": null,
-    "awards": null,
+    "awards": "Best Paper",
     "bibtex": "pauloski2025agents",
     "code": null,
     "website": "https://academy-agents.org",

@@ -1,50 +1,21 @@
-<!DOCTYPE html>
-
+{% import 'icons.html' as icons %}
 {% for thesis in theses %}
-<div class="bullet">
-<div>
-    <i class="material-icons">chevron_right</i>
-</div>
-<table id={{ thesis.tag }} cellspacing="0" cellpadding="0">
-    <tr><td>
-        <b>{{ thesis.title }}</b>
-        <span class="grey-text text-darken-1" style="padding-left: 6px;">[{{ thesis.date_str }}]</span>
-        <a href="#{{ thesis.tag }}" target="_self">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </td></tr>
-    <tr><td>
-        <a href="javascript:unhide('{{ thesis.tag }}_abstract')" target="_self">Abstract</a> |
-        <a href="javascript:unhide('{{ thesis.tag }}_committee')" target="_self">Committee</a> |
-        {% if thesis.pdf %}
-        <a href="{{ thesis.pdf }}" target="_blank">PDF</a> |
-        {% endif %}
-        {% if thesis.slides %}
-        <a href="{{ thesis.slides }}" target="_blank">Slides</a> |
-        {% endif %}
-        {% if thesis.poster %}
-        <a href="{{ thesis.poster }}" target="_blank">Poster</a> |
-        {% endif %}
-        <em>{{ thesis.location }}</em>
-    </td></tr>
-    <tr><td>
-        <div id="{{ thesis.tag }}_abstract" class="hidden">
-            <div class="grey lighten-3" id="dropdown-box">
-                <div id="dropdown-box-inner">
-                <b>ABSTRACT:</b> {{ thesis.abstract | safe }}
-                </div>
-            </div>
+<div class="card" id="{{ thesis.tag }}">
+    <div class="date">{{ thesis.date_str }}</div>
+    <div class="main">
+        <div class="title">{{ thesis.title }}<a class="anchor" href="#{{ thesis.tag }}" target="_self">{{ icons.icon('link') }}</a></div>
+        <div class="authors"><em>{{ thesis.location }}{% if thesis.university %} · {{ thesis.university }}{% endif %}</em></div>
+        <div class="links">
+            <button data-panel="{{ thesis.tag }}_abstract">Abstract</button>
+            <button data-panel="{{ thesis.tag }}_committee">Committee</button>
+            {% if thesis.pdf %}<a href="{{ thesis.pdf }}">PDF</a>{% endif %}
+            {% if thesis.slides %}<a href="{{ thesis.slides }}">Slides</a>{% endif %}
+            {% if thesis.poster %}<a href="{{ thesis.poster }}">Poster</a>{% endif %}
+            {% if thesis.bibtex %}<button data-panel="{{ thesis.tag }}_bibtex">BibTeX</button>{% endif %}
         </div>
-    </td></tr>
-    <tr><td>
-        <div id="{{ thesis.tag }}_committee" class="hidden">
-            <div class="grey lighten-3" id="dropdown-box">
-                <div id="dropdown-box-inner">
-                <b>Committee:</b> {{ thesis.committee }}
-                </div>
-            </div>
-        </div>
-    </td></tr>
-</table>
+        <div class="panel" id="{{ thesis.tag }}_abstract" hidden><span class="lbl">Abstract</span>{{ thesis.abstract | safe }}</div>
+        <div class="panel" id="{{ thesis.tag }}_committee" hidden><span class="lbl">Committee</span>{{ thesis.committee }}</div>
+        {% if thesis.bibtex %}<div class="panel" id="{{ thesis.tag }}_bibtex" hidden><pre>{{ thesis.bibtex }}</pre></div>{% endif %}
+    </div>
 </div>
 {% endfor %}
