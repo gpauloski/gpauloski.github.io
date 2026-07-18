@@ -15,6 +15,7 @@ class Config:
     publications: PublicationsConfig
     presentations: PresentationsConfig
     theses: ThesesConfig
+    layout: LayoutConfig
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Config:
@@ -26,6 +27,7 @@ class Config:
             publications=PublicationsConfig(**data["publications"]),
             presentations=PresentationsConfig(**data["presentations"]),
             theses=ThesesConfig(**data["theses"]),
+            layout=LayoutConfig(**data.get("layout", {})),
         )
 
     @classmethod
@@ -134,3 +136,14 @@ class ThesesConfig:
     """
 
     theses_dir: str
+
+
+@dataclasses.dataclass
+class LayoutConfig:
+    """Layout config.
+
+    Attributes:
+        sections_collapsed: Whether the top-level sections start collapsed.
+    """
+
+    sections_collapsed: bool = True

@@ -22,6 +22,17 @@
     <title>{{ config.overview.name }}</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Apply saved theme before paint to avoid a flash; unset means follow the OS. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
@@ -35,6 +46,10 @@
       <a href="#publications" target="_self">publications</a>
       <a href="#presentations" target="_self">talks</a>
     </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+      <span class="moon">{{ icons.icon('moon') }}</span>
+      <span class="sun">{{ icons.icon('sun') }}</span>
+    </button>
   </div>
 </nav>
 
@@ -60,12 +75,12 @@
 
     <!-- 01 RESEARCH (+ dissertations) -->
     <section id="research">
-      <div class="sec-head collapse-toggle" data-target="b-research" aria-expanded="true">
+      <div class="sec-head collapse-toggle" data-target="b-research" aria-expanded="{{ 'false' if config.layout.sections_collapsed else 'true' }}">
         <span class="sec-idx">01</span><h2>Research</h2><span class="sub">// what I work on</span>
-        <a class="anchor" href="#research" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <a class="anchor" href="#research" target="_self" onclick="event.stopPropagation()">{{ icons.icon('link') }}</a>
         <span class="chev">{{ icons.icon('chevron') }}</span>
       </div>
-      <div class="sec-body" id="b-research">
+      <div class="sec-body" id="b-research"{% if config.layout.sections_collapsed %} hidden{% endif %}>
         {% include 'research.html' %}
         <div class="subhead"><span class="k">Dissertations</span><span class="line"></span></div>
         {% include 'theses.html' %}
@@ -74,12 +89,12 @@
 
     <!-- 02 PROJECTS -->
     <section id="projects">
-      <div class="sec-head collapse-toggle" data-target="b-projects" aria-expanded="true">
+      <div class="sec-head collapse-toggle" data-target="b-projects" aria-expanded="{{ 'false' if config.layout.sections_collapsed else 'true' }}">
         <span class="sec-idx">02</span><h2>Projects</h2><span class="sub">// open source</span>
-        <a class="anchor" href="#projects" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <a class="anchor" href="#projects" target="_self" onclick="event.stopPropagation()">{{ icons.icon('link') }}</a>
         <span class="chev">{{ icons.icon('chevron') }}</span>
       </div>
-      <div class="sec-body" id="b-projects">
+      <div class="sec-body" id="b-projects"{% if config.layout.sections_collapsed %} hidden{% endif %}>
         {% include 'projects.html' %}
         <a class="ghlink" href="{{ config.projects.github }}">{{ icons.icon('github') }}browse all projects on github <span class="ar">&rarr;</span></a>
       </div>
@@ -87,12 +102,12 @@
 
     <!-- 03 PUBLICATIONS -->
     <section id="publications">
-      <div class="sec-head collapse-toggle" data-target="b-publications" aria-expanded="true">
+      <div class="sec-head collapse-toggle" data-target="b-publications" aria-expanded="{{ 'false' if config.layout.sections_collapsed else 'true' }}">
         <span class="sec-idx">03</span><h2>Publications</h2><span class="sub">// research output</span>
-        <a class="anchor" href="#publications" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <a class="anchor" href="#publications" target="_self" onclick="event.stopPropagation()">{{ icons.icon('link') }}</a>
         <span class="chev">{{ icons.icon('chevron') }}</span>
       </div>
-      <div class="sec-body" id="b-publications">
+      <div class="sec-body" id="b-publications"{% if config.layout.sections_collapsed %} hidden{% endif %}>
         <div class="subhead"><span class="k">Highlights</span><span class="line"></span></div>
         {% set publications = selected_publications %}
         {% include 'selected.html' %}
@@ -116,12 +131,12 @@
 
     <!-- 04 PRESENTATIONS -->
     <section id="presentations">
-      <div class="sec-head collapse-toggle" data-target="b-presentations" aria-expanded="true">
-        <span class="sec-idx">04</span><h2>Presentations</h2><span class="sub">// selected talks</span>
-        <a class="anchor" href="#presentations" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+      <div class="sec-head collapse-toggle" data-target="b-presentations" aria-expanded="{{ 'false' if config.layout.sections_collapsed else 'true' }}">
+        <span class="sec-idx">04</span><h2>Talks</h2><span class="sub">// selected</span>
+        <a class="anchor" href="#presentations" target="_self" onclick="event.stopPropagation()">{{ icons.icon('link') }}</a>
         <span class="chev">{{ icons.icon('chevron') }}</span>
       </div>
-      <div class="sec-body" id="b-presentations">
+      <div class="sec-body" id="b-presentations"{% if config.layout.sections_collapsed %} hidden{% endif %}>
         {% include 'presentations.html' %}
       </div>
     </section>
@@ -135,6 +150,22 @@
 </footer>
 
 <script>
+  // Theme toggle (defaults to OS preference; choice persisted in localStorage)
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById("themeBtn");
+    function current() {
+      var t = root.getAttribute("data-theme");
+      if (t) return t;
+      return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+
   // Section collapse
   document.querySelectorAll(".sec-head").forEach(function (head) {
     head.addEventListener("click", function () {

@@ -3,7 +3,7 @@
 <div class="card" id="{{ thesis.tag }}">
     <div class="date">{{ thesis.date_str }}</div>
     <div class="main">
-        <div class="title">{{ thesis.title }}<a class="anchor" href="#{{ thesis.tag }}" target="_self">{{ icons.icon('file') }}</a></div>
+        <div class="title">{{ thesis.title }}<a class="anchor" href="#{{ thesis.tag }}" target="_self">{{ icons.icon('link') }}</a></div>
         <div class="authors"><em>{{ thesis.location }}{% if thesis.university %} · {{ thesis.university }}{% endif %}</em></div>
         <div class="links">
             <button data-panel="{{ thesis.tag }}_abstract">Abstract</button>

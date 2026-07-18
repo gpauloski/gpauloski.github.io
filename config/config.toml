@@ -3,6 +3,10 @@ build_dir = "./_site"
 templates_dir = "./templates"
 static_dir = "./static"
 
+[layout]
+# Whether the top-level sections (Research, Projects, etc.) start collapsed.
+sections_collapsed = true
+
 [overview]
 name = "Greg Pauloski"
 titles = ["Computer Scientist", "Software Engineer"]

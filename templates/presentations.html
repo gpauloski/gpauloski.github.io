@@ -3,7 +3,7 @@
     <div class="row" id="{{ p.tag }}">
         <div class="date">{{ p.date_str }}</div>
         <div>
-            <div class="t">{{ p.title }} <a class="anchor" href="#{{ p.tag }}" target="_self">{{ icons.icon('file') }}</a></div>
+            <div class="t">{{ p.title }} <a class="anchor" href="#{{ p.tag }}" target="_self">{{ icons.icon('link') }}</a></div>
             <div class="m">
                 {% if p.slides %}<a href="{{ p.slides }}">Slides</a> · {% endif %}
                 {% if p.poster %}<a href="{{ p.poster }}">Poster</a> · {% endif %}

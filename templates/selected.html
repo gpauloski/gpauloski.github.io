@@ -3,7 +3,7 @@
 <div class="card" id="{{ pub.bibtex_id }}">
     <div class="date">{{ pub.date_str }}</div>
     <div class="main">
-        <div class="title">{{ pub.title }}<a class="anchor" href="#{{ pub.bibtex_id }}" target="_self">{{ icons.icon('file') }}</a></div>
+        <div class="title">{{ pub.title }}<a class="anchor" href="#{{ pub.bibtex_id }}" target="_self">{{ icons.icon('link') }}</a></div>
         <div class="authors">{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }}</div>
         <div class="venue-row">
             <span class="venue">{{ pub.venue }}</span>

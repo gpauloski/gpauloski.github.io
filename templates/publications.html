@@ -13,7 +13,7 @@
     <div class="row" id="all-{{ pub.bibtex_id }}">
         <div class="date">{{ pub.date_str }}</div>
         <div>
-            <div class="t">{{ pub.title }} <a class="anchor" href="#all-{{ pub.bibtex_id }}" target="_self">{{ icons.icon('file') }}</a></div>
+            <div class="t">{{ pub.title }} <a class="anchor" href="#all-{{ pub.bibtex_id }}" target="_self">{{ icons.icon('link') }}</a></div>
             <div class="m">{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }} · <em>{{ pub.venue }}{% if pub.awards %} — {{ pub.awards }}{% endif %}</em></div>
             <div class="links">
                 <button data-panel="all-{{ pub.bibtex_id }}_tldr">TLDR</button>

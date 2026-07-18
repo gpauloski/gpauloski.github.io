@@ -2,9 +2,9 @@
    Greg Pauloski — portfolio stylesheet
    Type: Geist + Geist Mono. Accent: refined red.
    Motifs: continuum rail + monospace system labels.
-   Theming: all colors are tokens. A full dark palette is
-   defined under :root[data-theme="dark"] but stays inert
-   until a theme toggle is added (light is the shipped design).
+   Theming: all colors are tokens. Dark mode follows the OS
+   preference and can be overridden by the nav theme toggle
+   (persisted in localStorage via data-theme on <html>).
    ============================================================ */
 
 @font-face {
@@ -36,7 +36,7 @@
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
-/* ---------- Dark palette (inert until a toggle sets data-theme) ---------- */
+/* ---------- Dark palette (via OS preference or the theme toggle) ---------- */
 :root[data-theme="light"] {
   --bg:#fbfaf8;--surface:#fff;--surface-2:#f6f3f0;--ink:#1b1613;--muted:#6d645d;--faint:#938a82;
   --border:#ebe5df;--border-strong:#ddd5cd;--accent:#b11226;--accent-hover:#8d0d1e;
@@ -44,21 +44,20 @@
   --ring:rgba(177,18,38,.28);--shadow:0 1px 2px rgba(27,22,19,.04),0 6px 20px rgba(27,22,19,.05);
 }
 :root[data-theme="dark"] {
-  --bg:#141110;--surface:#1c1917;--surface-2:#23201d;--ink:#efe9e3;--muted:#a89e95;--faint:#837a72;
-  --border:#2c2825;--border-strong:#3a3531;--accent:#f2606a;--accent-hover:#f7828a;
-  --accent-soft:#2a1c1d;--accent-line:#3a2a2b;--rail-top:#4a433d;--dot:rgba(239,233,227,.06);
-  --ring:rgba(242,96,106,.32);--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  --bg:#211c18;--surface:#2a2420;--surface-2:#332c27;--ink:#efe9e3;--muted:#aba197;--faint:#867c73;
+  --border:#3a332d;--border-strong:#4a423a;--accent:#f2606a;--accent-hover:#f7828a;
+  --accent-soft:#3a2926;--accent-line:#4a3733;--rail-top:#544b43;--dot:rgba(239,233,227,.05);
+  --ring:rgba(242,96,106,.30);--shadow:0 1px 2px rgba(0,0,0,.22),0 8px 24px rgba(0,0,0,.26);
 }
-/* When ready to honor OS preference, uncomment:
+/* Follow the OS preference unless the visitor has explicitly chosen light. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:#141110;--surface:#1c1917;--surface-2:#23201d;--ink:#efe9e3;--muted:#a89e95;--faint:#837a72;
-    --border:#2c2825;--border-strong:#3a3531;--accent:#f2606a;--accent-hover:#f7828a;
-    --accent-soft:#2a1c1d;--accent-line:#3a2a2b;--rail-top:#4a433d;--dot:rgba(239,233,227,.06);
-    --ring:rgba(242,96,106,.32);--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+    --bg:#211c18;--surface:#2a2420;--surface-2:#332c27;--ink:#efe9e3;--muted:#aba197;--faint:#867c73;
+    --border:#3a332d;--border-strong:#4a423a;--accent:#f2606a;--accent-hover:#f7828a;
+    --accent-soft:#3a2926;--accent-line:#4a3733;--rail-top:#544b43;--dot:rgba(239,233,227,.05);
+    --ring:rgba(242,96,106,.30);--shadow:0 1px 2px rgba(0,0,0,.22),0 8px 24px rgba(0,0,0,.26);
   }
 }
-*/
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -97,6 +96,19 @@ em { color: var(--muted); }
 }
 .nav-links a::before { content: "/"; color: var(--faint); }
 .nav-links a:hover { color: var(--accent); background: var(--surface-2); }
+.theme-btn { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--muted);
+  cursor: pointer; transition: color .15s, border-color .15s; }
+.theme-btn:hover { color: var(--accent); border-color: var(--ring); }
+.theme-btn .icon { width: 17px; height: 17px; }
+.theme-btn .sun, .theme-btn .moon { display: inline-flex; }
+.theme-btn .sun { display: none; }
+:root[data-theme="dark"] .theme-btn .moon { display: none; }
+:root[data-theme="dark"] .theme-btn .sun { display: inline-flex; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-btn .moon { display: none; }
+  :root:not([data-theme="light"]) .theme-btn .sun { display: inline-flex; }
+}
 
 /* ---------- Layout ---------- */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px 4rem; }
@@ -146,16 +158,18 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
   width: 12px; height: 12px; border-radius: 50%; background: var(--bg);
   border: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--bg); transition: background .15s; }
 .sec-head[aria-expanded="true"] .sec-idx::before { background: var(--accent); }
+.sec-head[aria-expanded="false"] { margin-bottom: 0; }
 .sec-head h2 { font-size: 1.12rem; font-weight: 700; letter-spacing: .07em;
                text-transform: uppercase; margin: 0; }
 .sec-head .sub { font-family: var(--mono); color: var(--faint); font-size: .8rem; font-weight: 400; }
 .sec-head .chev { margin-left: auto; color: var(--faint); align-self: center; transition: transform .2s; }
+.sec-head .chev svg { width: 20px; height: 20px; }
 .sec-head[aria-expanded="false"] .chev { transform: rotate(-90deg); }
 .sec-head .anchor { margin-left: 4px; color: var(--faint); align-self: center; opacity: 0;
                     transition: opacity .15s, color .15s; }
 .sec-head:hover .anchor { opacity: 1; }
 .sec-head .anchor:hover { color: var(--accent); }
-.sec-head .anchor svg { width: 14px; height: 14px; }
+.sec-head .anchor svg { width: 16px; height: 16px; }
 .sec-body[hidden] { display: none; }
 
 /* ---------- Research entries ---------- */
@@ -173,7 +187,7 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
 .subhead .count { color: var(--faint); font-family: var(--mono); font-size: .74rem; font-weight: 500; }
 .subhead .line { flex: 1; height: 1px; background: var(--border); }
 .subhead .schev { color: var(--faint); display: inline-flex; transition: transform .2s; }
-.subhead .schev svg { width: 15px; height: 15px; }
+.subhead .schev svg { width: 17px; height: 17px; }
 button.subhead { cursor: pointer; }
 button.subhead:hover .k { background: var(--accent); color: #fff; }
 button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
@@ -187,7 +201,7 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
   color: var(--muted); background: var(--surface); border: 1px solid var(--border-strong);
   border-radius: 8px; cursor: pointer; transition: color .15s, border-color .15s; }
 .showmore:hover { color: var(--accent); border-color: var(--ring); }
-.showmore svg { width: 15px; height: 15px; transition: transform .2s; }
+.showmore svg { width: 17px; height: 17px; transition: transform .2s; }
 .showmore[aria-expanded="true"] svg { transform: rotate(180deg); }
 .showmore .lbl-less { display: none; }
 .showmore[aria-expanded="true"] .lbl-more { display: none; }
@@ -224,7 +238,7 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .card .title .anchor { color: var(--faint); opacity: 0; transition: opacity .15s, color .15s; margin-left: 4px; }
 .card:hover .title .anchor { opacity: 1; }
 .card .title .anchor:hover { color: var(--accent); }
-.card .title .anchor svg { width: 13px; height: 13px; vertical-align: -1px; }
+.card .title .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .card .authors { color: var(--muted); font-size: .92rem; margin-top: 4px; }
 .card .authors .me { color: var(--accent); font-weight: 600; }
 .card .venue-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
@@ -266,7 +280,7 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .row .t .anchor { color: var(--faint); opacity: 0; transition: opacity .15s, color .15s; }
 .row:hover .t .anchor { opacity: 1; }
 .row .t .anchor:hover { color: var(--accent); }
-.row .t .anchor svg { width: 13px; height: 13px; vertical-align: -1px; }
+.row .t .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .row .m { color: var(--muted); font-size: .84rem; margin-top: 2px; }
 .row .m a { color: var(--accent); font-weight: 500; }
 .row .m a:hover { text-decoration: underline; }
