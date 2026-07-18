@@ -162,10 +162,10 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
 .sec-head h2 { font-size: 1.12rem; font-weight: 700; letter-spacing: .07em;
                text-transform: uppercase; margin: 0; }
 .sec-head .sub { font-family: var(--mono); color: var(--faint); font-size: .8rem; font-weight: 400; }
-.sec-head .chev { margin-left: auto; color: var(--faint); align-self: center; transition: transform .2s; }
+.sec-head .chev { margin-left: 8px; color: var(--faint); align-self: center; transition: transform .2s; }
 .sec-head .chev svg { width: 20px; height: 20px; }
 .sec-head[aria-expanded="false"] .chev { transform: rotate(-90deg); }
-.sec-head .anchor { margin-left: 4px; color: var(--faint); align-self: center; opacity: 0;
+.sec-head .anchor { margin-left: auto; color: var(--faint); align-self: center; opacity: 0;
                     transition: opacity .15s, color .15s; }
 .sec-head:hover .anchor { opacity: 1; }
 .sec-head .anchor:hover { color: var(--accent); }
@@ -173,6 +173,10 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
 .sec-body[hidden] { display: none; }
 
 /* ---------- Research entries ---------- */
+/* Border centered on the bullet markers (col1 is 15px, marker center = 7.5px);
+   text indent (6.5 + 2 + 17.5 = 26px) matches the entry text (15px col + 11px gap). */
+.section-intro { margin: 0 0 22px 6.5px; color: var(--muted); font-size: .95rem;
+  padding-left: 17.5px; border-left: 2px solid var(--accent-line); }
 .entry { display: grid; grid-template-columns: 15px 1fr; gap: 11px; margin-bottom: 15px; }
 .entry .marker { color: var(--accent); display: flex; align-items: center; justify-content: center;
   align-self: start; height: 1.62em; }
@@ -302,4 +306,10 @@ footer a:hover { color: var(--accent); }
   .card { grid-template-columns: 1fr; gap: 2px; }
   .card .date, .card .main { grid-column: 1; }
   .row { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* Drop the mono subtitles when headers would otherwise squish */
+@media (max-width: 560px) {
+  .sec-head .sub { display: none; }
+  .subhead .count { display: none; }
 }

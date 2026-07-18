@@ -3,7 +3,7 @@
 {% set count = publications | selectattr('category', 'equalto', key) | list | length %}
 <button class="subhead group" data-sub="allcat-{{ key }}" aria-expanded="false">
     <span class="k">{{ category }}</span>
-    <span class="count">{{ count }}</span>
+    <span class="count">{{ count }} papers</span>
     <span class="line"></span>
     <span class="schev">{{ icons.icon('chevron') }}</span>
 </button>

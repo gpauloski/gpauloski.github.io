@@ -63,6 +63,7 @@ class OverviewConfig:
         analytics: Google analyics ID.
         source: Link to source code of website.
         text: Overview/intro paragraph (HTML supported).
+        topics: Short topic tags shown under the name in the hero.
     """
 
     name: str
@@ -72,6 +73,7 @@ class OverviewConfig:
     analytics: str
     source: str
     text: str
+    topics: list[str] = dataclasses.field(default_factory=list)
 
 
 @dataclasses.dataclass
@@ -81,9 +83,12 @@ class ResearchConfig:
     Attributes:
         sections: List of mappings where each mapping contains the name
             and text key corresponding to a research section.
+        intro: Optional introductory blurb shown above the research
+            sections (HTML supported).
     """
 
     sections: list[dict[str, str]]
+    intro: str = ""
 
 
 @dataclasses.dataclass
