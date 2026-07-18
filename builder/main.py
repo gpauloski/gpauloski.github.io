@@ -71,7 +71,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         os.path.join(config.build.static_dir, config.publications.bibtex),
     )
     presentations = load_presentations(config.presentations.presentations_dir)
-    theses = load_theses(config.theses.theses_dir)
+    theses = load_theses(
+        config.theses.theses_dir,
+        os.path.join(config.build.static_dir, config.publications.bibtex),
+    )
 
     pub_categories = {
         "systems": "Distributed Systems",

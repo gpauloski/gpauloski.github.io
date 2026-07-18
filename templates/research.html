@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-
+{% import 'icons.html' as icons %}
 {% for research in config.research.sections %}
-<div class="bullet">
-    <div>
-        <i class="material-icons">chevron_right</i>
-    </div>
-    <div id="bullet-entry">
-        <b>{{ research.name }}:</b> {{ research.text | safe }}
-    </div>
+<div class="entry">
+    <span class="marker">{{ icons.icon('chevron-right') }}</span>
+    <div><b>{{ research.name }}.</b> {{ research.text | safe }}</div>
 </div>
 {% endfor %}

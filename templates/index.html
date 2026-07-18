@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% import 'icons.html' as icons %}
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.overview.analytics }}"></script>
@@ -8,11 +8,10 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', '{{ config.overview.analytics }}');
     </script>
 
-    <!-- Open links in new tab by default -->
+    <!-- Open external links in a new tab by default; in-page links opt out with target="_self" -->
     <base target="_blank">
 
     <meta charset="utf-8">
@@ -22,165 +21,167 @@
 
     <title>{{ config.overview.name }}</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!-- JS Stuff -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-
-    <!-- CSS -->
+    <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
-    <script>
-        function unhide(divID) {
-            var item = document.getElementById(divID);
-            if (item) {
-                item.className=(item.className=='hidden')?'unhidden':'hidden';
-            }
-        }
-
-        function toggleCollapse(sectionID) {
-            var content = document.getElementById(sectionID);
-            var icon = document.getElementById(sectionID + '_icon');
-            if (content) {
-                var collapsed = content.style.display === 'none';
-                content.style.display = collapsed ? 'block' : 'none';
-                if (icon) {
-                    icon.textContent = collapsed ? 'unfold_less' : 'unfold_more';
-                }
-            }
-        }
-    </script>
 </head>
 
-<body class="grey lighten-4">
-<div class="mainblock">
-    <div class="headshot">
-        <img src="{{ config.overview.headshot }}" alt="" width="100%" height="100%"/>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">{{ config.overview.name }}</span>
+    <div class="nav-links">
+      <a href="#research" target="_self">research</a>
+      <a href="#projects" target="_self">projects</a>
+      <a href="#publications" target="_self">publications</a>
+      <a href="#presentations" target="_self">talks</a>
     </div>
+  </div>
+</nav>
 
-    <h1 class="blue-grey-text text-darken-4">{{ config.overview.name }}</h1>
+<div class="wrap">
 
-    <p class="blue-grey-text text-darken-3" id="h1-subheader">
-        {{ config.overview.titles | join(' // ') }}
-    </p>
-
+  <header class="hero">
     <div>
-        {% set pipe = joiner("|") %}
+      <div class="eyebrow"><span class="slash">//</span> {{ config.overview.titles | join(' & ') | lower }}<span class="cursor"></span></div>
+      <h1 class="name">{{ config.overview.name }}</h1>
+      <p class="tagline">{{ config.research.sections | map(attribute='name') | join(' · ') }}</p>
+      <p class="lead">{{ config.overview.text | safe }}</p>
+      <div class="contacts">
         {% for contact in config.overview.contacts %}
-        {{ pipe() }} <a href="{{ contact.link }}" style="text-transform: uppercase">{{ contact.name }}</a>
+        <a href="{{ contact.link }}">{{ icons.icon(contact.name) }}{{ contact.name }}</a>
         {% endfor %}
+      </div>
     </div>
+    <img class="portrait" src="{{ config.overview.headshot }}" alt="{{ config.overview.name }}" width="176" height="176"/>
+  </header>
 
-    <p>{{ config.overview.text | safe }}</p>
+  <div class="sections">
+    <div class="rail"></div>
 
-    <h2 id="research" class="blue-grey-text text-darken-4 collapse-toggle" onclick="toggleCollapse('section_research')">
-        <i class="material-icons">science</i>
-        RESEARCH
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_research_icon">unfold_less</i>
-        <a href="#research" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_research" style="display: block">
-    {% include 'research.html' %}
-    </div>
+    <!-- 01 RESEARCH (+ dissertations) -->
+    <section id="research">
+      <div class="sec-head collapse-toggle" data-target="b-research" aria-expanded="true">
+        <span class="sec-idx">01</span><h2>Research</h2><span class="sub">// what I work on</span>
+        <a class="anchor" href="#research" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <span class="chev">{{ icons.icon('chevron') }}</span>
+      </div>
+      <div class="sec-body" id="b-research">
+        {% include 'research.html' %}
+        <div class="subhead"><span class="k">Dissertations</span><span class="line"></span></div>
+        {% include 'theses.html' %}
+      </div>
+    </section>
 
-    <h2 id="theses" class="blue-grey-text text-darken-4 collapse-toggle" onclick="toggleCollapse('section_theses')">
-        <i class="material-icons">book</i>
-        DISSERTATIONS
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_theses_icon">unfold_less</i>
-        <a href="#dissertations" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_theses" style="display: block">
-    {% include 'theses.html' %}
-    </div>
+    <!-- 02 PROJECTS -->
+    <section id="projects">
+      <div class="sec-head collapse-toggle" data-target="b-projects" aria-expanded="true">
+        <span class="sec-idx">02</span><h2>Projects</h2><span class="sub">// open source</span>
+        <a class="anchor" href="#projects" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <span class="chev">{{ icons.icon('chevron') }}</span>
+      </div>
+      <div class="sec-body" id="b-projects">
+        {% include 'projects.html' %}
+        <a class="ghlink" href="{{ config.projects.github }}">{{ icons.icon('github') }}browse all projects on github <span class="ar">&rarr;</span></a>
+      </div>
+    </section>
 
-    <h2 id="projects" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_projects')">
-        <i class="material-icons">engineering</i>
-        PROJECTS
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_projects_icon">unfold_less</i>
-        <a href="#projects" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_projects" style="display: block">
-    <p class="blue-grey-text text-darken-3" id="h2-subheader">
-        <em>
-        Check out all of my projects on
-        <a href="{{ config.projects.github }}" class="blue-grey-text text-darken-3">GitHub</a>.
-        </em>
-    </p>
-    {% include 'projects.html' %}
-    </div>
+    <!-- 03 PUBLICATIONS -->
+    <section id="publications">
+      <div class="sec-head collapse-toggle" data-target="b-publications" aria-expanded="true">
+        <span class="sec-idx">03</span><h2>Publications</h2><span class="sub">// research output</span>
+        <a class="anchor" href="#publications" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <span class="chev">{{ icons.icon('chevron') }}</span>
+      </div>
+      <div class="sec-body" id="b-publications">
+        <div class="subhead"><span class="k">Highlights</span><span class="line"></span></div>
+        {% set publications = selected_publications %}
+        {% include 'selected.html' %}
 
-    <h2 id="selected-publications" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_selected')">
-        <i class="material-icons">star</i>
-        SELECTED PUBLICATIONS
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_selected_icon">unfold_less</i>
-        <a href="#selected-publications" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_selected" style="display: block">
-    <p class="blue-grey-text text-darken-3" id="h2-subheader">
-        <em>Ordered by most recent.</em>
-    </p>
-    {% set publications = selected_publications %}
-    {% include 'selected.html' %}
-    </div>
+        <button class="subhead" data-sub="all-pubs" aria-expanded="true">
+          <span class="k">All Publications</span>
+          <span class="count">{{ all_publications | length }} papers · grouped by topic</span>
+          <span class="line"></span>
+          <span class="schev">{{ icons.icon('chevron') }}</span>
+        </button>
+        <div class="subblock" id="all-pubs">
+          <p class="mono" style="font-size:.78rem;color:var(--faint);margin:0 0 14px">
+            Sorted by most recent. Full BibTeX available
+            <a href="{{ config.publications.bibtex }}" style="color:var(--accent)">here</a>.
+          </p>
+          {% set publications = all_publications %}
+          {% include 'publications.html' %}
+        </div>
+      </div>
+    </section>
 
-    <h2 id="publications" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_publications')">
-        <i class="material-icons">article</i>
-        ALL PUBLICATIONS
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_publications_icon">unfold_less</i>
-        <a href="#publications" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_publications" style="display: block">
-    <p class="blue-grey-text text-darken-3" id="h2-subheader">
-        <em>
-        Ordered by most recent and grouped by topic. Bibtex file available for download
-        <a href="{{ config.publications.bibtex }}" class="blue-grey-text text-darken-3">here</a>.
-        </em>
-    </p>
-    {% set publications = all_publications %}
-    {% include 'publications.html' %}
-    </div>
+    <!-- 04 PRESENTATIONS -->
+    <section id="presentations">
+      <div class="sec-head collapse-toggle" data-target="b-presentations" aria-expanded="true">
+        <span class="sec-idx">04</span><h2>Presentations</h2><span class="sub">// selected talks</span>
+        <a class="anchor" href="#presentations" target="_self" onclick="event.stopPropagation()">{{ icons.icon('file') }}</a>
+        <span class="chev">{{ icons.icon('chevron') }}</span>
+      </div>
+      <div class="sec-body" id="b-presentations">
+        {% include 'presentations.html' %}
+      </div>
+    </section>
 
-    <h2 id="presentations" class="blue-grey-text text-darken-4 collapse-toggle" style="margin-bottom: 4px;" onclick="toggleCollapse('section_presentations')">
-        <i class="material-icons">co_present</i>
-        PRESENTATIONS
-        <i class="material-icons grey-text text-lighten-1 section-toggle-icon" id="section_presentations_icon">unfold_less</i>
-        <a href="#presentations" target="_self" onclick="event.stopPropagation()">
-            <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-        </a>
-    </h2>
-    <div id="section_presentations" style="display: block">
-    <p class="blue-grey-text text-darken-3" id="h2-subheader">
-        <em>Ordered by most recent.</em>
-    </p>
-    {% include 'presentations.html' %}
-    </div>
+  </div>
 </div>
-</body>
 
-<footer class="grey-text">
-    <a href="{{ config.overview.source }}" class="grey-text">Source Code</a><br>
-    Website design based on <a href="https://www.ericswallace.com/" class="grey-text">ericwallace.com</a>.<br>
-    Copyright &copy; {{ current_year }} {{ config.overview.name }}.
+<footer>
+  // <a href="{{ config.overview.source }}">source code</a> ·
+  &copy; {{ current_year }} {{ config.overview.name }}
 </footer>
 
+<script>
+  // Section collapse
+  document.querySelectorAll(".sec-head").forEach(function (head) {
+    head.addEventListener("click", function () {
+      var body = document.getElementById(head.dataset.target);
+      var open = head.getAttribute("aria-expanded") === "true";
+      head.setAttribute("aria-expanded", String(!open));
+      body.hidden = open;
+    });
+  });
+  // Collapsible sub-blocks (e.g. all publications)
+  document.querySelectorAll("[data-sub]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var block = document.getElementById(btn.dataset.sub);
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      block.hidden = open;
+    });
+  });
+  // Inline panels (TLDR / BibTeX / Abstract / Committee)
+  document.querySelectorAll("[data-panel]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = document.getElementById(btn.dataset.panel);
+      var open = !panel.hidden;
+      panel.hidden = open;
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  });
+  // Deep links: expand any collapsed section/sub-block that contains the target
+  function revealHash() {
+    if (!location.hash) return;
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!el) return;
+    // Walk up, expanding every collapsed section / sub-block that contains the target
+    for (var node = el; node; node = node.parentElement) {
+      if (!node.classList) continue;
+      if (node.classList.contains("subblock") && node.hidden) {
+        var sb = document.querySelector('[data-sub="' + node.id + '"]');
+        if (sb) sb.click();
+      } else if (node.classList.contains("sec-body") && node.hidden) {
+        var sh = document.querySelector('[data-target="' + node.id + '"]');
+        if (sh) sh.click();
+      }
+    }
+    el.scrollIntoView();
+  }
+  window.addEventListener("hashchange", revealHash);
+  revealHash();
+</script>
+</body>
 </html>

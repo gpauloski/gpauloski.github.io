@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-
-<div style="padding-left: 24px; margin-bottom: 24px">
-<table cellspacing="0" cellpadding="0" style="table-layout: auto; width: 100%">
-    <tbody>
-    {% for p in presentations %}
-    <tr>
-        <td style="white-space: nowrap">
-            <span class="grey-text text-darken-1">{{ p.date_str }}</span>
-        </td>
-        <td id={{ p.tag }} style="width: 100%">
-            <b>{{ p.title }}</b>
-            <a href="#{{ p.tag }}" target="_self">
-                <i class="material-icons grey-text text-lighten-1 anchor-link">link</i>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td style="white-space: nowrap">
-            {% if p.slides %}
-            <a href="{{ p.slides }}" target="_blank">Slides</a> |
-            {% endif %}
-            {% if p.poster %}
-            <a href="{{ p.poster }}" target="_blank">Poster</a> |
-            {% endif %}
-            {% if p.video %}
-            <a href="{{ p.video }}" target="_blank">Video</a> |
-            {% endif %}
-            <em>{{ p.location }}</em>
-        </td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+{% import 'icons.html' as icons %}
+{% macro presentation_row(p) %}
+    <div class="row" id="{{ p.tag }}">
+        <div class="date">{{ p.date_str }}</div>
+        <div>
+            <div class="t">{{ p.title }} <a class="anchor" href="#{{ p.tag }}" target="_self">{{ icons.icon('file') }}</a></div>
+            <div class="m">
+                {% if p.slides %}<a href="{{ p.slides }}">Slides</a> · {% endif %}
+                {% if p.poster %}<a href="{{ p.poster }}">Poster</a> · {% endif %}
+                {% if p.video %}<a href="{{ p.video }}">Video</a> · {% endif %}
+                <em>{{ p.location }}</em>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% set recent = 6 %}
+<div class="rows">
+{% for p in presentations[:recent] %}{{ presentation_row(p) }}{% endfor %}
 </div>
+{% if presentations | length > recent %}
+<button class="showmore" data-sub="more-talks" aria-expanded="false">
+    <span class="lbl-more">show all {{ presentations | length }} presentations</span>
+    <span class="lbl-less">show fewer</span>
+    {{ icons.icon('chevron') }}
+</button>
+<div class="subblock" id="more-talks" hidden>
+<div class="rows" style="margin-top:12px">
+{% for p in presentations[recent:] %}{{ presentation_row(p) }}{% endfor %}
+</div>
+</div>
+{% endif %}

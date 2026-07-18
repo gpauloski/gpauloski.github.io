@@ -1,66 +1,27 @@
-<!DOCTYPE html>
-
+{% import 'icons.html' as icons %}
 {% for pub in publications %}
-<div class="bullet">
-<div>
-    <i class="material-icons">chevron_right</i>
-</div>
-<table cellspacing="0" cellpadding="0">
-    <tr><td>
-        <b>{{ pub.title }}</b>
-        <span class="grey-text text-darken-1" style="padding-left: 6px;">[{{ pub.date_str }}]</span>
-    </td></tr>
-    <tr><td>
-        {{ pub.authors }}
-    </td></tr>
-    <tr><td>
-        <em>
-            {{ pub.venue }}
-            {% if pub.awards %}
-            — {{ pub.awards }}
-            {% endif %}
-        </em>
-    </td></tr>
-    <tr><td>
-        <a href="javascript:unhide('{{ pub.bibtex_id }}_selected_tldr')" target="_self">TLDR</a> |
-        {% if pub.paper %}
-        <a href="{{ pub.paper }}">PDF</a> |
-        {% endif %}
-        {% if pub.website %}
-        <a href="{{ pub.website }}">Website</a> |
-        {% endif %}
-        {% if pub.code %}
-        <a href="{{ pub.code }}">Code</a> |
-        {% endif %}
-        {% if pub.poster %}
-        <a href="{{ pub.poster }}">Poster</a> |
-        {% endif %}
-        {% if pub.slides %}
-        <a href="{{ pub.slides }}">Slides</a> |
-        {% endif %}
-        {% if pub.publisher %}
-        <a href="{{ pub.publisher }}">Publication</a> |
-        {% elif pub.preprint %}
-        <a href="{{ pub.preprint }}">Preprint</a> |
-        {% endif %}
-        <a href="javascript:unhide('{{ pub.bibtex_id }}_selected_bibtex')" target="_self">BibTex</a>
-    </td></tr>
-    <tr><td>
-        <div id="{{ pub.bibtex_id }}_selected_tldr" class="hidden">
-            <div class="grey lighten-3" id="dropdown-box">
-                <div id="dropdown-box-inner">
-                <b>TLDR:</b> {{ pub.tldr }}
-                </div>
-            </div>
+<div class="card" id="{{ pub.bibtex_id }}">
+    <div class="date">{{ pub.date_str }}</div>
+    <div class="main">
+        <div class="title">{{ pub.title }}<a class="anchor" href="#{{ pub.bibtex_id }}" target="_self">{{ icons.icon('file') }}</a></div>
+        <div class="authors">{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }}</div>
+        <div class="venue-row">
+            <span class="venue">{{ pub.venue }}</span>
+            <span class="tag topic">{{ pub_categories[pub.category] }}</span>
+            {% if pub.awards %}<span class="tag award">{{ icons.icon('star') }}{{ pub.awards }}</span>{% endif %}
         </div>
-    </td></tr>
-    <tr><td>
-        <div id="{{ pub.bibtex_id }}_selected_bibtex" class="hidden">
-            <div class="grey lighten-3" id="dropdown-box">
-            <pre id="dropdown-box-inner" style="white-space: pre-wrap; font-family: 'Roboto Mono'; font-size: 10pt;">{{ pub.bibtex }}</pre>
-            </div>
+        <div class="links">
+            <button data-panel="{{ pub.bibtex_id }}_h_tldr">TLDR</button>
+            {% if pub.paper %}<a href="{{ pub.paper }}">PDF</a>{% endif %}
+            {% if pub.website %}<a href="{{ pub.website }}">Website</a>{% endif %}
+            {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
+            {% if pub.poster %}<a href="{{ pub.poster }}">Poster</a>{% endif %}
+            {% if pub.slides %}<a href="{{ pub.slides }}">Slides</a>{% endif %}
+            {% if pub.publisher %}<a href="{{ pub.publisher }}">Publication</a>{% elif pub.preprint %}<a href="{{ pub.preprint }}">Preprint</a>{% endif %}
+            <button data-panel="{{ pub.bibtex_id }}_h_bibtex">BibTeX</button>
         </div>
-    </td></tr>
-</table>
+        <div class="panel" id="{{ pub.bibtex_id }}_h_tldr" hidden><span class="lbl">TLDR</span>{{ pub.tldr }}</div>
+        <div class="panel" id="{{ pub.bibtex_id }}_h_bibtex" hidden><pre>{{ pub.bibtex }}</pre></div>
+    </div>
 </div>
 {% endfor %}
