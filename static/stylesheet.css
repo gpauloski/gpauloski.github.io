@@ -95,11 +95,9 @@ em { color: var(--muted); }
   letter-spacing: .01em; padding: 6px 10px; border-radius: 7px; transition: color .15s, background .15s;
 }
 .nav-links a::before { content: "/"; color: var(--faint); }
-.nav-links a:hover { color: var(--accent); background: var(--surface-2); }
 .theme-btn { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
   border: 1px solid var(--border-strong); background: var(--surface); color: var(--muted);
   cursor: pointer; transition: color .15s, border-color .15s; }
-.theme-btn:hover { color: var(--accent); border-color: var(--ring); }
 .theme-btn .icon { width: 17px; height: 17px; }
 .theme-btn .sun, .theme-btn .moon { display: inline-flex; }
 .theme-btn .sun { display: none; }
@@ -131,7 +129,6 @@ h1.name { font-size: clamp(2.15rem, 5.6vw, 3.05rem); font-weight: 700; letter-sp
 .tagline { font-size: 1.04rem; color: var(--muted); font-weight: 500; margin: 0 0 20px; }
 .lead { max-width: 60ch; }
 .lead a { color: var(--accent); font-weight: 500; box-shadow: inset 0 -1px 0 var(--accent-line); }
-.lead a:hover { box-shadow: inset 0 -2px 0 var(--accent); }
 .contacts { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
 .contacts a {
   display: inline-flex; align-items: center; gap: .6ch; font-family: var(--mono);
@@ -139,7 +136,6 @@ h1.name { font-size: clamp(2.15rem, 5.6vw, 3.05rem); font-weight: 700; letter-sp
   padding: 7px 13px; border: 1px solid var(--border-strong); border-radius: 8px;
   background: var(--surface); transition: color .15s, border-color .15s, transform .15s;
 }
-.contacts a:hover { color: var(--accent); border-color: var(--ring); transform: translateY(-1px); }
 .contacts svg { width: 15px; height: 15px; }
 .portrait { width: 176px; height: 176px; border-radius: 50%; object-fit: cover; display: block;
   box-shadow: 0 0 0 1px var(--border), 0 0 0 7px var(--surface), 0 0 0 8px var(--ring), var(--shadow); }
@@ -168,8 +164,6 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
 .sec-head[aria-expanded="false"] .chev { transform: rotate(-90deg); }
 .sec-head .anchor { margin-left: auto; color: var(--faint); align-self: center; opacity: 0;
                     transition: opacity .15s, color .15s; }
-.sec-head:hover .anchor { opacity: 1; }
-.sec-head .anchor:hover { color: var(--accent); }
 .sec-head .anchor svg { width: 16px; height: 16px; }
 .sec-body[hidden] { display: none; }
 
@@ -194,7 +188,6 @@ section { padding-top: 30px; scroll-margin-top: 74px; }
 .subhead .schev { color: var(--faint); display: inline-flex; transition: transform .2s; }
 .subhead .schev svg { width: 17px; height: 17px; }
 button.subhead { cursor: pointer; }
-button.subhead:hover .k { background: var(--accent); color: #fff; }
 button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .subhead.group { margin: 16px 0 12px; }
 .subhead.group .k { background: var(--surface-2); color: var(--ink); }
@@ -205,7 +198,6 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
   margin-top: 12px; padding: 9px 14px; font-family: var(--mono); font-size: .78rem; font-weight: 500;
   color: var(--muted); background: var(--surface); border: 1px solid var(--border-strong);
   border-radius: 8px; cursor: pointer; transition: color .15s, border-color .15s; }
-.showmore:hover { color: var(--accent); border-color: var(--ring); }
 .showmore svg { width: 17px; height: 17px; transition: transform .2s; }
 .showmore[aria-expanded="true"] svg { transform: rotate(180deg); }
 .showmore .lbl-less { display: none; }
@@ -216,33 +208,26 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .proj { display: block; padding: 15px 17px; border: 1px solid var(--border);
   border-radius: var(--radius-sm); background: var(--surface); transition: border-color .16s, transform .16s, box-shadow .16s; }
-.proj:hover { border-color: var(--ring); transform: translateY(-2px); box-shadow: var(--shadow); }
 .proj .pt { display: flex; align-items: center; gap: .5ch; font-weight: 600; margin-bottom: 3px; }
 .proj .pt .arrow { color: var(--faint); transition: transform .16s, color .16s; }
-.proj:hover .pt .arrow { color: var(--accent); transform: translate(2px,-2px); }
 .proj .pt .arrow svg { width: 14px; height: 14px; }
 .proj .pd { color: var(--muted); font-size: .9rem; line-height: 1.5; }
 .ghlink { display: inline-flex; align-items: center; gap: .6ch; margin-top: 14px;
   font-family: var(--mono); font-size: .82rem; font-weight: 500; color: var(--muted);
   padding: 8px 14px; border: 1px solid var(--border-strong); border-radius: 8px;
   background: var(--surface); transition: color .15s, border-color .15s, transform .16s, box-shadow .16s; }
-.ghlink:hover { color: var(--accent); border-color: var(--ring); transform: translateY(-2px); box-shadow: var(--shadow); }
 .ghlink svg { width: 15px; height: 15px; }
 .ghlink .ar { transition: transform .15s; }
-.ghlink:hover .ar { transform: translateX(3px); }
 
 /* ---------- Publication / thesis cards ---------- */
 .card { display: grid; grid-template-columns: 92px 1fr; gap: 4px 18px; padding: 18px 20px;
   margin-bottom: 12px; background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); scroll-margin-top: 74px; transition: border-color .16s, box-shadow .16s; }
-.card:hover { border-color: var(--border-strong); box-shadow: var(--shadow); }
 .card .date { grid-column: 1; font-family: var(--mono); color: var(--faint); font-size: .76rem;
   font-weight: 500; padding-top: .35em; font-variant-numeric: tabular-nums; }
 .card .main { grid-column: 2; min-width: 0; }
 .card .title { font-weight: 600; font-size: 1.02rem; letter-spacing: -.005em; line-height: 1.35; }
 .card .title .anchor { color: var(--faint); opacity: 0; transition: opacity .15s, color .15s; margin-left: 4px; }
-.card:hover .title .anchor { opacity: 1; }
-.card .title .anchor:hover { color: var(--accent); }
 .card .title .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .card .authors { color: var(--muted); font-size: .92rem; margin-top: 4px; }
 .card .authors .me { color: var(--accent); font-weight: 600; }
@@ -259,7 +244,6 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
   cursor: pointer; color: var(--muted); background: var(--surface-2); border: 1px solid transparent;
   padding: 4px 10px; border-radius: 6px; transition: color .14s, background .14s, border-color .14s;
   display: inline-flex; align-items: center; gap: .45ch; }
-.links a:hover, .links button:hover { color: var(--accent); background: var(--accent-soft); }
 .links button[aria-expanded="true"] { color: var(--accent); background: var(--accent-soft);
   border-color: var(--accent-line); }
 .links svg { width: 12px; height: 12px; }
@@ -283,17 +267,42 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .row .t { font-weight: 600; font-size: .96rem; }
 .row .t .me { color: var(--accent); }
 .row .t .anchor { color: var(--faint); opacity: 0; transition: opacity .15s, color .15s; }
-.row:hover .t .anchor { opacity: 1; }
-.row .t .anchor:hover { color: var(--accent); }
 .row .t .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .row .m { color: var(--muted); font-size: .84rem; margin-top: 2px; }
 .row .m a { color: var(--accent); font-weight: 500; }
-.row .m a:hover { text-decoration: underline; }
 
 footer { max-width: var(--maxw); margin: 0 auto; padding: 30px 28px 46px; border-top: 1px solid var(--border);
   text-align: center; color: var(--faint); font-family: var(--mono); font-size: .78rem; }
 footer a { color: var(--muted); box-shadow: inset 0 -1px 0 var(--border-strong); }
-footer a:hover { color: var(--accent); }
+
+/* ---------- Hover states ----------
+   Gated behind (hover: hover) so touch devices (iPad, phones) never
+   get a hover state. On iOS Safari a tap otherwise applies :hover and
+   sticks it until you tap elsewhere — which both leaves highlights
+   lingering and forces a second tap to activate buttons that reveal
+   content (e.g. the BibTeX toggle). */
+@media (hover: hover) {
+  .nav-links a:hover { color: var(--accent); background: var(--surface-2); }
+  .theme-btn:hover { color: var(--accent); border-color: var(--ring); }
+  .lead a:hover { box-shadow: inset 0 -2px 0 var(--accent); }
+  .contacts a:hover { color: var(--accent); border-color: var(--ring); transform: translateY(-1px); }
+  .sec-head:hover .anchor { opacity: 1; }
+  .sec-head .anchor:hover { color: var(--accent); }
+  button.subhead:hover .k { background: var(--accent); color: #fff; }
+  .showmore:hover { color: var(--accent); border-color: var(--ring); }
+  .proj:hover { border-color: var(--ring); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .proj:hover .pt .arrow { color: var(--accent); transform: translate(2px,-2px); }
+  .ghlink:hover { color: var(--accent); border-color: var(--ring); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .ghlink:hover .ar { transform: translateX(3px); }
+  .card:hover { border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .card:hover .title .anchor { opacity: 1; }
+  .card .title .anchor:hover { color: var(--accent); }
+  .links a:hover, .links button:hover { color: var(--accent); background: var(--accent-soft); }
+  .row:hover .t .anchor { opacity: 1; }
+  .row .t .anchor:hover { color: var(--accent); }
+  .row .m a:hover { text-decoration: underline; }
+  footer a:hover { color: var(--accent); }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {
