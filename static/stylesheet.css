@@ -61,7 +61,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }  /* reserve scrollbar space so expanding a section doesn't shift the page; smooth scrolling handled in JS */
 body {
   margin: 0;
   font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -115,8 +115,9 @@ em { color: var(--muted); }
 .icon { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.9;
         stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.12em; }
 .cursor { display: inline-block; width: .5ch; height: 1.05em; background: var(--accent);
-          margin-left: .45ch; vertical-align: -.16em; animation: blink 1.1s infinite; }
-@keyframes blink { 0%, 49.9% { opacity: 1; } 50%, 100% { opacity: 0; } }
+          margin-left: .45ch; vertical-align: -.16em; animation: blink 1.7s ease-in-out infinite; }
+/* Gentle slow pulse. */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
 
 /* ---------- Hero ---------- */

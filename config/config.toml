@@ -30,8 +30,8 @@ I completed my Bachelors in Computer Science at the <a href="https://cs.utexas.e
 
 [research]
 intro = """
-These are the areas I focused on during my Ph.D. and earlier research &mdash; topics I know deeply.
-Consider this an archive of that work rather than a list of what I am actively pursuing today.
+These are the areas I focused on during my Ph.D. and earlier research&mdash;topics I know deeply.
+Consider this an archive of that work rather than a list of what I am actively working on.
 """
 sections = [
     { name = "Distributed Systems", text = "Designed programming paradigms that decoupled communication from application design, letting applications select data movement methods based on <i>where</i> data are moved, <i>what</i> is moved, or <i>when</i> it is moved. These abstractions power scalable scientific workflows, federated function-as-a-service platforms, and multi-agent systems." },

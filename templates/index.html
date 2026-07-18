@@ -202,11 +202,8 @@
     });
   });
   // Deep links: expand any collapsed section/sub-block that contains the target
-  function revealHash() {
-    if (!location.hash) return;
-    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (!el) return;
-    // Walk up, expanding every collapsed section / sub-block that contains the target
+  // Expand any collapsed section / sub-block that contains (or is) the target
+  function expandTo(el) {
     for (var node = el; node; node = node.parentElement) {
       if (!node.classList) continue;
       if (node.classList.contains("subblock") && node.hidden) {
@@ -217,9 +214,53 @@
         if (sh) sh.click();
       }
     }
+    var head = el.querySelector ? el.querySelector(".sec-head") : null;
+    if (head && head.getAttribute("aria-expanded") === "false") head.click();
+  }
+  // Eased scroll to an element, offset below the sticky nav.
+  // Honors prefers-reduced-motion with an instant jump.
+  function smoothScrollTo(el) {
+    var offset = 66;
+    var target = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { window.scrollTo(0, target); return; }
+    var start = window.pageYOffset;
+    var dist = target - start;
+    var duration = Math.min(1100, Math.max(550, Math.abs(dist) * 0.65));
+    var t0 = null;
+    function easeInOutCubic(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+    function step(now) {
+      if (t0 === null) t0 = now;
+      var p = Math.min(1, (now - t0) / duration);
+      window.scrollTo(0, start + dist * easeInOutCubic(p));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function revealHash() {
+    if (!location.hash) return;
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!el) return;
+    expandTo(el);
     el.scrollIntoView();
   }
+  // Back/forward navigation
   window.addEventListener("hashchange", revealHash);
+  // In-page link clicks: expand first, then do a single controlled scroll so the
+  // browser never jumps to the still-collapsed position (which caused a flash).
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var id = a.getAttribute("href").slice(1);
+      var el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      expandTo(el);
+      if (history.pushState) history.pushState(null, "", "#" + id);
+      else location.hash = id;
+      smoothScrollTo(el);
+    });
+  });
+  // On load, honor a hash in the URL
   revealHash();
 </script>
 </body>
