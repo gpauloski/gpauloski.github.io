@@ -14,10 +14,10 @@ repos:
       - id: check-yaml
       - id: check-merge-conflict
       - id: name-tests-test
-  - repo: 'https://github.com/codespell-project/codespell'
-    rev: v2.4.2
+  - repo: 'https://github.com/gpauloski/bibtex-formatter'
+    rev: v0.2.0
     hooks:
-      - id: codespell
+      - id: bibtex-format
   - repo: 'https://github.com/charliermarsh/ruff-pre-commit'
     rev: v0.15.21
     hooks:
