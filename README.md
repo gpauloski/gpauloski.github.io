@@ -4,7 +4,6 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gpauloski/gpauloski.github.io/main.svg)](https://results.pre-commit.ci/latest/github/gpauloski/gpauloski.github.io/main)
 
 Static files and code for generating my personal website at [gregpauloski.com](https://gregpauloski.com).
-The page design is based on [ericwallace.com](https://www.ericswallace.com/), and the static site compilation is done in Python using Jinja.
 
 ## Structure
 
