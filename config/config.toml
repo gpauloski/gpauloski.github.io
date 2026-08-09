@@ -22,10 +22,10 @@ analytics = "G-RP37QLH20F"
 source = "https://github.com/gpauloski/gpauloski.github.io/"
 text = """
 Hello there!
-I'm a Senior Engineer at <a href="https://www.nvidia.com" target="_blank">NVIDIA</a>, where I work on AI/ML infrastructure&mdash;building reliable, efficient systems and tooling that empowers researchers to push frontier AI and science forward at scale.
+I'm a Senior Engineer at <a href="https://www.nvidia.com" target="_blank">NVIDIA</a> working on AI/ML infrastructure.
 I earned my Ph.D. in Computer Science with <a href="https://labs.globus.org" target="_blank">Globus Labs</a> at the <a href="https://cs.uchicago.edu/" target="_blank">University of Chicago</a>,
-where I was co-advised by <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank">Ian Foster</a> and <a href="https://kylechard.com/" target="_blank">Kyle Chard</a>,
-and have previously worked at Apple, Google, and the Texas Advanced Computing Center.
+where I was co-advised by <a href="https://cs.uchicago.edu/people/ian-foster/" target="_blank">Ian Foster</a> and <a href="https://kylechard.com/" target="_blank">Kyle Chard</a>.
+I have previously worked at Apple, Google, and the Texas Advanced Computing Center.
 """
 
 [research]
