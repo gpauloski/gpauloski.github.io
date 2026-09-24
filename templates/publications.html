@@ -14,7 +14,7 @@
         <div class="date">{{ pub.date_str }}</div>
         <div>
             <div class="t">{{ pub.title }} <a class="anchor" href="#all-{{ pub.bibtex_id }}" target="_self">{{ icons.icon('link') }}</a></div>
-            <div class="m">{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }} · <em>{{ pub.venue }}{% if pub.awards %} — {{ pub.awards }}{% endif %}</em></div>
+            <div class="m">{% if pub.award %}{% if pub.award.url %}<a class="award" href="{{ pub.award.url }}">{{ icons.icon('star') }}{{ pub.award.name }}</a>{% else %}<span class="award">{{ icons.icon('star') }}{{ pub.award.name }}</span>{% endif %} · {% endif %}{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }} · <em>{{ pub.venue }}</em></div>
             <div class="links">
                 <button data-panel="all-{{ pub.bibtex_id }}_tldr">TLDR</button>
                 {% if pub.paper %}<a href="{{ pub.paper }}">PDF</a>{% endif %}

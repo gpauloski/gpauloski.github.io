@@ -5,11 +5,7 @@
     <div class="main">
         <div class="title">{{ pub.title }}<a class="anchor" href="#{{ pub.bibtex_id }}" target="_self">{{ icons.icon('link') }}</a></div>
         <div class="authors">{{ pub.authors | replace('J. Gregory Pauloski', '<span class="me">J. Gregory Pauloski</span>') | safe }}</div>
-        <div class="venue-row">
-            <span class="venue">{{ pub.venue }}</span>
-            <span class="tag topic">{{ pub_categories[pub.category] }}</span>
-            {% if pub.awards %}<span class="tag award">{{ icons.icon('star') }}{{ pub.awards }}</span>{% endif %}
-        </div>
+        <div class="venue-row">{% if pub.award %}{% if pub.award.url %}<a class="award" href="{{ pub.award.url }}">{{ icons.icon('star') }}{{ pub.award.name }}</a>{% else %}<span class="award">{{ icons.icon('star') }}{{ pub.award.name }}</span>{% endif %} · {% endif %}<span class="venue">{{ pub.venue }}</span></div>
         <div class="links">
             <button data-panel="{{ pub.bibtex_id }}_h_tldr">TLDR</button>
             {% if pub.paper %}<a href="{{ pub.paper }}">PDF</a>{% endif %}

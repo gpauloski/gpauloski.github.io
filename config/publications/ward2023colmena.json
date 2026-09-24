@@ -13,7 +13,7 @@
         "Ian Foster"
     ],
     "venue": "HCW @ IPDPS 2023",
-    "awards": null,
+    "award": null,
     "tldr": "We describe our experiences in building and deploying AI driven workflows across multiple computing sites without networking hassles and without losing performance using Colmena, Globus, FuncX, and ProxyStore.",
     "paper": "publications/ward2023colmena-preprint.pdf",
     "bibtex": "ward2023colmena",

@@ -8,7 +8,10 @@
     "venue": "IEEE Computer",
     "tldr": "As data-driven methods, artificial intelligence, and automated workflows accelerate scientific tasks, we see the rate of discovery increasingly limited by human decision-making tasks such as setting objectives, generating hypotheses, and designing experiments. Cooperative agents can augment the role of humans and enable autonomous discovery.",
     "paper": null,
-    "awards": "Best Paper",
+    "award": {
+        "name": "IEEE Computer Best Paper",
+        "url": "https://www.computer.org/publications/2025-best-paper-award-winners"
+    },
     "bibtex": "pauloski2025agents",
     "code": null,
     "website": "https://academy-agents.org",
