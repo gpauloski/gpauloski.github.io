@@ -37,7 +37,10 @@
         "Arvind Ramanathan"
     ],
     "venue": "IJHPCA",
-    "awards": "ACM Gordon Bell Special Prize for COVID-19 Research",
+    "award": {
+        "name": "ACM Gordon Bell Special Prize",
+        "url": "https://www.acm.org/articles/bulletins/2022/november/gordon-bell-prizes-2022"
+    },
     "tldr": "We build genome-scale language models (GenSLMs) which can learn the evolutionary landscape of SARS-CoV-2 genomes. By pretraining on over 110 million prokaryotic gene sequences, and then finetuning a SARS-CoV-2 specific model on 1.5 million genomes, we show that GenSLM can accurately and rapidly identify variants of concern.",
     "paper": "publications/zvyagin2022genslm-preprint.pdf",
     "bibtex": "zvyagin2023genslms",

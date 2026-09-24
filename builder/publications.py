@@ -16,12 +16,16 @@ from bibtexparser.bparser import BibTexParser
 from bibtexparser.bwriter import BibTexWriter
 
 
+class Award(NamedTuple):
+    name: str
+    url: str | None = None
+
+
 class Publication(NamedTuple):
     title: str
     authors: str
     venue: str
     tldr: str
-    awards: str | None
     paper: str
     bibtex_id: str
     bibtex: str
@@ -36,6 +40,7 @@ class Publication(NamedTuple):
     preprint: str | None = None
     publisher: str | None = None
     selected: bool = False
+    award: Award | None = None
 
 
 def get_bibtex_writer() -> BibTexWriter:
@@ -64,7 +69,6 @@ def parse_publication_json(pub_file: str) -> Publication:
         authors=authors,
         venue=attrs["venue"],
         tldr=attrs["tldr"],
-        awards=attrs["awards"],
         paper=attrs["paper"],
         bibtex_id=attrs["bibtex"],
         bibtex="",
@@ -79,6 +83,12 @@ def parse_publication_json(pub_file: str) -> Publication:
         date_str=f"{calendar.month_abbr[attrs['month']]} {attrs['year']}",
         selected=attrs["selected"] if "selected" in attrs else False,
         category=attrs["category"],
+        award=Award(
+            name=attrs["award"]["name"],
+            url=attrs["award"].get("url"),
+        )
+        if attrs["award"] is not None
+        else None,
     )
 
 

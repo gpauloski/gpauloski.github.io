@@ -31,6 +31,7 @@
   --rail-top: #cfc7be;
   --dot: rgba(27, 22, 19, 0.075);
   --ring: rgba(177, 18, 38, 0.28);
+  --award: #8a5a00; --award-star: #d29a0c;
   --shadow: 0 1px 2px rgba(27,22,19,.04), 0 6px 20px rgba(27,22,19,.05);
   --radius: 14px; --radius-sm: 9px; --maxw: 940px;
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
@@ -42,12 +43,14 @@
   --border:#ebe5df;--border-strong:#ddd5cd;--accent:#b11226;--accent-hover:#8d0d1e;
   --accent-soft:#f8ebec;--accent-line:#eed9db;--rail-top:#cfc7be;--dot:rgba(27,22,19,.075);
   --ring:rgba(177,18,38,.28);--shadow:0 1px 2px rgba(27,22,19,.04),0 6px 20px rgba(27,22,19,.05);
+  --award:#8a5a00;--award-star:#d29a0c;
 }
 :root[data-theme="dark"] {
   --bg:#211c18;--surface:#2a2420;--surface-2:#332c27;--ink:#efe9e3;--muted:#aba197;--faint:#867c73;
   --border:#3a332d;--border-strong:#4a423a;--accent:#f2606a;--accent-hover:#f7828a;
   --accent-soft:#3a2926;--accent-line:#4a3733;--rail-top:#544b43;--dot:rgba(239,233,227,.05);
   --ring:rgba(242,96,106,.30);--shadow:0 1px 2px rgba(0,0,0,.22),0 8px 24px rgba(0,0,0,.26);
+  --award:#e8b84a;--award-star:#f0c14b;
 }
 /* Follow the OS preference unless the visitor has explicitly chosen light. */
 @media (prefers-color-scheme: dark) {
@@ -56,6 +59,7 @@
     --border:#3a332d;--border-strong:#4a423a;--accent:#f2606a;--accent-hover:#f7828a;
     --accent-soft:#3a2926;--accent-line:#4a3733;--rail-top:#544b43;--dot:rgba(239,233,227,.05);
     --ring:rgba(242,96,106,.30);--shadow:0 1px 2px rgba(0,0,0,.22),0 8px 24px rgba(0,0,0,.26);
+    --award:#e8b84a;--award-star:#f0c14b;
   }
 }
 
@@ -231,14 +235,8 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .card .title .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .card .authors { color: var(--muted); font-size: .92rem; margin-top: 4px; }
 .card .authors .me { color: var(--accent); font-weight: 600; }
-.card .venue-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
-.card .venue { color: var(--muted); font-size: .86rem; font-style: italic; }
-.tag { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .02em;
-  padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
-.tag.topic { color: var(--accent); background: var(--accent-soft); }
-.tag.award { color: var(--ink); background: transparent; border: 1px solid var(--border-strong);
-  display: inline-flex; align-items: center; gap: .4ch; }
-.tag.award svg { width: 11px; height: 11px; color: var(--accent); }
+.card .venue-row { color: var(--muted); font-size: .86rem; margin-top: 8px; }
+.card .venue { font-style: italic; }
 .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .links a, .links button { font: inherit; font-family: var(--mono); font-size: .76rem; font-weight: 500;
   cursor: pointer; color: var(--muted); background: var(--surface-2); border: 1px solid transparent;
@@ -270,6 +268,9 @@ button.subhead[aria-expanded="false"] .schev { transform: rotate(-90deg); }
 .row .t .anchor svg { width: 15px; height: 15px; vertical-align: -2px; }
 .row .m { color: var(--muted); font-size: .84rem; margin-top: 2px; }
 .row .m a { color: var(--accent); font-weight: 500; }
+.row .m .award, .card .award { color: var(--award); font-weight: 600; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: .35ch; vertical-align: bottom; }
+.row .m .award svg, .card .award svg { width: 12px; height: 12px; color: var(--award-star); }
 
 footer { max-width: var(--maxw); margin: 0 auto; padding: 30px 28px 46px; border-top: 1px solid var(--border);
   text-align: center; color: var(--faint); font-family: var(--mono); font-size: .78rem; }
@@ -300,7 +301,7 @@ footer a { color: var(--muted); box-shadow: inset 0 -1px 0 var(--border-strong);
   .links a:hover, .links button:hover { color: var(--accent); background: var(--accent-soft); }
   .row:hover .t .anchor { opacity: 1; }
   .row .t .anchor:hover { color: var(--accent); }
-  .row .m a:hover { text-decoration: underline; }
+  .row .m a:hover, .card a.award:hover { text-decoration: underline; }
   footer a:hover { color: var(--accent); }
 }
 

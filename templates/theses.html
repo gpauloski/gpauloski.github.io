@@ -4,7 +4,7 @@
     <div class="date">{{ thesis.date_str }}</div>
     <div class="main">
         <div class="title">{{ thesis.title }}<a class="anchor" href="#{{ thesis.tag }}" target="_self">{{ icons.icon('link') }}</a></div>
-        <div class="authors"><em>{{ thesis.location }}{% if thesis.university %} · {{ thesis.university }}{% endif %}</em></div>
+        <div class="authors">{% if thesis.award %}{% if thesis.award.url %}<a class="award" href="{{ thesis.award.url }}">{{ icons.icon('star') }}{{ thesis.award.name }}</a>{% else %}<span class="award">{{ icons.icon('star') }}{{ thesis.award.name }}</span>{% endif %} · {% endif %}<em>{{ thesis.location }}{% if thesis.university %} · {{ thesis.university }}{% endif %}</em></div>
         <div class="links">
             <button data-panel="{{ thesis.tag }}_abstract">Abstract</button>
             <button data-panel="{{ thesis.tag }}_committee">Committee</button>

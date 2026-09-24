@@ -9,6 +9,7 @@ from typing import NamedTuple
 
 from bibtexparser.bibdatabase import BibDatabase
 
+from builder.publications import Award
 from builder.publications import get_bibtex_writer
 from builder.publications import load_bibtex
 
@@ -28,6 +29,7 @@ class Thesis(NamedTuple):
     poster: str | None = None
     bibtex_id: str | None = None
     bibtex: str = ""
+    award: Award | None = None
 
 
 def parse_thesis_json(thesis_file: str) -> Thesis:
@@ -48,6 +50,12 @@ def parse_thesis_json(thesis_file: str) -> Thesis:
             year=attrs["year"],
             month=attrs["month"],
             date_str=f"{calendar.month_abbr[attrs['month']]} {attrs['year']}",
+            award=Award(
+                name=attrs["award"]["name"],
+                url=attrs["award"].get("url"),
+            )
+            if attrs.get("award") is not None
+            else None,
         )
 
 
